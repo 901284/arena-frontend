@@ -11,6 +11,7 @@ class Auth {
   }
   
   async signUp(userData, fail = false){  
+
     const response = await fetch(`${App.apiBase}/user`, {
       method: 'POST',      
       body: userData
