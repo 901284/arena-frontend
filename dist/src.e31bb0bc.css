@@ -4,22 +4,22 @@
   --heading-color: #333;
   --base-font-family: "Work Sans", sans-serif;
   --body-bg: #fff;
-  --brand-color: #3cc6b9;
+  --brand-color: #17bbc9;
   --link-color: --brand-color;
   --app-header-height: 60px;
   --app-header-txt-color: #fff;
   --app-header-title-font-size: 1.6em;
   --sl-color-primary-50: #f4f4f4;
-  --sl-color-primary-100: #daf4f2;
-  --sl-color-primary-200: #b2e9e4;
-  --sl-color-primary-300: #8bddd5;
-  --sl-color-primary-400: #63d2c7;
-  --sl-color-primary-500: #3cc6b9;
-  --sl-color-primary-600: #2fa096;
-  --sl-color-primary-700: #237971;
-  --sl-color-primary-800: #18514c;
-  --sl-color-primary-900: #0c2a27;
-  --sl-focus-ring-color-primary: rgba(60, 198, 185, 0.1);
+  --sl-color-primary-100: #b5f1f7;
+  --sl-color-primary-200: #88e9f1;
+  --sl-color-primary-300: #5ae1ec;
+  --sl-color-primary-400: #2cd8e7;
+  --sl-color-primary-500: #17bbc9;
+  --sl-color-primary-600: #12909b;
+  --sl-color-primary-700: #0d666d;
+  --sl-color-primary-800: #073b40;
+  --sl-color-primary-900: #021112;
+  --sl-focus-ring-color-primary: rgba(23, 187, 201, 0.1);
 }
 
 * {
