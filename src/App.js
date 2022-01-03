@@ -1,20 +1,23 @@
+// Author:        Team Rose
+// Filename:      App.js
+// Created:       
+// Description:   Root js application instance
+
 import Router from './Router'
 import Auth from './Auth'
 import Toast from './Toast'
 
-
 class App {
   constructor(){
-    this.name = "Haircuts"
+    this.name = "ARENA"
     this.version = "1.0.0"
-    this.apiBase = 'http://localhost:3000'
+    this.apiBase = 'https://arenaapi.herokuapp.com'
     this.rootEl = document.getElementById("root")
     this.version = "1.0.0"
   }
   
   init() { 
-    console.log("App.init")
-    
+        
     // Toast init
     Toast.init()   
     

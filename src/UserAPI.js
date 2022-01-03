@@ -4,12 +4,12 @@ import Toast from './Toast'
 
 class UserAPI {
   
-  async updateUser(userId, userData){
+  async updateUser(userEmail, userData){
     // validate
-    if(!userId || !userData) return
+    if(!userEmail || !userData) return
     
     // make fetch request to backend
-    const response = await fetch(`${App.apiBase}/user/${userId}`, {
+    const response = await fetch(`${App.apiBase}/user/${userEmail}`, {
       method: "PUT",
         headers: { "Authorization": `Bearer ${localStorage.accessToken}`},
         body: userData
@@ -31,12 +31,12 @@ class UserAPI {
     return data
   }
 
-  async getUser(userId){
+  async getUser(userEmail){
     // validate
-    if(!userId) return
+    if(!userEmail) return
     
     // fetch the json data
-    const response = await fetch(`${App.apiBase}/user/${userId}`, {
+    const response = await fetch(`${App.apiBase}/user/${userEmail}`, {
       headers: { "Authorization": `Bearer ${localStorage.accessToken}`}
     })
 

@@ -72,7 +72,8 @@ class Auth {
     if(!localStorage.accessToken){
       // no local token!
       Toast.show("Please sign in")    
-      // redirect to sign in page      
+      // redirect to sign in page   
+      console.log("directing to sign-n modal")   
       gotoRoute('/signin')
       return
     }
