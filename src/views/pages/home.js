@@ -24,6 +24,11 @@ class HomeView {
         <p>&nbsp;</p>
         <h3>Link example</h3>
         <a href="/profile" @click=${anchorRoute}>View Profile</a>
+
+        <br>
+        
+        this is how you use a button to go on click to another page
+        <sl-button @click=${() => gotoRoute('/about')}>Test</sl-button>
         
       </div>
      

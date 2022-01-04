@@ -15,7 +15,7 @@ class Utils {
   pageIntroAnim(){
     const pageContent = document.querySelector('.page-content')
     if(!pageContent) return
-    gsap.fromTo(pageContent, {opacity: 0, y: -12}, {opacity: 1, y: 0, ease: 'power2.out', duration: 0.3})
+    gsap.fromTo(pageContent, {opacity: 0, y: -12}, {opacity: 1, y: 0, ease: 'power2.out', duration: 1})
   }
 }
 

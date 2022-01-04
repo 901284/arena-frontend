@@ -163,6 +163,10 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
 
       <nav class="app-top-nav">
         <a href="/" @click="${anchorRoute}">Home</a>        
+        <a href="/about" @click="${anchorRoute}">About</a>        
+        <a href="/contact" @click="${anchorRoute}">Contact</a>        
+        <a href="/engage" @click="${anchorRoute}">Engage</a>        
+        <a href="/careers" @click="${anchorRoute}">Careers</a>        
         <sl-dropdown>
           <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">
             <sl-avatar style="--size: 24px;" image=${(this.user && this.user.avatar) ? `${App.apiBase}/images/${this.user.avatar}` : ''}></sl-avatar> ${this.user && this.user.firstName}
@@ -180,6 +184,10 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       <img class="app-side-menu-logo" src="/images/logo.svg">
       <nav class="app-side-menu-items">
         <a href="/" @click="${this.menuClick}">Home</a>
+        <a href="/about" @click="${this.menuClick}">About</a>
+        <a href="/contact" @click="${this.menuClick}">Contact</a>
+        <a href="/engage" @click="${this.menuClick}">Engage</a>
+        <a href="/careers" @click="${this.menuClick}">Careers</a>
         <a href="/profile" @click="${this.menuClick}">Profile</a>
         <a href="#" @click="${() => Auth.signOut()}">Sign Out</a>
       </nav>  
