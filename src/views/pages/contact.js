@@ -16,7 +16,7 @@ class ContactView {
       <va-app-header title="Contact" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-content">        
         
-        <div class="contact-in">
+        <div class="contact-wrapper">
           <div class="contact-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29624007.58460168!2d115.22979863156776!3d-24.992915938390176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b2bfd076787c5df%3A0x538267a1955b1352!2sAustralia!5e0!3m2!1sen!2sau!4v1641304069768!5m2!1sen!2sau"style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
@@ -36,9 +36,6 @@ class ContactView {
                   <br><br>
                   <sl-button variant="primary" submit>Submit</sl-button>
                 </sl-form>
-            
-              const form = document.querySelector('.input-validation-type');
-              form.addEventListener('sl-submit', () => alert('All fields are valid!'));
 
               </div> 
           </div>
