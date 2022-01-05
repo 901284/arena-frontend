@@ -22,7 +22,7 @@ class ProfileView {
         `:html`
         <sl-avatar style="--size: 200px; margin-bottom: 1em;"></sl-avatar>
         `}
-        <h2>${Auth.currentUser.firstName} ${Auth.currentUser.lastName}</h2>
+        <h2>${Auth.currentUser.firstname} ${Auth.currentUser.lastname}</h2>
         <p>${Auth.currentUser.email}</p>
         
         <p>Updated: ${moment(Auth.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>

@@ -33,24 +33,28 @@ class UserAPI {
 
   async getUser(userEmail){
     // validate
-    if(!userEmail) return
+    if(!userEmail) throw new Error('Unable to get a user without referencing their email address')
     
     // fetch the json data
-    const response = await fetch(`${App.apiBase}/user/${userEmail}`, {
+    const response  = await fetch(`${App.apiBase}/user/${userEmail}`, {
       headers: { "Authorization": `Bearer ${localStorage.accessToken}`}
     })
 
-    // if response not ok
+    console.log("response: ", response)
+
+        // if response not ok
     if(!response.ok){ 
       // console log error
-      const err = await response.json()
+      const err = response.json()
       if(err) console.log(err)
       // throw error (exit this function)      
       throw new Error('Problem getting user')
     }
     
     // convert response payload into json - store as data
-    const data = await response.json()
+    const data = response.json()
+
+    console.log("data: ", data)
     
     // return data
     return data

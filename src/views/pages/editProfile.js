@@ -12,27 +12,38 @@ class EditProfileView {
     console.log('EditProfileView.init')
     document.title = 'Edit Profile'    
     this.user = null
-    this.render()    
+    this.render()   
+    console.log("rendered") 
     Utils.pageIntroAnim()
+    console.log("entry animated") 
     this.getUser()    
+    console.log("got user") 
+
   }
 
   async getUser(){
     try {
-      this.user = await UserAPI.getUser(Auth.currentUser._id)      
+      this.user = await UserAPI.getUser(Auth.currentUser.email)     
+      console.log("the user: " , this.user) 
+ 
       this.render()
     }catch(err){
+      console.log(err)
       Toast.show(err, 'error')
     }
+
+
+
   }
 
   async updateProfileSubmitHandler(e){
+    console.log("updateProfileSubmitHandler called") 
     e.preventDefault()
     const formData = e.detail.formData
     const submitBtn = document.querySelector('.submit-btn')
     submitBtn.setAttribute('loading', '')
     try {
-      const updatedUser = await UserAPI.updateUser(Auth.currentUser._id, formData)      
+      const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, formData)      
       delete updatedUser.password        
       this.user = updatedUser     
       Auth.currentUser = updatedUser
@@ -45,6 +56,7 @@ class EditProfileView {
   }
 
   render(){
+    console.log("render called") 
     const template = html`
       <va-app-header title="Edit Profile" user=${JSON.stringify(Auth.currentUser)}></va-app-header>
       <div class="page-content">        
@@ -54,10 +66,10 @@ class EditProfileView {
           <p>Updated: ${moment(Auth.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>
           <sl-form class="page-form" @sl-submit=${this.updateProfileSubmitHandler.bind(this)}>
             <div class="input-group">
-              <sl-input type="text" name="firstName" value="${this.user.firstName}" placeholder="First Name"></sl-input>
+              <sl-input type="text" name="firstname" value="${this.user.firstname}" placeholder="First Name"></sl-input>
             </div>
             <div class="input-group">
-              <sl-input type="text" name="lastName" value="${this.user.lastName}" placeholder="Last Name"></sl-input>
+              <sl-input type="text" name="lastname" value="${this.user.lastname}" placeholder="Last Name"></sl-input>
             </div>
             <div class="input-group">
               <sl-input type="text" name="email" value="${this.user.email}" placeholder="Email Address"></sl-input>
