@@ -218,4 +218,162 @@ sl-dialog::part(title) {
   background: #d4195d;
   color: #fff;
 }
+
+/* .contact-in {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 10px #666;
+
+    .contact-map iframe {
+        margin: 10px;
+        width: 700px;
+        height: 700px;
+    }
+
+    .input-group {
+        max-width: 95%;
+    }
+
+    .contact-form {
+        padding-left: 1em;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        padding-top: 10px;   
+     }
+} */
+.contact-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 10px #666;
+          box-shadow: 0px 0px 10px #666;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+.contact-wrapper .contact-map {
+  width: 50%;
+}
+
+.contact-wrapper .contact-form {
+  width: 50%;
+  padding-left: 15px;
+}
+
+.contact-wrapper .input-group {
+  max-width: 95%;
+}
+
+.contact-wrapper .contact-map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-wrapper h1 {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 10px;
+}
+
+.careers-header {
+  width: 100%;
+  height: 40vh;
+  margin: 0;
+  padding: 0;
+  border: 1px solid hotpink;
+}
+
+.careers-header .header-info {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5rem 0rem;
+}
+
+.careers-header .header-info h1 {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.careers-header .header-info p {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.8rem;
+  width: 35%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.careers-header .down-arrow {
+  color: red;
+}
+
+.careers-information {
+  border: 1px solid red;
+  margin: 1rem 0rem;
+}
+
+.careers-information .careers-boxes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.careers-information .careers-box {
+  color: red;
+  width: 50%;
+  padding: 1rem 3rem;
+}
+
+.careers-information h2 {
+  text-align: center;
+  padding: 3rem 0rem;
+  font-size: 2rem;
+}
+
+.careers-information h3 {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.careers-information p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.careers-testimonials {
+  border: 1px solid red;
+}
+
+.careers-testimonials h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.careers-testimonials hr {
+  border-top: 1px solid #ADDD43;
+  width: 100px;
+  margin: 3rem;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=master.css.map */

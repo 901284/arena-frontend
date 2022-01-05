@@ -1,0 +1,134 @@
+
+.careers-header {
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+    padding: 0;
+    border: 1px solid hotpink;
+
+    .header-info {
+        text-align: center;
+        margin: 0 auto;
+        padding: 5rem 0rem;
+    }
+
+    .header-info h1 {
+        font-size: 6rem;
+        margin: 0;
+    }
+
+    .header-info p {
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.8rem;
+        width: 35%;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+
+    .down-arrow {
+        color: red;
+        animation: bounce 1s linear;
+      }
+
+      @keyframes bounce {
+          20%, 50%, 80%, to {
+              transform: translateY(0);
+          }
+          40%{
+              transform: translateY(-30px);
+          }
+          70%{
+              transform: translateY(-15px);
+          }
+          90%{
+              transform: translateY(-4px);
+          }
+          
+      }
+
+}
+
+.careers-information {
+    border: 1px solid red;
+    margin: 1rem 0rem;
+
+    .careers-boxes-container {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .careers-box {
+        width: 50%;
+        padding: 1rem 3rem;
+    }
+
+    h2 {
+        text-align: center;
+        padding: 3rem 0rem;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-style: italic;
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    
+}
+
+.careers-testimonials {
+    border: 1px solid red;
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    hr {
+        border-top: 1px solid black;
+        width: 100px;
+        margin: 3rem;
+        margin: 0 auto;
+    }
+
+    .testimonials-container {
+        display: flex;
+        text-align: center;
+    }
+
+    .testimonials-boxes {
+        padding: 0 2rem;
+    }
+
+    .border-right {
+        border-right: 1px solid red;
+    }
+
+    p {
+        width: 50%;
+/*         margin: 0 auto;
+ */        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .testimonials-img {
+        width: 80px;
+        height: 80px;
+        background: red;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    h5 {
+        font-weight: 400;
+    }
+}

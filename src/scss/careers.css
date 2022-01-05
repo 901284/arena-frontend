@@ -1,0 +1,162 @@
+.careers-header {
+  width: 100%;
+  height: 40vh;
+  margin: 0;
+  padding: 0;
+  border: 1px solid hotpink;
+}
+
+.careers-header .header-info {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5rem 0rem;
+}
+
+.careers-header .header-info h1 {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.careers-header .header-info p {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.8rem;
+  width: 35%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.careers-header .down-arrow {
+  color: red;
+  -webkit-animation: bounce 1s linear;
+          animation: bounce 1s linear;
+}
+
+@-webkit-keyframes bounce {
+  20%, 50%, 80%, to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  70% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  90% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+
+@keyframes bounce {
+  20%, 50%, 80%, to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  70% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  90% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+
+.careers-information {
+  border: 1px solid red;
+  margin: 1rem 0rem;
+}
+
+.careers-information .careers-boxes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.careers-information .careers-box {
+  width: 50%;
+  padding: 1rem 3rem;
+}
+
+.careers-information h2 {
+  text-align: center;
+  padding: 3rem 0rem;
+  font-size: 2rem;
+}
+
+.careers-information h3 {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.careers-information p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.careers-testimonials {
+  border: 1px solid red;
+}
+
+.careers-testimonials h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.careers-testimonials hr {
+  border-top: 1px solid black;
+  width: 100px;
+  margin: 3rem;
+  margin: 0 auto;
+}
+
+.careers-testimonials .testimonials-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.careers-testimonials .testimonials-boxes {
+  padding: 0 2rem;
+}
+
+.careers-testimonials .border-right {
+  border-right: 1px solid red;
+}
+
+.careers-testimonials p {
+  width: 50%;
+  /*         margin: 0 auto;
+ */
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.careers-testimonials .testimonials-img {
+  width: 80px;
+  height: 80px;
+  background: red;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.careers-testimonials h4 {
+  margin: 0;
+}
+
+.careers-testimonials h5 {
+  font-weight: 400;
+}
+/*# sourceMappingURL=careers.css.map */
