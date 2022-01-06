@@ -24,31 +24,35 @@ class CareersView {
         </div>
 
         <div class="careers-information">
-          <h2>Something something something...</h2>
+          <h2>A meaningful impact</h2>
           <div class="careers-boxes-container">
 
             <div class="careers-box">
-              <h3>Meaningful Work</h3>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+              <h3>Expertise</h3>
+              <p>Our deep understanding of the renewable energy sector as well as our willingness to fund ground breaking projects means
+                 we provide a pathway to commercialisation for many new technologies and businesses that would otherwise struggle.
+              </p>
             </div>
 
             <div class="careers-box">
-              <h3>Meaningful Work</h3>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+              <h3>Innovation</h3>
+              <p>Always learning fast, we stand at the brink of cutting edge energy innovation, working to shape an energy market that
+                is fit for purpose and in which renewable energy is available when and where it is needed.
+              </p>
             </div>
 
             <div class="careers-box">
-              <h3>Meaningful Work</h3>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+              <h3>Collaboration</h3>
+              <p>We bring together people from across the globe to undertake research and inform policy decisions - from the energy sector
+                to the government, startups and universities - we collaborate with everyone.
+              </p>
             </div>
             
             <div class="careers-box">
-              <h3>Meaningful Work</h3>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+              <h3>Sustainability</h3>
+              <p>We're always working to ensuring that businesses in the private sector always have the right tools, technology options
+                and business models to deliver and secure and reliable energy, because that's how our impact is measured.
+              </p>
             </div>
 
           </div>
@@ -86,7 +90,7 @@ class CareersView {
           </div>
 
         </div>
-        
+        <!-- <img src="/images/turbines.jpeg" class="banner-img" />  -->     
       </div>      
     `
     render(template, App.rootEl)

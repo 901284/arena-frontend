@@ -4,11 +4,11 @@
   margin: 0;
   padding: 0;
   border: 1px solid hotpink;
+  /*  background:url("/static/images/turbines.jpeg"); */
 }
 
 .careers-header .header-info {
   text-align: center;
-  margin: 0 auto;
   padding: 5rem 0rem;
 }
 
@@ -79,9 +79,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
 }
 
 .careers-information .careers-box {
@@ -112,6 +109,7 @@
 .careers-testimonials h2 {
   font-size: 2rem;
   text-align: center;
+  padding: 3rem 0 1rem 0;
 }
 
 .careers-testimonials hr {
@@ -125,11 +123,34 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .careers-testimonials .testimonials-boxes {
   padding: 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .careers-testimonials .border-right {
@@ -138,8 +159,6 @@
 
 .careers-testimonials p {
   width: 50%;
-  /*         margin: 0 auto;
- */
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -148,8 +167,8 @@
   width: 80px;
   height: 80px;
   background: red;
-  margin: 0 auto;
   border-radius: 50%;
+  margin-top: 4rem;
 }
 
 .careers-testimonials h4 {

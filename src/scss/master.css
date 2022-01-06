@@ -219,38 +219,6 @@ sl-dialog::part(title) {
   color: #fff;
 }
 
-/* .contact-in {
-    width: 80%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    padding: 10px;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0px 0px 10px #666;
-
-    .contact-map iframe {
-        margin: 10px;
-        width: 700px;
-        height: 700px;
-    }
-
-    .input-group {
-        max-width: 95%;
-    }
-
-    .contact-form {
-        padding-left: 1em;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 50px;
-        padding-top: 10px;   
-     }
-} */
 .contact-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -323,6 +291,46 @@ sl-dialog::part(title) {
 
 .careers-header .down-arrow {
   color: red;
+  -webkit-animation: bounce 1s linear;
+          animation: bounce 1s linear;
+}
+
+@-webkit-keyframes bounce {
+  20%, 50%, 80%, to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  70% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  90% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+
+@keyframes bounce {
+  20%, 50%, 80%, to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  70% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  90% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
 }
 
 .careers-information {
@@ -340,7 +348,6 @@ sl-dialog::part(title) {
 }
 
 .careers-information .careers-box {
-  color: red;
   width: 50%;
   padding: 1rem 3rem;
 }
@@ -371,9 +378,48 @@ sl-dialog::part(title) {
 }
 
 .careers-testimonials hr {
-  border-top: 1px solid #ADDD43;
+  border-top: 1px solid black;
   width: 100px;
   margin: 3rem;
   margin: 0 auto;
+}
+
+.careers-testimonials .testimonials-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.careers-testimonials .testimonials-boxes {
+  padding: 0 2rem;
+}
+
+.careers-testimonials .border-right {
+  border-right: 1px solid red;
+}
+
+.careers-testimonials p {
+  width: 50%;
+  /*         margin: 0 auto;
+ */
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.careers-testimonials .testimonials-img {
+  width: 80px;
+  height: 80px;
+  background: red;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.careers-testimonials h4 {
+  margin: 0;
+}
+
+.careers-testimonials h5 {
+  font-weight: 400;
 }
 /*# sourceMappingURL=master.css.map */
