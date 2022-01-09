@@ -4,16 +4,31 @@ import Toast from './Toast'
 
 class UserAPI {
   
-  async updateUser(userEmail, userData){
+  async updateUser(userEmail, userData, dataType = 'form'){
     // validate
     if(!userEmail || !userData) return
-    
-    // make fetch request to backend
-    const response = await fetch(`${App.apiBase}/user/${userEmail}`, {
-      method: "PUT",
+    let responseHeader
+    // form data
+    if(dataType == 'form'){
+      // fetch response header normal (form data)
+      responseHeader = {
+        method: "PUT",        
         headers: { "Authorization": `Bearer ${localStorage.accessToken}`},
         body: userData
-    })
+      }
+      
+    // json data
+    }else if(dataType == 'json'){
+      responseHeader = {
+        method: "PUT",        
+        headers: { "Authorization": `Bearer ${localStorage.accessToken}`, "Content-Type" : "application/json"},
+        body: JSON.stringify(userData)
+      }
+    }
+   
+    // make fetch request to backend
+    const response = await fetch(`${App.apiBase}/user/${userEmail}`, responseHeader)
+    console.log("got response")
 
     // if response not ok
     if(!response.ok){
