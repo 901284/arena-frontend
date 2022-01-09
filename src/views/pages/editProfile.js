@@ -43,7 +43,9 @@ class EditProfileView {
     const submitBtn = document.querySelector('.submit-btn')
     submitBtn.setAttribute('loading', '')
     try {
-      const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, formData)      
+      console.log("calling UserAPI.updateUser(Auth.currentUser.email, formData)") 
+      const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, formData)    
+      console.log("got updated user : ",updatedUser)   
       delete updatedUser.password        
       this.user = updatedUser     
       Auth.currentUser = updatedUser
@@ -73,7 +75,10 @@ class EditProfileView {
             </div>
             <div class="input-group">
               <sl-input type="text" name="email" value="${this.user.email}" placeholder="Email Address"></sl-input>
-            </div>            
+            </div>     
+            <div class="input-group">
+              <sl-input type="text" name="bio" value="${this.user.bio}" placeholder="Enter some information about yourself"></sl-input>
+            </div>          
             <div class="input-group">
               <label>Avatar</label><br>          
               ${(this.user.avatar) ? html`
