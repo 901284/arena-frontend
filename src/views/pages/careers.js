@@ -112,7 +112,7 @@ class CareersView {
           </div>
 
         </div>
-        <!-- <img src="/images/turbines.jpeg" class="banner-img" />  -->     
+        <!-- <img src="/images/turbines.jpeg" class="banner-img" />       -->
       </div>      
     `
     render(template, App.rootEl)
