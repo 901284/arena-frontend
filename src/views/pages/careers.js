@@ -19,11 +19,10 @@ class CareersView {
           <div class="header-info">
             <h1>CAREERS</h1>
             <p>We offer exciting and rewarding careers for talented individuals who wish to help improve Australia’s future through renewable energy.</p>
-            <span class="down-arrow">&#8595;</span>
           </div>
         </div>
 
-          <div class="careers-flex">
+          <!-- <div class="careers-flex">
 
             <div class="careers-flex-left">
             <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
@@ -43,7 +42,7 @@ class CareersView {
                aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
             </div>
 
-          </div>
+          </div> -->
 
         <div class="careers-information">
           <h2>A meaningful impact</h2>
@@ -85,34 +84,67 @@ class CareersView {
           <hr>
           <div class="testimonials-container">
 
-            <div class="testimonials-boxes border-right ">
-              <div class="testimonials-img"></div>
-              <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident".</p>
+            <div class="testimonials-boxes">
+              <div class="testimonials-img dipesh-img"></div>
+              <p>"I once worked with a company that wanted solutions in minutes. Now I work for a company that makes me proud,
+                empowers me and allows me to follow my passion in providing sustainable, renewable energy."</p>
                 <h4>David Green</h4>
-                <h5>Accounts Manager</h5>
-            </div>
-
-            <div class="testimonials-boxes border-right">
-            <div class="testimonials-img"></div>
-              <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident".</p>
-                <h4>David Green</h4>
-                <h5>Accounts Manager</h5>
+                <h5>Senior Engineer</h5>
             </div>
 
             <div class="testimonials-boxes">
-            <div class="testimonials-img"></div>
-              <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-                deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident".</p>
+            <div class="testimonials-img david-img"></div>
+              <p>"I started here as an intern straight out of university, and immediately felt welcomed throughout
+                the entire office. Upon graduating, I found myself working with an amazing company, and even more amazing people".</p>
                 <h4>David Green</h4>
-                <h5>Accounts Manager</h5>
+                <h5>Energy Analyst</h5>
             </div>
 
+            <div class="testimonials-boxes">
+            <div class="testimonials-img georgia-img"></div>
+              <p>"ARENA has been a truly authentic, inclusive experience that empowers me to bring my best ideas
+                and self forward. I never stop learning and having fun in a workplace like this."</p>
+                <h4>Georgia Sutton</h4>
+                <h5>Bookkeeper</h5>
+            </div>
           </div>
 
         </div>
-        <!-- <img src="/images/turbines.jpeg" class="banner-img" />       -->
+
+        <div class="careers-jobs">
+          <h2>Career Opportunities</h2>
+          <div class="jobs-flex">
+            <div class="jobs-box">
+              <h3>Installations Manager</h3>
+              <h4>Perth</h4>
+            </div>
+
+            <div class="jobs-box">
+              <h3>Project Manager</h3>
+              <h4>Sydney</h4>
+            </div>
+
+            <div class="jobs-box">
+              <h3>PV Battery Engineer</h3>
+              <h4>Sydney</h4>
+            </div>
+
+            <div class="jobs-box">
+              <h3>Sales Consultant</h3>
+              <h4>Brisbane</h4>
+            </div>
+
+            <div class="jobs-box">
+              <h3>Hardware Technician</h3>
+              <h4>Melbourne</h4>
+            </div>
+
+            <div class="jobs-box">
+              <h3>Analysis Engineer</h3>
+              <h4>Perth</h4>
+            </div>
+          </div>
+
       </div>      
     `
     render(template, App.rootEl)
