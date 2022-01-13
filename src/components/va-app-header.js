@@ -59,16 +59,14 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         box-sizing: border-box;
       }
       .app-header {
-        background: var(--brand-color);
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         height: var(--app-header-height);
-        color: #fff;
+        color: black;
         display: flex;
         z-index: 9;
-        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);
         align-items: center;
       }
       
@@ -80,11 +78,11 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       }
 
       .app-header-main::slotted(h1){
-        color: #fff;
+        color: var(--brand-color);
       }
 
       .app-logo a {
-        color: #fff;
+        color: var(--brand-color);
         text-decoration: none;
         font-weight: bold;
         font-size: 1.2em;
@@ -97,20 +95,22 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       }
       
       .hamburger-btn::part(base) {
-        color: #fff;
+        color: var(--brand-color)
       }
 
       .app-top-nav {
         display: flex;
         height: 100%;
         align-items: center;
+        display: hid
       }
 
       .app-top-nav a {
         display: inline-block;
         padding: .8em;
         text-decoration: none;
-        color: #fff;
+        color: var(--brand-color);
+        text-transform: uppercase;
       }
       
       .app-side-menu-items a {
@@ -118,7 +118,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         padding: .5em;
         text-decoration: none;
         font-size: 1.3em;
-        color: #333;
+        color: var(--brand-color);
       }
 
       .app-side-menu-logo {

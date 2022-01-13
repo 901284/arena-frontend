@@ -22,6 +22,12 @@ h1,h2,h3,h5,h6 {
   color: var(--heading-color);
 }
 
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+
 // links ---------------
 a {
   color: var(--link-color);
