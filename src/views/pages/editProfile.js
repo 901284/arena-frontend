@@ -71,7 +71,7 @@ class EditProfileView {
 
           <div class="profile-header">
             <h1>${this.user.firstname + " " + this.user.lastname }</h1>
-            <p><sl-icon-button name="x"></sl-icon-button></p>
+            <a href="javascript:history.back()"><h2><sl-icon-button name="x"></sl-icon-button></h2></a>
           </div>
 
 
@@ -108,7 +108,11 @@ class EditProfileView {
 
             <!-- right side  -->
             <div class="avatar-wrapper">
-                <img url="" alt="Profile pictuire">
+              ${Auth.currentUser && Auth.currentUser.avatar ? html`
+                <sl-avatar style="--size: 250px; margin-bottom: 1em;" image=${(Auth.currentUser && Auth.currentUser.avatar) ? `${App.apiBase}/images/${Auth.currentUser.avatar}` : ''}></sl-avatar>
+                `:html`
+                <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>
+              `}
             </div>
                     
           </div> <!-- end of profile body -->

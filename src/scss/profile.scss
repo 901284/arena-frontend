@@ -1,8 +1,12 @@
 
 .profile-wrapper {
     display: flex;
-    width: fit-content;
-    height: fit-content;
+    // width: fit-content;
+    // height: fit-content;
+    min-width: 50%;
+    max-width:fit-content;
+    
+    
     border-radius: 10px;
     background: #fff;
     box-shadow: 0px 0px 10px #666;
@@ -45,17 +49,19 @@
             @extend .flex-item;
             padding: 1em;
             // max-width: 90%;
-            min-width: 400px;
+            min-width: 450px;
 
+            tr {
+                vertical-align: top;
+            }
         }
-
 
         .avatar-wrapper{
             @extend .flex-item;
             padding: 1em;
-            // max-width: 90%;
-            min-width: 200px;
-
+            max-width: 90%;
+            min-width: 30%;
+            text-align: center;
         }
 
         .input-group {

@@ -43,6 +43,10 @@ h1, h2, h3, h5, h6 {
   color: var(--heading-color);
 }
 
+.strong {
+  font-weight: bold;
+}
+
 a {
   color: var(--link-color);
 }
@@ -423,3 +427,4 @@ sl-dialog::part(title) {
   font-weight: 400;
 }
 /*# sourceMappingURL=master.css.map */
+
