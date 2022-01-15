@@ -49,6 +49,7 @@ class Auth {
       Toast.show(`Problem signing in: ${err.message}`, 'error')   
       // run fail() functon if set
       if(typeof fail == 'function') fail()
+      return
     }
 
     // sign in success
