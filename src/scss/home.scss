@@ -1,0 +1,123 @@
+.home-section {
+    // the landing page and main interactive component of the website
+    height: 100vh;
+    // background: url('./../../static/images/background-stars.png');
+    // background-size: cover;
+    border:1px dashed green;  // disable before prod.
+   
+
+
+    h1 {
+        color: aliceblue; // temp color only
+    }
+
+    .section1 {
+        margin:auto;
+        text-align:center;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        align-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        
+    }
+
+    .space {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: min(75vw, 75vh);
+        height: min(75vw, 75vh);
+        border-radius: 50%;
+        text-align: center;
+        background: url('./../../static/images/background-stars.png');
+        background-size: cover
+        
+
+    }
+
+    .earth {
+        position: absolute;
+        background: url('./../../static/images/earth.png');
+        background-size: cover;
+        width: 25%;
+        height: 25%;
+        left: 37.5%;
+        top: 35%;
+        z-index: 5;
+
+    }
+
+    
+    .astronaut {
+        --swing-radius: 40vh; 
+        --top-position: 40vh;
+        position: absolute;
+        background: url('./../../static/images/astronaut.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 18%;
+        height: 25%;
+        left: 45%;
+        top: 59%;
+        z-index: 4;
+        animation: swing 5s infinite ease-in-out;
+        transform-origin:  top center;
+        
+
+    }
+
+    @keyframes swing {
+        0%{transform:rotate(-7deg)}
+        50%{transform:rotate(7deg)}
+        100%{transform:rotate(-7deg)}
+    }
+
+
+
+    .atmosphere {
+        position: absolute;
+        background: url('./../../static/images/atmosphere.png');
+        background-size: contain;
+        width: 45%;
+        height: 45%;
+        left: 27.5%;
+        top: 25%;
+        z-index: 2;
+    }
+
+    .speech-bubble{
+        position: absolute;
+        width: 40%;
+        // height: 45%;
+        left: 60%;
+        top: 65%;
+        z-index: 2;
+
+    }
+
+    .hide {
+        display: none;
+    }
+
+    // section 1 bubble 1
+    .speech-bubble-s1b1 {
+        @extend .speech-bubble;
+          
+    }
+
+
+
+    // section 1 bubble 2
+    .speech-bubble-s1b2 {
+        @extend .speech-bubble;
+        
+    }
+
+
+
+
+
+}
+

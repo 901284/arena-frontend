@@ -16,7 +16,26 @@ class HomeView {
     console.log('HomeView.init')
     document.title = 'Home'    
     this.render()    
-    Utils.pageIntroAnim()    
+    Utils.pageIntroAnim()  
+    this.animateAstronout()  
+  } 
+
+  // make the Minji swing from side to side.
+  animateAstronout(){
+
+    const astronaut = document.querySelector(".astronaut");
+
+    // create gsap timeline for animation.
+    const swingTimeline = gsap.timeline({repeat: 2, yoyo:true, })
+    const swingRadius = gsap.getProperty(".astronaut", "--swing-radius"); 
+
+    // swingTimeline.from(astronaut, {duration: 15, rotation: '-20deg', transformOrigin: swingRadius, ease: 'elastic.out( 3, 0.1)', repeat: 2, delay: 0});
+ 
+    // animate the elements.
+    // swingTimeline  .from(astronaut,{ duration: 2, opacity: 0, scale: 0.2});
+        // .set(bookingBtn, {css: {className:'+=booknow-btn animate__animated animate__tada'}},"+=1.5");
+
+
   }
 
   render(){
