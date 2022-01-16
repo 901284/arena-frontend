@@ -17,19 +17,30 @@ class HomeView {
       <va-app-header title="Home" user=${JSON.stringify(Auth.currentUser)}></va-app-header>
       
       <div class="page-content">
-        <h1 class="anim-in">Hey ${Auth.currentUser.firstName}</h1>
 
-        <h3>Button example:</h3>
-        <sl-button class="anim-in" @click=${() => gotoRoute('/profile')}>View Profile</sl-button>
-        <p>&nbsp;</p>
-        <h3>Link example</h3>
-        <a href="/profile" @click=${anchorRoute}>View Profile</a>
 
-        <br>
-        
-        this is how you use a button to go on click to another page
-        <sl-button @click=${() => gotoRoute('/about')}>Test</sl-button>
-        
+        <!-- page1  -->
+        <div class='home-section'>
+
+      
+          <h1 class='anim-in'>Section 1</h1>
+
+        </div>  
+
+        <!-- page2  -->
+        <div class='home-section'>
+          <h1 class='anim-in'>Section 2.</h1>
+        </div>
+
+        <!-- page3  -->
+        <div class='home-section'>
+          <h1 class='anim-in'>Section 3</h1>
+
+        </div>
+
+
+
+
       </div>
      
     `

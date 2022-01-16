@@ -54,15 +54,23 @@ class Auth {
 
     // sign in success
     const data = await response.json()
-    Toast.show(`Welcome  ${data.user.firstname}`)
-    // save access token (jwt) to local storage
-    localStorage.setItem('accessToken', data.accessToken)
-    // set current user
-    this.currentUser = data.user      
-    // console.log(this.currentUser)           
-    // redirect to home
-    Router.init()
-    gotoRoute('/')
+    if (!data) {
+      console.log("No sign in failed")
+      Toast.show(`There was a problem signing in.`)
+      Router.init()
+      gotoRoute('/singin')
+    } else {
+
+      Toast.show(`Welcome  ${data.user.firstname}`)
+      // save access token (jwt) to local storage
+      localStorage.setItem('accessToken', data.accessToken)
+      // set current user
+      this.currentUser = data.user      
+      // console.log(this.currentUser)           
+      // redirect to home
+      Router.init()
+      gotoRoute('/')
+    }    
   }
 
 
