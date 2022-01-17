@@ -1,0 +1,63 @@
+.engage-header {
+    width: 100%;
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: left;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/engage.jpeg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .header-info {
+        color: white;
+        text-align: center;
+    }
+
+    .header-info h1 {
+        font-size: 6rem;
+        margin: 0;
+        color: white;
+    }
+
+    .header-info p {
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.8rem;
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+}
+
+.engage-spiel {
+    padding: 3em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 2.5em;
+        width: 50%;
+        margin: 0.25em 0;
+    }
+
+    p {
+        width: 45%;
+    }
+
+    .learn-more {
+        text-transform: uppercase;
+        color:  var(--brand-grey);
+        font-weight: 300;
+
+    }
+
+    hr {
+        width: 80vw;
+        border: 1px solid var(--brand-yellow);
+        position: relative;
+    }
+}

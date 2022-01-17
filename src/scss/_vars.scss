@@ -12,6 +12,12 @@
   $brand-color: #17bbc9;
   --brand-color: #{$brand-color};
   --link-color: --brand-color;
+
+  --brand-grey: rgb(201, 198, 198);
+  --brand-yellow: #ffe600;
+  --brand-green: #addd43;
+  --brand-charcoal: #36454f;
+ 
   
   // app header
   --app-header-height: 60px;
