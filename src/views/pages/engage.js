@@ -37,6 +37,59 @@ class EngageView {
             <hr>
         </div>
 
+        <div class="engage-row">
+
+          <div class="engage-column">
+            <div class="feature-box">
+              <sl-icon name="arrow-down-right-circle"  style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
+              <h3 class="heading-tertiary">Take a trip</h3>
+              <p class="feature-box__text">
+                Lorem ipsum sit amet consectetur adiscipting elit. Aperiam, ipsum sapiente aspernatur.
+              </p>
+            </div>
+          </div>
+
+          <div class="engage-column">
+            <div class="feature-box">
+              <sl-icon name="arrow-down-right-circle"  style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
+              <h3 class="heading-tertiary">Be a role model</h3>
+              <p class="feature-box__text">
+                Kids do a lot of learning just by observing what older kids do - show them how
+                they can start to implement good habits.
+              </p>
+            </div>
+          </div>
+
+          <div class="engage-column">
+            <div class="feature-box">
+              <sl-icon name="arrow-down-right-circle"   style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
+              <h3 class="heading-tertiary">Explore the world</h3>
+              <p class="feature-box__text">
+                Lorem ipsum sit amet consectetur adiscipting elit. Aperiam, ipsum sapiente aspernatur.
+              </p>
+            </div>
+          </div>
+
+          <div class="engage-column">
+            <div class="feature-box">
+              <sl-icon name="arrow-down-right-circle"  style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
+              <h3 class="heading-tertiary">Play games</h3>
+              <p class="feature-box__text">
+                Lorem ipsum sit amet consectetur adiscipting elit. Aperiam, ipsum sapiente aspernatur.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="engage-quote-wrapper">
+            <div class="engage-quote-box">
+              <h1 id="quote-top">"</h1>
+              <h2>The future is green energy, sustainability and renewable energy. <br><br> - Arnold Schwarzenegger</h2>
+              <h1 id="quote-bottom">"</h1>
+            </div>
+        </div>
+
       </div>      
     `
     render(template, App.rootEl)

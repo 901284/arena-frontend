@@ -98,7 +98,7 @@ class CareersView {
             <div class="jobs-box">
               <h3>Installations Manager</h3>
               <div class="location">
-                <sl-icon name="geo-alt-fill" style="color: #c9c6c6;" class="pin"></sl-icon>
+                <sl-icon name="geo-alt-fill" style="color: var(--brand-grey);" class="pin"></sl-icon>
                 <h4>Perth</h4>
               </div>
             </div>
@@ -106,7 +106,7 @@ class CareersView {
             <div class="jobs-box">
               <h3>Project Manager</h3>
               <div class="location">
-                <sl-icon name="geo-alt-fill" style="color: #c9c6c6;" class="pin"></sl-icon>
+                <sl-icon name="geo-alt-fill" style="color: var(--brand-grey);" class="pin"></sl-icon>
                 <h4>Sydney</h4>
               </div>
             </div>
@@ -114,7 +114,7 @@ class CareersView {
             <div class="jobs-box">
               <h3>PV Battery Engineer</h3>
               <div class="location">
-                <sl-icon name="geo-alt-fill" style="color: #c9c6c6;" class="pin"></sl-icon>
+                <sl-icon name="geo-alt-fill" style="color: var(--brand-grey);" class="pin"></sl-icon>
                 <h4>Sydney</h4>
               </div>
             </div>
@@ -122,7 +122,7 @@ class CareersView {
             <div class="jobs-box">
               <h3>Sales Consultant</h3>
               <div class="location">
-                <sl-icon name="geo-alt-fill" style="color: #c9c6c6;" class="pin"></sl-icon>
+                <sl-icon name="geo-alt-fill" style="color: var(--brand-grey);" class="pin"></sl-icon>
                 <h4>Melbourne</h4>
               </div>
             </div>
@@ -130,7 +130,7 @@ class CareersView {
             <div class="jobs-box">
               <h3>Hardware Technician</h3>
               <div class="location">
-                <sl-icon name="geo-alt-fill" style="color: #c9c6c6;" class="pin"></sl-icon>
+                <sl-icon name="geo-alt-fill" style="color: var(--brand-grey);" class="pin"></sl-icon>
                 <h4>Brisbane</h4>
               </div>
             </div>
@@ -138,7 +138,7 @@ class CareersView {
             <div class="jobs-box">
               <h3>Analysis Engineer</h3>
               <div class="location">
-                <sl-icon name="geo-alt-fill" style="color: #c9c6c6;" class="pin"></sl-icon>
+                <sl-icon name="geo-alt-fill" style="color: var(--brand-grey);" class="pin"></sl-icon>
                 <h4>Perth</h4>
               </div>
             </div>
