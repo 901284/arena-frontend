@@ -65,6 +65,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         left: 0;
         height: var(--app-header-height);
         color: black;
+        background: var(--brand-green);
         display: flex;
         z-index: 9;
         align-items: center;
@@ -102,7 +103,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         display: flex;
         height: 100%;
         align-items: center;
-        display: hid
+        /* display: hidden */
       }
 
       .app-top-nav a {

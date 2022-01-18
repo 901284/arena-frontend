@@ -1,6 +1,6 @@
 .careers-header {
   width: 100%;
-  height: 40vh;
+  height: 60vh;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: left;
@@ -39,12 +39,6 @@
   width: 60%;
   margin: 0 auto;
   padding-bottom: 2rem;
-}
-
-.careers-header .down-arrow {
-  color: red;
-  -webkit-animation: bounce 1s linear;
-          animation: bounce 1s linear;
 }
 
 @-webkit-keyframes bounce {

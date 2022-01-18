@@ -1,0 +1,130 @@
+.about-header {
+    width: 100%;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: left;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/car.jpeg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .header-info {
+        color: white;
+        text-align: center;
+    }
+
+    .header-info h1 {
+        font-size: 6rem;
+        margin: 0;
+        color: white;
+    }
+
+    .header-info p {
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.8rem;
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+        }
+    }
+
+.about-numbers {
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .numbers-items {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            text-align: center;
+        }
+
+        .number {
+            font-size: 10em;
+            font-weight: bolder;
+        }
+
+        .number-p {
+            font-size: 2em;
+            margin-bottom: 2em;
+            font-weight: lighter;
+            text-transform: uppercase;
+        }
+    }
+
+.about-intro {
+    width: 100%;
+    height: 100vh;
+    background: var(--brand-yellow);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+     h1 {
+         font-size: 8rem;
+         width: 80%;
+         color: var(-brand-charcoal);
+         text-align: center;
+     }
+}
+
+.role-container {
+    display: flex;
+    border: 1px solid red;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 7rem;
+
+    .our-role {
+        border: 1px solid red;
+/*         padding: 0 3rem;
+ */        width: 60%;
+        margin: 2rem 2rem;
+        }
+
+        h1 {
+            border-left: 3px solid var(--brand-green);
+            padding-left: 2rem;
+            font-size: 4rem;
+        }
+    
+        h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+        }
+    
+        p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+    
+        .role-img {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            
+
+            &:hover {
+                animation: pulse 1.5s infinite;
+            }
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 #648DE5;
+        }
+        75% {
+          box-shadow: 0 0 0 30px #648DE500;
+        }
+      }

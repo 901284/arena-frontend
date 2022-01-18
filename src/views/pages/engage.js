@@ -28,7 +28,7 @@ class EngageView {
             <p>Learn how you can get involved in Renewable Energy, and have a positive impact on the Earth's environment</p>
           </div>
         </div>
-
+        
         <div class="engage-spiel">
           <h3 class="learn-more">- Learn More - </h3>
           <h1>Are you keen on learning more about Renewable Energy and having a positive impact on the Earth's Environment?</h1>
@@ -80,14 +80,6 @@ class EngageView {
             </div>
           </div>
 
-        </div>
-
-        <div class="engage-quote-wrapper">
-            <div class="engage-quote-box">
-              <h1 id="quote-top">"</h1>
-              <h2>The future is green energy, sustainability and renewable energy. <br><br> - Arnold Schwarzenegger</h2>
-              <h1 id="quote-bottom">"</h1>
-            </div>
         </div>
 
       </div>      
