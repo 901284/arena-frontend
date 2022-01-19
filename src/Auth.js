@@ -114,7 +114,7 @@ class Auth {
     // console.log(data)
     // set currentUser obj
     this.currentUser = data.user
-    // run success
+    // run success - callback to init the router.
     success()
   }
 
