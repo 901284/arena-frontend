@@ -26,7 +26,7 @@ class HomeView {
   init(){    
     console.log('HomeView.init')
     localStorage.setItem("currentStage","0");
-    this.currentStep = 0;
+    // this.currentStep = 0;
     document.title = 'Home'  
     this.render()    
     this.setListeners()
@@ -45,11 +45,25 @@ class HomeView {
     this.bubble2 = document.querySelector("#bubble2");
     this.atmosphere = document.querySelector(".atmosphere");
     this.astronaut = document.querySelector('.astronaut');
-    console.log('setting clock listener on minji');
+    this.astronaut2 = document.querySelector('.astronaut2');
+
+    // enable these once i have put them  in the dom.
+    // this.downArrow = document.querySelector('#down');
+    // this.upArrow = document.querySelector('#up');
+    
+    
+    console.log('setting click listener on the Minjis');
     this.astronaut.addEventListener('click', ()=>{
-      this.handleAstranautClick()
+      let currentStage = Number(localStorage.getItem("currentStage"));
+      this.handleStageClick(++currentStage)
+    })
+    this.astronaut2.addEventListener('click', () => {
+      let currentStage = Number(localStorage.getItem("currentStage"));      
+      this.handleStageClick(++currentStage);
     })
     
+
+
   }
 
 
@@ -72,99 +86,167 @@ class HomeView {
   }
 
 
-  handleAstranautClick(){
+
+  handleStageClick(newStage){
 
     /* elements of section 1 */ 
     // this.earth = document.querySelector(".earth");
     // this.space = document.querySelector(".space");
+    let section1 = document.querySelector('#section1'); 
     let spaceBackground = document.querySelector(".space-background");
     let bubble1 = document.querySelector("#bubble1");
     let bubble2 = document.querySelector("#bubble2");
     let atmosphere = document.querySelector(".atmosphere");
-    let section1 = document.querySelector("#section1");
-    // this.astronaut = document.querySelector('.astronaut');
-
+    let astronaut = document.querySelector('.astronaut');
+    
     /* elements of section 2 */
     let section2 = document.querySelector('#section2');
     let cloud = document.querySelector('.cloud');
     let astronaut2 = document.querySelector('.astronaut2');
     let bubble3 = document.querySelector('#bubble3');
 
-    // get the saved current stage
-    let currentStage = Number(localStorage.getItem("currentStage"));
 
-    switch(currentStage) {
+    /* elements of section 3 */ 
+
+
+
+    /* elements of section 4 */
+
+
+    switch(newStage) {
       case 0:
-        // show the atmosphere, hide the first bubble and show the second.
-        const tl = gsap.timeline();
-        atmosphere.classList.remove("hide");
-        bubble2.classList.remove("hide");
-        let newXcoord = 0 - spaceBackground.offsetLeft;
-        let newYcoord = 0 - spaceBackground.offsetTop;
-        
-        // animate the element transitions.
-        tl  .to(bubble1, {opacity:0 ,  duration: 0.4, ease: "power4.out"})
-            .to(spaceBackground,{duration: 1.2, borderRadius: "0%",  ease: "power4.out", x: newXcoord, y: newYcoord, width: "100%", height: "100%"})            
-            .from(atmosphere, { opacity:0 , scale: 0.8, duration: 2.0, ease: "elastic.out"},+1.0)            
-            .from(bubble2, { opacity:0 , duration: 0.8, ease: "power4.out"});
-        atmosphere.classList.remove("hide");
+        // First time on the page- make like new 
+        section2.classList.add("hide");
+        // section3.classList.add("hide");
+        this.showSection(section1)
+        this.startSection1Anim()
+        break;
 
-        // make the hide of bubble1 permanent
-        bubble1.classList.add("hide");
-        
-        break;
-      
       case 1:
-        // code block to execure the transition from section 1 to section 2
-        const tlCloud = gsap.timeline();
-        tlCloud  .to(section1,{opacity: 0, duration: 1, ease: "power4.out" })
-            .from(section2, { className: "-hide", scale: 0.2, duration: 0.3, ease: "power4.out" })
-            .from(cloud,{ duration: 1.2, scale: 0.1, ease: "power4.out"  })
-            .from(astronaut2,{ duration: 1.5, ease: "elastic.out", height: 0})
-            .from(bubble3,{ duration: 0.7, scale: 0.5, y: "-50px", ease: "power4.out"});
-        section1.classList.add("hide");
+        // show the atmosphere, hide the first bubble and show the second.
+        this.handleStage1Click(atmosphere,bubble1, bubble2, spaceBackground)
         break;
+           
 
       case 2:
-        // code block to start the click animations of section 2
+            // code block to execure the transition from section 1 to section 2
+        this.hideSetion(section1)
+        this.handleStage2Click(section1, section2, cloud, astronaut2, bubble3)        
+
+        break;
+      
+      case 3:
+    // code block to start the click animations of section 2
 
         //reload the page.
          // change later
-
-      break;
-      
+        break;
     
 
       default:
         // code block
+
     } 
 
-    //increment by 1
-   
-    currentStage++
-    localStorage.setItem("currentStage", currentStage.toString());
+    // save the stage to local storage for when the user navigates back to this page    
+    localStorage.setItem("currentStage", newStage.toString());
   
   }
 
+  /* =============== animate section in or out ==================  */
+
+  showSection(section){
+    const tl =  gsap.timeline(); 
+    tl  .from(section, { className: "-hide", scale: 0.1, duration: 0.5, ease: "power4.out" });
+  }
+
+
+  hideSetion(section){
+    const tl =  gsap.timeline(); 
+    tl  .to(section, { className: "+hide", scale: 0.1, duration: 0.5, ease: "power4.out" });
+  }
+
+
   /* ==============  animations for section 1  ================== */
 
-  // animate in the atmosphere
-  animateAtmosphere(){
-    console.log('animating the atmosphere')
-    const atmosphere = document.querySelector("#atmos-section1");
-    // create gsap timeline for animating in the atmosphere.
-    const tl = gsap.timeline({})   
-    tl.from(atmosphere, {opacity: 0, scale: 0.5, duration: 2, delay: 0.3});
-   }
 
-  animateSection1Speech(){
-    console.log('animating the speech for section 1')
-    const atmosphere = document.querySelector("#atmos-section1");
-    // create gsap timeline for animating in the atmosphere.
-    const tl = gsap.timeline({})   
-    tl.from(atmosphere, {opacity: 0, scale: 0.5, duration: 2, delay: 0.3});
+  handleStage1Click(atmosphere, bubble1, bubble2, spaceBackground) {
+      
+    const tl = gsap.timeline();
+    atmosphere.classList.remove("hide");
+    bubble2.classList.remove("hide");
+    let newXcoord = 0 - spaceBackground.offsetLeft;
+    let newYcoord = 0 - spaceBackground.offsetTop;
+    
+    // animate the element transitions.
+    tl  .to(bubble1, {opacity:0 ,  duration: 0.4, ease: "power4.out"})
+        .to(spaceBackground,{duration: 1.2, borderRadius: "0%",  ease: "power4.out", x: newXcoord, y: newYcoord, width: "100%", height: "100%"})            
+        .from(atmosphere, { opacity:0 , scale: 0.8, duration: 2.0, ease: "elastic.out"},+1.0)            
+        .from(bubble2, { opacity:0 , duration: 0.8, ease: "power4.out"});
+    atmosphere.classList.remove("hide");
+
+    // make the hide of bubble1 permanent
+    bubble1.classList.add("hide");
 
   }
+
+    // animate in the atmosphere
+    animateAtmosphere(){
+      console.log('animating the atmosphere')
+      const atmosphere = document.querySelector("#atmos-section1");
+      // create gsap timeline for animating in the atmosphere.
+      const tl = gsap.timeline({})   
+      tl.from(atmosphere, {opacity: 0, scale: 0.5, duration: 2, delay: 0.3});
+     }
+  
+    animateSection1Speech(){
+      console.log('animating the speech for section 1')
+      const atmosphere = document.querySelector("#atmos-section1");
+      // create gsap timeline for animating in the atmosphere.
+      const tl = gsap.timeline({})   
+      tl.from(atmosphere, {opacity: 0, scale: 0.5, duration: 2, delay: 0.3});
+  
+    }
+    
+
+
+  /* ========== animations for section 2 =================== */
+
+  // animate to the clouds thingy in section 2 
+  handleStage2Click(section1, section2, cloud, astronaut2, bubble3) {
+    const tlCloud = gsap.timeline();
+    tlCloud  .to(section1,{opacity: 0, duration: 1, ease: "power4.out" })
+        .from(section2, { className: "-hide", scale: 0.2, duration: 0.3, ease: "power4.out" })
+        .from(cloud,{ duration: 1.2, scale: 0.1, ease: "power4.out"  })
+        .from(astronaut2,{ duration: 1.5, ease: "elastic.out", height: 0})
+        .from(bubble3,{ duration: 0.7, scale: 0.5, y: "-50px", ease: "power4.out"});
+   
+  }
+
+
+  /* ============ animateions for section 3 ================= */
+
+  handleStage4Click(){
+
+  }
+
+
+
+  handleUpClick(){
+    // move the storyline to the previous stage
+    let currentStage = Number(localStorage.getItem("currentStage"));
+    
+
+  }
+
+
+  handleDownCLick(){
+    // move the storyline to the next stage
+    let currentStage = Number(localStorage.getItem("currentStage"));
+
+  }
+
+
 
   render(){
     const template = html`
