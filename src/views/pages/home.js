@@ -63,7 +63,6 @@ class HomeView {
     })
     
 
-
   }
 
 
@@ -216,13 +215,13 @@ class HomeView {
   handleStage2Click(section1, section2, cloud, astronaut2, bubble3) {
     const tlCloud = gsap.timeline();
     tlCloud  .to(section1,{opacity: 0, duration: 1, ease: "power4.out" })
-        .from(section2, { className: "-hide", scale: 0.2, duration: 0.3, ease: "power4.out" })
+        .from(section2, { opacity: 0, scale: 0.2, duration: 0.3, ease: "power4.out" })
         .from(cloud,{ duration: 1.2, scale: 0.1, ease: "power4.out"  })
         .from(astronaut2,{ duration: 1.5, ease: "elastic.out", height: 0})
-        .from(bubble3,{ duration: 0.7, scale: 0.5, y: "-50px", ease: "power4.out"});
-   
+        .from(bubble3,{ duration: 0.7, width: 0, x: "-100px", ease: "power4.out"});
+    section2.classList.remove("hide");
   }
-
+  
 
   /* ============ animateions for section 3 ================= */
 

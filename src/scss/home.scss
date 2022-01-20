@@ -1,3 +1,7 @@
+.hide {
+    display: none;
+}
+
 .home-section {
     // the landing page and main interactive component of the website
     height: 100vh;
@@ -99,9 +103,7 @@
         z-index: 2;
     }
 
-    .hide {
-        display: none;
-    }
+ 
 
     // section 1 bubble 1
     #bubble1 {
@@ -125,7 +127,7 @@
     position: absolute;
     top: 0;
     width: 100vw;
-    display: none;
+    // display: none;
     
 }
 
