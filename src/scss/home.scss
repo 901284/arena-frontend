@@ -1,25 +1,17 @@
 .home-section {
     // the landing page and main interactive component of the website
     height: 100vh;
-    // background: url('./../../static/images/background-stars.png');
-    // background-size: cover;
     border:1px dashed green;  // disable before prod.
    
-
 
     h1 {
         color: aliceblue; // temp color only
     }
 
-    .section1 {
-        margin:auto;
-        text-align:center;
-        display: flex;
-        justify-content: center;
-        // align-items: center;
-        align-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
+    #section1 {
+        
+        position: absolute;
+        display: none;
         
     }
 
@@ -31,9 +23,7 @@
         height: min(75vw, 75vh);
         border-radius: 50%;
         text-align: center;
-        // background: url('./../../static/images/background-stars.png');
-        // background-size: cover;
-        
+         
     }
 
     .space-background {
@@ -127,44 +117,60 @@
         
     }
 
+}
 
 
 // ----- section 2 -----------------
+#section2 {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    display: none;
+    
+}
 
-    .cloud {
-        @extend .space;
-        background: url('./../../static/images/cloud-round.png');
-        background-size: cover;
+.cloud {
+    @extend .space;
+    background: url('./../../static/images/cloud-round.png');
+    background-size: cover;
+    border-radius: 0;
+    z-index: 5;
 
+}
+
+
+.astronaut2 {
+
+    --swing-radius: 40vh; 
+    --top-position: 40vh;
+    position: absolute;
+    background: url('./../../static/images/astronaut.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 18%;
+    height: 25%;
+    left: 71%;
+    top: 51.5%;
+    z-index: 4;
+    animation: swing 5s infinite ease-in-out;
+    transform-origin:  29% 0%;
+
+    &:hover {
+        cursor: pointer;
     }
-
-
-    .astronaut2 {
-        @extend .astronaut;
-
-        // --swing-radius: 40vh; 
-        // --top-position: 40vh;
-        // position: absolute;
-        // background: url('./../../static/images/astronaut.png');
-        // background-size: contain;
-        // background-repeat: no-repeat;
-        // width: 18%;
-        // height: 25%;
-        // left: 45%;
-        // top: 59%;
-        // z-index: 4;
-        // animation: swing 5s infinite ease-in-out;
-        // transform-origin:  top center;
-
-        // &:hover {
-        //     cursor: pointer;
-        // }
-
-    }
-
-
 
 
 
 }
+
+#bubble3 {
+    position: absolute;
+    width: 40%;
+    left: 87%;
+    top: 55%;
+    z-index: 6;
+}
+
+
+
 
