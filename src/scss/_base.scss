@@ -95,11 +95,15 @@ a {
   right: 0;
   bottom: 0;
   overflow-y: scroll;
-  padding: 1em;
-  &.no-pad {
+/*   padding: 1em; */  
+&.no-pad {
     padding: 0;
   }
 }
+
+/* .page-padding {
+  padding: 2em 10em;
+} */
 
 .page-centered {
   display: flex;

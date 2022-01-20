@@ -1,0 +1,83 @@
+.profile-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 50%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 10px #666;
+          box-shadow: 0px 0px 10px #666;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile-wrapper .profile-header {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profile-wrapper .profile-header h1 {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.profile-wrapper .profile-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.profile-wrapper .profile-body .flex-item, .profile-wrapper .profile-body .profile-form, .profile-wrapper .profile-body .avatar-wrapper {
+  width: 50%;
+}
+
+.profile-wrapper .profile-body .profile-form {
+  padding: 1em;
+  min-width: 450px;
+}
+
+.profile-wrapper .profile-body .profile-form tr {
+  vertical-align: top;
+}
+
+.profile-wrapper .profile-body .avatar-wrapper {
+  padding: 1em;
+  max-width: 90%;
+  min-width: 30%;
+  text-align: center;
+}
+
+.profile-wrapper .profile-body .input-group {
+  max-width: 95%;
+}
+/*# sourceMappingURL=profile.css.map */
