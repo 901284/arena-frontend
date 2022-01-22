@@ -5,6 +5,7 @@
   -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
 
+
 body {
   padding: 0;  
   margin: 0;
@@ -18,11 +19,17 @@ body {
 
 // headings ------------
 h1,h2,h3,h5,h6 {
+  font-family: 'Fuzzy Bubbles', cursive;
   margin: 0 0 .5em;
   color: var(--heading-color);
 }
 
+h1 {
+  font-size: 36pt;
+}
+
 p {
+  font-family: 'Varela Round', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -123,6 +130,11 @@ a {
   margin-bottom: 1em;
 }
 
+.diagram {
+  height: min(70vh, 70vw);
+  width: min(70vh, 70vw);
+  align-items: center;
+}
 // guide page ---------------
 .guide-step {
   padding: 1em;

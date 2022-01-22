@@ -5,11 +5,12 @@
 .home-section {
     // the landing page and main interactive component of the website
     height: 100vh;
-    border:1px dashed green;  // disable before prod.
-   
+       
 
     h1 {
         color: aliceblue; // temp color only
+        text-align: center;
+        margin-top: 1em;
     }
 
     #section1 {

@@ -288,12 +288,12 @@ class HomeView {
 
         <!-- page2  -->
         <div class='home-section hide'  id='section2'>
-          <h1 class='anim-in'>Section 2.</h1>
+          <h1 class='anim-in'>Earth's Atmosphere</h1>
           
           <div class='cloud'>           
            
            
-            <div class='astronaut2'>
+            <div class='astronaut2' @click=${()=> gotoRoute('/atmosphere')} >
               
             </div>
 

@@ -9,6 +9,7 @@ import aboutView from './views/pages/about'
 import contactView from './views/pages/contact'
 import engageView from './views/pages/engage'
 import careersView from './views/pages/careers'
+import atmosphereView from './views/pages/atmosphere'
 
 // define routes
 const routes = {
@@ -21,7 +22,8 @@ const routes = {
 	'/about': aboutView,
 	'/contact': contactView,
 	'/engage': engageView,
-	'/careers': careersView
+	'/careers': careersView,
+	'/atmosphere': atmosphereView
 }
 
 class Router {
