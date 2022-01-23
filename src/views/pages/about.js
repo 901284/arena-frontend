@@ -34,22 +34,22 @@ class AboutView {
           
           <div class="numbers-items">
             <div class="numbers-item">
-              <div class="number">#1</div>
-              <div class="number-p">Sustainability</div>
+              <div class="number">2016</div>
+              <div class="number-p">Corporate Leadership Award</div>
             </div>
           </div>
 
           <div class="numbers-items">
             <div class="numbers-item">
-              <div class="number">#1</div>
-              <div class="number-p">Sustainability</div>
+              <div class="number">2018</div>
+              <div class="number-p">Energy Efficient Champions</div>
             </div>
           </div>
 
           <div class="numbers-items">
             <div class="numbers-item">
-              <div class="number">#1</div>
-              <div class="number-p">Sustainability</div>
+              <div class="number">2021</div>
+              <div class="number-p">Community Leadership Award</div>
             </div>
           </div>
 
@@ -70,6 +70,37 @@ class AboutView {
           </div>
 
           <img src="/images/earth.png" class="role-img"/>
+        </div>
+
+        <div class="project-container">
+          <div class="project-box">
+            <div class="project-text">
+             <h3>Our Projects</h3>
+              <h2>Hydogren Hub<br>Feasibility Study</h2>
+              <p>This project will investigate the technical and commercial viability of renewable hydrogen and ammonia production facilities at the Port of Newcastle.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu. 
+              </p>
+            </div>
+
+            <div class="project-img"></div>
+            
+          </div>
+        </div>
+
+        <div class="project-container">
+          <div class="project-box">
+          <div class="project-img"></div>
+
+            <div class="project-text">
+             <h3>Our Projects</h3>
+              <h2>Next Generation<br>Electric Bus Depot</h2>
+              <p>This project will investigate the technical and commercial viability of renewable hydrogen and ammonia production facilities at the Port of Newcastle.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu. 
+              </p>
+            </div>            
+          </div>
         </div>
         
       </div>      

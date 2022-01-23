@@ -30,10 +30,12 @@ class EngageView {
         </div>
         
         <div class="engage-spiel">
-          <h3 class="learn-more">- Learn More - </h3>
           <h1>Are you keen on learning more about Renewable Energy and having a positive impact on the Earth's Environment?</h1>
           <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, 
             similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+            <sl-icon name="caret-down-fill" class="learn-more"></sl-icon>
+
+
             <hr>
         </div>
 

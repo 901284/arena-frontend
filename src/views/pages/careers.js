@@ -73,7 +73,7 @@ class CareersView {
                   <h5>Senior Engineer</h5>
               </div>
 
-              <div class="testimonials-boxes border">
+              <div class="testimonials-boxes">
               <div class="testimonials-img david-img"></div>
                 <p>"I started here as an intern straight out of university, and immediately felt welcomed throughout
                   the entire office. Upon graduating, I found myself working with an amazing company, and even more amazing people".</p>

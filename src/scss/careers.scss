@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: left;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/turbines.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/careersheader.jpg");
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,41 +30,29 @@
         padding-bottom: 2rem;
     }
 
-
-      @keyframes bounce {
-          20%, 50%, 80%, to {
-              transform: translateY(0);
-          }
-          40%{
-              transform: translateY(-30px);
-          }
-          70%{
-              transform: translateY(-15px);
-          }
-          90%{
-              transform: translateY(-4px);
-          }
-          
-      }
-
 }
 
 .careers-information {
-    margin: 1rem 0rem;
+    height: 40vh;
+    width: 100%;
     background: rgb(228, 226, 226);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .careers-boxes-container {
         display: flex;
+  
     }
 
     .careers-box {
         width: 50%;
-        padding: 1rem 3rem;
-    }
+        padding: 1.5rem 4rem;
+     }
 
     h2 {
         text-align: center;
-        padding: 3rem 0rem;
         font-size: 2rem;
     }
 
@@ -81,6 +69,8 @@
     .testimonials-container {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
         margin: 3em 0;
     }
 
@@ -102,7 +92,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center; 
-        width: 40%;
+        width: 25%;
+        height: auto;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 1.5rem 4rem rgba(black, .15);
+        margin: 0 2rem;
     }
 
     p {
@@ -129,11 +123,6 @@
 
     h5 {
         font-weight: 300;
-    }
-
-    .border {
-        border-left: 0.5px solid black;
-        border-right: 0.5px solid black;
     }
 
     .david-img {

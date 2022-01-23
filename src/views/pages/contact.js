@@ -14,7 +14,14 @@ class ContactView {
   render(){
     const template = html`
       <va-app-header title="Contact" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
-      <div class="page-content">        
+      <div class="page-content">   
+        
+      <div class="contact-header">
+          <div class="header-info">
+            <h1>CONTACT</h1>
+            <p>Keen to help? Learn how you can make a lasting impact today, and be one of the frontrunners in securing our future</p>
+          </div>
+        </div>
         
         <div class="contact-wrapper">
           <div class="contact-map">

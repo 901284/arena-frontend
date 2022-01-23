@@ -4,8 +4,8 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: left;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0.15))), url("./../../static/images/turbines.jpeg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("./../../static/images/turbines.jpeg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0.15))), url("./../../static/images/careersheader.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("./../../static/images/careersheader.jpg");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,47 +41,23 @@
   padding-bottom: 2rem;
 }
 
-@-webkit-keyframes bounce {
-  20%, 50%, 80%, to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-  }
-  70% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
-  }
-  90% {
-    -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
-  }
-}
-
-@keyframes bounce {
-  20%, 50%, 80%, to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
-  }
-  70% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
-  }
-  90% {
-    -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
-  }
-}
-
 .careers-information {
-  margin: 1rem 0rem;
+  height: 40vh;
+  width: 100%;
   background: #e4e2e2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .careers-information .careers-boxes-container {
@@ -92,12 +68,11 @@
 
 .careers-information .careers-box {
   width: 50%;
-  padding: 1rem 3rem;
+  padding: 1.5rem 4rem;
 }
 
 .careers-information h2 {
   text-align: center;
-  padding: 3rem 0rem;
   font-size: 2rem;
 }
 
@@ -118,6 +93,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 3em 0;
 }
 
@@ -147,7 +128,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 40%;
+  width: 25%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  margin: 0 2rem;
 }
 
 .careers-testimonials p {
@@ -174,11 +160,6 @@
 
 .careers-testimonials h5 {
   font-weight: 300;
-}
-
-.careers-testimonials .border {
-  border-left: 0.5px solid black;
-  border-right: 0.5px solid black;
 }
 
 .careers-testimonials .david-img {

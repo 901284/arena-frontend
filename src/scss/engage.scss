@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: left;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/engage.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/engageheader.jpg");
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,10 +37,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     h1 {
         font-size: 2.5em;
-        width: 50%;
+        width: 45%;
         margin: 0.25em 0;
     }
 
@@ -50,9 +51,9 @@
 
     .learn-more {
         text-transform: uppercase;
-        color:  var(--brand-grey);
-        font-weight: 300;
-
+        color:  var(--brand-green);
+        font-size: 2.5rem;
+        animation: bounce 2s infinite;
     }
 
     hr {
@@ -95,6 +96,7 @@
     }
 
 }
+
 /* 
 .engage-quote-wrapper {
     background-image: linear-gradient(

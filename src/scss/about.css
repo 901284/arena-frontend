@@ -4,8 +4,8 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: left;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0.15))), url("./../../static/images/car.jpeg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("./../../static/images/car.jpeg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0.15))), url("./../../static/images/aboutheader.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("./../../static/images/aboutheader.jpg");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,15 +70,14 @@
 }
 
 .about-numbers .number {
-  font-size: 10em;
+  font-size: 8em;
   font-weight: bolder;
+  color: var(--brand-green);
 }
 
 .about-numbers .number-p {
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 2em;
-  font-weight: lighter;
-  text-transform: uppercase;
 }
 
 .about-intro {
@@ -108,7 +107,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid red;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -119,9 +117,7 @@
 }
 
 .role-container .our-role {
-  border: 1px solid red;
-  /*         padding: 0 3rem;
- */
+  padding: 0 3rem;
   width: 60%;
   margin: 2rem 2rem;
 }
@@ -155,25 +151,51 @@
           animation: pulse 1.5s infinite;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #648DE5;
-            box-shadow: 0 0 0 0 #648DE5;
-  }
-  75% {
-    -webkit-box-shadow: 0 0 0 30px #648DE500;
-            box-shadow: 0 0 0 30px #648DE500;
-  }
+.project-container {
+  margin: 2rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-@keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 #648DE5;
-            box-shadow: 0 0 0 0 #648DE5;
-  }
-  75% {
-    -webkit-box-shadow: 0 0 0 30px #648DE500;
-            box-shadow: 0 0 0 30px #648DE500;
-  }
+.project-container:hover {
+  -webkit-transform: translateY(-0.5rem) scale(0.98);
+          transform: translateY(-0.5rem) scale(0.98);
+}
+
+.project-container .project-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  height: 500px;
+}
+
+.project-container .project-img {
+  background-image: url("./../../static/images/car.jpeg");
+  width: 50%;
+}
+
+.project-container .project-text {
+  width: 50%;
+  padding: 4rem 7rem;
+}
+
+.project-container h2 {
+  font-size: 2rem;
+}
+
+.project-container h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.project-container p {
+  width: 90%;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 /*# sourceMappingURL=about.css.map */

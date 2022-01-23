@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: left;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/car.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/aboutheader.jpg");
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,15 +47,14 @@
         }
 
         .number {
-            font-size: 10em;
+            font-size: 8em;
             font-weight: bolder;
+            color: var(--brand-green)
         }
 
         .number-p {
-            font-size: 2em;
+            font-size: 1.5em;
             margin-bottom: 2em;
-            font-weight: lighter;
-            text-transform: uppercase;
         }
     }
 
@@ -78,15 +77,13 @@
 
 .role-container {
     display: flex;
-    border: 1px solid red;
     align-items: center;
     justify-content: space-between;
     padding: 4rem 7rem;
 
     .our-role {
-        border: 1px solid red;
-/*         padding: 0 3rem;
- */        width: 60%;
+        padding: 0 3rem;
+        width: 60%;
         margin: 2rem 2rem;
         }
 
@@ -120,11 +117,48 @@
         }
     }
 
-    @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 #648DE5;
+.project-container {
+    margin: 2rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    transition: 0.3s;
+
+    &:hover {
+        transform: translateY(-.5rem) scale(0.98);
+    }
+
+    .project-box{
+        display: flex;
+        width: auto;
+        height: 500px;
+    }
+
+    .project-img {
+        background-image: url("./../../static/images/car.jpeg");
+        width: 50%;
+    }
+
+    .project-text {
+        width: 50%;
+        padding: 4rem 7rem;
+
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 1.5rem;
+            
         }
-        75% {
-          box-shadow: 0 0 0 30px #648DE500;
+
+        p {
+            width: 90%;
+            font-size: 1.25rem;
+            line-height: 1.5;
         }
-      }
+
+    }
