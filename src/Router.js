@@ -10,6 +10,7 @@ import contactView from './views/pages/contact'
 import engageView from './views/pages/engage'
 import careersView from './views/pages/careers'
 import atmosphereView from './views/pages/atmosphere'
+import references from './views/pages/references'
 
 // define routes
 const routes = {
@@ -23,7 +24,8 @@ const routes = {
 	'/contact': contactView,
 	'/engage': engageView,
 	'/careers': careersView,
-	'/atmosphere': atmosphereView
+	'/atmosphere': atmosphereView,
+	'/references': references
 }
 
 class Router {

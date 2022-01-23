@@ -190,6 +190,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         <a href="/engage" @click="${this.menuClick}">Engage</a>
         <a href="/careers" @click="${this.menuClick}">Careers</a>
         <a href="/profile" @click="${this.menuClick}">Profile</a>
+        <a href="/references" @click="${this.menuClick}">References</a>
         <a href="#" @click="${() => Auth.signOut()}">Sign Out</a>
       </nav>  
     </sl-drawer>
