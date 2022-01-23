@@ -1,0 +1,130 @@
+#section-atmosphere{
+
+    
+
+    h1{
+        text-align: center;
+    }
+
+    
+
+    .atmosphere-background {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top:0;
+        background: url('./../../static/images/background-stars.png');
+        background-size: cover;
+        z-index: -1;
+       // this will animate out to fillscreen later.
+    }
+
+    .space {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: min(75vw, 75vh);
+        height: min(75vw, 75vh);
+        border-radius: 50%;
+        text-align: center;
+         
+    }
+
+
+    .earth {
+        position: absolute;
+        background: url('./../../static/images/earth.png');
+        background-size: cover;
+        width: 25%;
+        height: 25%;
+        left: 37.5%;
+        top: 35%;
+        z-index: 5;
+
+    }
+
+    
+    .atmosphere {
+        position: absolute;
+        background: url('./../../static/images/atmosphere.png');
+        background-size: contain;
+        width: 45%;
+        height: 45%;
+        left: 27.5%;
+        top: 25%;
+        z-index: 2;
+    }
+
+}
+
+#atmosphere-content {
+
+
+    #atmosphere-body-text{
+
+        // background-color: purple;
+        padding: 2em;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .back {
+        position:sticky;
+        width: min(5vh, 5vw);
+        height: min(5vh, 5vw);
+        background: url('./../../static/images/chevron-left.png');
+        top: 45vh;
+        left: 4vw;
+        z-index: 6;
+        background-size:contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        
+        
+    }
+
+    .down {
+        position: sticky;
+        width: min(5vh, 5vw);
+        height: min(5vh, 5vw);
+        background: url('./../../static/images/chevron-down.png');
+        top: 85vh;
+        left: 4vw;
+        z-index: 6;
+        background-size:contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            cursor: pointer;
+        }
+    
+
+
+    }
+
+    .up {
+        position: fixed;
+        width: min(5vh, 5vw);
+        height: min(5vh, 5vw);
+        background: url('./../../static/images/chevron-up.png');
+        top: 5vh;
+        left: 4vw;
+        z-index: 6;
+        background-size:contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            cursor: pointer;
+        }
+    
+    }
+
+
+
+}
+
