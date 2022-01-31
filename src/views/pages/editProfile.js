@@ -12,41 +12,150 @@ class EditProfileView {
     console.log('EditProfileView.init')
     document.title = 'Edit Profile'    
     this.user = null
-    this.render()   
-    console.log("rendered") 
-    Utils.pageIntroAnim()
-    console.log("entry animated") 
-    this.getUser()    
-    console.log("got user") 
+    this.avatar = null
+    this.render() 
 
+    this.getUser().then(()=> {
+      // this.getAvatar(this.user.fileid)
+      this.render() 
+    })
+    
+    Utils.pageIntroAnim()
+   
   }
 
   async getUser(){
     try {
       this.user = await UserAPI.getUser(Auth.currentUser.email)     
-      console.log("the user: " , this.user) 
- 
-      this.render()
+      // console.log("the user: " , this.user) 
+       this.render()
     }catch(err){
       console.log(err)
       Toast.show(err, 'error')
     }
 
+  }
 
+  async getAvatar(fileid){
 
+    if (!fileid) {
+      console.log("no fileid. unable to fetch the avatar image")
+      return
+    }
+    try {
+      this.avatar = await UserAPI.getAvatar(fileid)
+
+      if (!this.avatar) {
+        console.log("got no avatar")
+        return
+      } else {
+        console.log("got avatar")
+        // console.log("avatar base64Data: ",  this.user.b64Data)      
+        
+        // this.render()
+        var innerHtml = (!this.user.b64data.length < 10) ? 
+          `no avatar`: 
+          `<p>base64avatar</p>
+          <img style='display:block; width:100px;height:100px;' id='base64image'
+          src="data:image/${this.user.filetype};base64, ${this.user.b64data}" alt='unable to display base64 image'/> `
+        // console.log("inner html: " ,innerHtml)
+        document.querySelector('.avatar-wrapper').innerHTML = innerHtml
+      }
+
+    } catch (err){     
+      console.log("error getting avatar from api")
+    }
   }
 
   async updateProfileSubmitHandler(e){
     console.log("updateProfileSubmitHandler called") 
     e.preventDefault()
+    const submitBtn = document.querySelector('.submit-btn')
+    submitBtn.setAttribute('loading', '')
+
+    const formData = e.detail.formData
+    
+    // check there is a file 
+    let fileInput = document.querySelector('#fileInput');
+    let f
+    if (fileInput.files) console.log(" have file: ", fileInput.files.avatar)
+    if (fileInput.files[0]) {
+      //get the fle from the element
+      f = fileInput.files[0]
+
+   
+      // get file extension (.jpg, .png etc)
+      let fileExt = f.name.split('.').pop()
+      
+      // normalise the filetype to store in the db.
+      let fileType;
+      fileExt = fileExt.toLowerCase();
+      switch (fileExt){
+          case "jpg": 
+          case "jpeg":
+              fileType = 'jpeg';
+              break;
+          case "png":
+              fileType = fileExt;
+              break;
+          case "gif":
+              fileType = fileExt;
+              break;
+          case "bmp":
+              fileType = fileExt;
+              break;
+      }
+
+      // make the reader read the binary data
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        // Since it contains the Data URI, we should remove the prefix and keep only Base64 string
+        var binData = e.target.result
+        let buff = Buffer.from(binData, "binary")
+        let b64Data = buff.toString("base64")
+                 
+        // console.log("type is:" , fileType)
+        // console.log("fiel as string: " , f.toString())
+        // console.log("b64 output: "); 
+        // console.log(b64Data); 
+
+        let data = {
+          firstname: formData.get('firstname'),
+          lastname: formData.get('lastname'),
+          email: formData.get('email'),
+          bio: formData.get('bio'),
+          b64data: b64Data,
+          filetype: fileType,
+          updatedAt: new Date().toISOString()
+        }
+
+        const updatedUser = UserAPI.updateUser(Auth.currentUser.email, data, 'json')   
+        this.user = updatedUser     
+        Auth.currentUser = updatedUser
+                        
+      }  
+      reader.onerror = function(e) {
+        // error occurred
+        console.log('Error : ' + e.type);
+      };
+
+      // console.log("reading as data url"); 
+
+      // reader.readAsDataURL();
+      reader.readAsBinaryString(f)
+      submitBtn.removeAttribute('loading')
+      this.render()
+      Toast.show('profile updated')
+    } else {
+
     const formData = e.detail.formData
     formData.append("updatedAt", new Date().toISOString())
     const submitBtn = document.querySelector('.submit-btn')
     submitBtn.setAttribute('loading', '')
     try {
-      console.log("calling UserAPI.updateUser(Auth.currentUser.email, formData)") 
+      // console.log("calling UserAPI.updateUser(Auth.currentUser.email, formData)") 
       const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, formData)    
-      console.log("got updated user : ",updatedUser)   
+      // console.log("got updated user : ",updatedUser)   
       delete updatedUser.password        
       this.user = updatedUser     
       Auth.currentUser = updatedUser
@@ -56,6 +165,9 @@ class EditProfileView {
       Toast.show(err, 'error')
     }
     submitBtn.removeAttribute('loading')
+
+    }
+
   }
 
   render(){
@@ -95,11 +207,13 @@ class EditProfileView {
                 </div>          
                 <div class="input-group">
                   <label>Avatar</label><br>          
-                  ${(this.user.avatar) ? html`
-                    <sl-avatar image="${App.apiBase}/images/${this.user.avatar}"></sl-avatar>
-                    <input type="file" name="avatar" />
+                  ${(this.user.b64data) ? html`
+                    <img class='base64image-thumbnail'
+                    src="data:image/${this.user.filetype};base64, ${this.user.b64data}" alt='unable to display base64 image'/> 
+                  
+                    <input type="file" name="avatar" id='fileInput'/>
                   `: html`
-                    <input type="file" name="avatar" />
+                    <input type="file" name="avatar"  id='fileInput' />
                   `}
                 </div>
                 <sl-button type="primary" class="submit-btn" submit>Update Profile</sl-button>
@@ -108,11 +222,14 @@ class EditProfileView {
 
             <!-- right side  -->
             <div class="avatar-wrapper">
-              ${Auth.currentUser && Auth.currentUser.avatar ? html`
-                <sl-avatar style="--size: 250px; margin-bottom: 1em;" image=${(Auth.currentUser && Auth.currentUser.avatar) ? `${App.apiBase}/images/${Auth.currentUser.avatar}` : ''}></sl-avatar>
+          
+              ${Auth.currentUser && Auth.currentUser.b64data ? html`
+                  <img id='base64image'
+                  src="data:image/${this.user.filetype};base64, ${this.user.b64data}" alt='unable to display base64 image'/> 
+                      
                 `:html`
-                <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>
-              `}
+                    <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>
+                `}
             </div>
                     
           </div> <!-- end of profile body -->

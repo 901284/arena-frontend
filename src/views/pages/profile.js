@@ -62,11 +62,21 @@ class ProfileView {
 
             <!-- right side  -->
             <div class="avatar-wrapper">
+
+            ${Auth.currentUser && Auth.currentUser.b64data ? html`
+                  <img id='base64image'
+                  src="data:image/${Auth.currentUser.filetype};base64, ${Auth.currentUser.b64data}" alt='unable to display base64 image'/> 
+                      
+                `:html`
+                    <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>
+                `}
+
+<!--                 
               ${Auth.currentUser && Auth.currentUser.avatar ? html`
                 <sl-avatar style="--size: 250px; margin-bottom: 1em;" image=${(Auth.currentUser && Auth.currentUser.avatar) ? `${App.apiBase}/images/${Auth.currentUser.avatar}` : ''}></sl-avatar>
                 `:html`
                 <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>
-              `}
+              `} -->
             </div>
                     
           </div> <!-- end of profile body -->

@@ -11,8 +11,8 @@ class App {
   constructor(){
     this.name = "ARENA"
     this.version = "1.0.0"
-    this.apiBase = 'https://arenaapi.herokuapp.com'
-    // this.apiBase = 'http://localhost:3000'
+    // this.apiBase = 'https://arenaapi.herokuapp.com'
+    this.apiBase = 'http://localhost:3000'
     this.rootEl = document.getElementById("root")
     this.version = "1.0.0"
   }

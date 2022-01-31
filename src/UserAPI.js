@@ -28,7 +28,7 @@ class UserAPI {
    
     // make fetch request to backend
     const response = await fetch(`${App.apiBase}/user/${userEmail}`, responseHeader)
-    console.log("got response")
+    // console.log("got response")
 
     // if response not ok
     if(!response.ok){
@@ -55,7 +55,7 @@ class UserAPI {
       headers: { "Authorization": `Bearer ${localStorage.accessToken}`}
     })
 
-    console.log("response: ", response)
+    // console.log("response: ", response)
 
         // if response not ok
     if(!response.ok){ 
@@ -69,7 +69,7 @@ class UserAPI {
     // convert response payload into json - store as data
     const data = response.json()
 
-    console.log("data: ", data)
+    // console.log("data: ", data)
     
     // return data
     return data

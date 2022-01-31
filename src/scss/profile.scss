@@ -68,6 +68,28 @@
             max-width: 95%;
         }
 
+        #base64image {
+            display: inline-block;
+            width: 250px;
+            height: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            object-fit: cover;
+            border-radius: 50%;
+
+        }
+
+        .base64image-thumbnail {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+
+          
+    
+
 
 
     }
