@@ -150,7 +150,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         }
       }
 
-    </style>
+      </style>
 
     <header class="app-header">
       <sl-icon-button class="hamburger-btn" name="list" @click="${this.hamburgerClick}" style="font-size: 1.5em;"></sl-icon-button>       
@@ -170,7 +170,16 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         <a href="/careers" @click="${anchorRoute}">Careers</a>        
         <sl-dropdown>
           <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">
-            <sl-avatar style="--size: 24px;" image=${(this.user && this.user.avatar) ? `${App.apiBase}/images/${this.user.avatar}` : ''}></sl-avatar> ${this.user && this.user.firstName}
+            ${(this.user && this.user.b64data) ? 
+              html`<img style='  
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;' 
+              src="data:image/${this.user.filetype};base64, ${this.user.b64data}" alt='unable to display base64 image'/> ` 
+              : html`<sl-avatar style="--size: 24px;" image=''></sl-avatar> ${this.user && this.user.firstName}`
+            } 
           </a>
           <sl-menu>            
             <sl-menu-item @click="${() => gotoRoute('/profile')}">Profile</sl-menu-item>
