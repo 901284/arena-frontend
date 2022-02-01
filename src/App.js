@@ -10,13 +10,10 @@ import Toast from './Toast'
 class App {
   constructor(){
     this.name = "ARENA"
-
     this.version = "1.1"
-    this.apiBase = 'https://arenaapi-v2.herokuapp.com/'
+    this.apiBase = 'https://arenaapi-v2.herokuapp.com'
     // this.apiBase = 'http://localhost:3000'
-  
-    this.rootEl = document.getElementById("root")
-    
+    this.rootEl = document.getElementById("root")    
   }
   
   init() { 

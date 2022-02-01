@@ -16,10 +16,8 @@ class EditProfileView {
     this.render() 
 
     this.getUser().then(()=> {
-      // this.getAvatar(this.user.fileid)
       this.render() 
     })
-    
     Utils.pageIntroAnim()
    
   }
@@ -36,36 +34,6 @@ class EditProfileView {
 
   }
 
-  async getAvatar(fileid){
-
-    if (!fileid) {
-      console.log("no fileid. unable to fetch the avatar image")
-      return
-    }
-    try {
-      this.avatar = await UserAPI.getAvatar(fileid)
-
-      if (!this.avatar) {
-        console.log("got no avatar")
-        return
-      } else {
-        console.log("got avatar")
-        // console.log("avatar base64Data: ",  this.user.b64Data)      
-        
-        // this.render()
-        var innerHtml = (!this.user.b64data.length < 10) ? 
-          `no avatar`: 
-          `<p>base64avatar</p>
-          <img style='display:block; width:100px;height:100px;' id='base64image'
-          src="data:image/${this.user.filetype};base64, ${this.user.b64data}" alt='unable to display base64 image'/> `
-        // console.log("inner html: " ,innerHtml)
-        document.querySelector('.avatar-wrapper').innerHTML = innerHtml
-      }
-
-    } catch (err){     
-      console.log("error getting avatar from api")
-    }
-  }
 
   async updateProfileSubmitHandler(e){
     console.log("updateProfileSubmitHandler called") 
@@ -78,7 +46,7 @@ class EditProfileView {
     // check there is a file 
     let fileInput = document.querySelector('#fileInput');
     let f
-    if (fileInput.files) console.log(" have file: ", fileInput.files.avatar)
+    
     if (fileInput.files[0]) {
       //get the fle from the element
       f = fileInput.files[0]
@@ -108,17 +76,14 @@ class EditProfileView {
 
       // make the reader read the binary data
       let reader = new FileReader();
-      reader.onload = function (e) {
+      reader.onload = async function (e) {
         // Since it contains the Data URI, we should remove the prefix and keep only Base64 string
         var binData = e.target.result
         let buff = Buffer.from(binData, "binary")
         let b64Data = buff.toString("base64")
                  
-        // console.log("type is:" , fileType)
-        // console.log("fiel as string: " , f.toString())
-        // console.log("b64 output: "); 
-        // console.log(b64Data); 
 
+        // build the json object
         let data = {
           firstname: formData.get('firstname'),
           lastname: formData.get('lastname'),
@@ -129,42 +94,52 @@ class EditProfileView {
           updatedAt: new Date().toISOString()
         }
 
-        const updatedUser = UserAPI.updateUser(Auth.currentUser.email, data, 'json')   
+        // send to the db
+        const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, data, 'json')   
+        delete updatedUser.password  
         this.user = updatedUser     
         Auth.currentUser = updatedUser
-                        
+        Toast.show('profile updated')
+        document.querySelector('.submit-btn').removeAttribute('loading')
+        gotoRoute('/profile')
+                          
       }  
       reader.onerror = function(e) {
         // error occurred
         console.log('Error : ' + e.type);
+        Toast.show('Error while updating profile','error')
       };
 
       // console.log("reading as data url"); 
 
       // reader.readAsDataURL();
       reader.readAsBinaryString(f)
-      submitBtn.removeAttribute('loading')
-      this.render()
-      Toast.show('profile updated')
+      // gotoRoute('/profile')
+      
+    
+
     } else {
 
-    const formData = e.detail.formData
-    formData.append("updatedAt", new Date().toISOString())
-    const submitBtn = document.querySelector('.submit-btn')
-    submitBtn.setAttribute('loading', '')
-    try {
-      // console.log("calling UserAPI.updateUser(Auth.currentUser.email, formData)") 
-      const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, formData)    
-      // console.log("got updated user : ",updatedUser)   
-      delete updatedUser.password        
-      this.user = updatedUser     
-      Auth.currentUser = updatedUser
-      this.render()
-      Toast.show('profile updated')
-    }catch(err){      
-      Toast.show(err, 'error')
-    }
-    submitBtn.removeAttribute('loading')
+      const formData = e.detail.formData
+      formData.append("updatedAt", new Date().toISOString())
+      const submitBtn = document.querySelector('.submit-btn')
+      submitBtn.setAttribute('loading', '')
+      try {
+        // console.log("calling UserAPI.updateUser(Auth.currentUser.email, formData)") 
+        const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, formData)    
+        // console.log("got updated user : ",updatedUser)   
+
+        delete updatedUser.password        
+        this.user = updatedUser   
+        Auth.currentUser = updatedUser
+        Toast.show('profile updated')
+        gotoRoute('/profile')
+       
+      
+      } catch(err) {      
+        Toast.show(err, 'error')
+      }
+      
 
     }
 
