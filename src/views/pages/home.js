@@ -153,7 +153,6 @@ class HomeView {
   }
 
 
-
   handleStageClick(){
 
     console.log('stageclick')
@@ -394,10 +393,17 @@ class HomeView {
   handleStage5Click(section5){
     console.log('stage 5 click handler')
 
+    let astronaut = document.querySelector('.astronaut5')
+    let bubble = document.querySelector('#bubble6')
+    let fossilFuels = document.querySelector('.fossilfuels')
+    let smog = document.querySelector('#smog')
 
-
+    const timeLineFossilfuels = gsap.timeline();
+    timeLineFossilfuels .fromTo(fossilFuels, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
+                        .fromTo(smog, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
+                        .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out"  })
+                        .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out" });
   }
-
 
 
   /* ============ animateions for section 6 (... power) ================= */
