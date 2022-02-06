@@ -162,9 +162,10 @@ a {
   z-index: 6;
   background-size:contain;
   background-repeat: no-repeat;
-
+  transition: all 0.2s ease-out;
   &:hover {
       cursor: pointer;
+      transform: scale(1.2);
   }
 
 }
@@ -186,9 +187,10 @@ a {
       background-size:contain;
       background-repeat: no-repeat;
       margin-right: 1vw;
-
+      transition: all 0.2s ease-out;
       &:hover {
           cursor: pointer;
+          transform: scale(1.2);
       }
 
   } 
@@ -201,9 +203,10 @@ a {
       background: url('./../../static/images/chevron-down.png');
       background-size:contain;
       background-repeat: no-repeat;
-
+      transition: all 0.2s ease-out;
       &:hover {
           cursor: pointer;
+          transform: scale(1.2);
       }
   }
 }

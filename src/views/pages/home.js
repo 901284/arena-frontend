@@ -474,8 +474,8 @@ class HomeView {
           <h1 class='anim-in'>Solar Power</h1>
 
           <div class='solarpower'>                    
-            <div class='astronaut4' alt='animated image of Minji the astonaut' @click=${()=> gotoRoute('/solarpower')}></div>
-            <div id='sun' alt='Image of the sun' ></div>
+            <div class='astronaut4' @click=${()=> gotoRoute('/solarpower')} alt='animated image of Minji the astonaut'></div>
+            <div id='sun' @click=${()=> gotoRoute('/solarpower')} alt='Image of the sun' ></div>
             <img class='speech-bubble5' id='bubble5' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/solarpower')} alt='Speech bubble says "Click Minji to lean more."'>
           </div>
 

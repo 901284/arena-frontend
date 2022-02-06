@@ -129,6 +129,11 @@
         left: 60%;
         top: 65%;
         z-index: 2;
+        transition: all 0.4s ease-out;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
     }
 
  
@@ -150,7 +155,7 @@
 }
 
 
-// ----- section 2 -----------------
+// ----- section 2 - atmosphere -----------------
 #section2 {
     position: absolute;
     top: 0;
@@ -258,7 +263,7 @@
 }
 
 
-// --- section 4  - solar power -----------------------------
+// --- section 4 - solar power -----------------------------
 
 #section4 {
     position: absolute;
@@ -305,6 +310,9 @@
             background: url('./../../static/images/solar.png');
             background-size: contain;
             background-repeat: no-repeat;
+            &:hover {
+                cursor: pointer;
+            }
         }
     
         // click me to lean more about solar power
@@ -314,8 +322,10 @@
             left: 60%;
             top: 40%;
             z-index: 6;
+            transition: all 0.4s ease-out;
             &:hover {
                 cursor: pointer;
+                transform: scale(1.1);
             }
         }
 
