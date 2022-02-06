@@ -151,9 +151,25 @@ a {
 
 // scroll navigation ---------------
 
-// story nav up button
-.nav-container {
+// story nav buttons
+.back {
+  position:sticky;
+  width: min(5vh, 5vw);
+  height: min(5vh, 5vw);
+  background: url('./../../static/images/chevron-left.png');
+  top: 45vh;
+  left: 4vw;
+  z-index: 6;
+  background-size:contain;
+  background-repeat: no-repeat;
 
+  &:hover {
+      cursor: pointer;
+  }
+
+}
+
+.nav-container {
   position: sticky;
   width: fit-content;
   height: min(5vh, 5vw);
