@@ -331,6 +331,77 @@
 
     }
 
+}
+
+// --- section 5 - fossil fuels -----------------------------
+#section5 {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+
+
+    .fossilfuels {
+
+        // circular sky image in the middle of the screen 
+        @extend .space-template;
+        background: url('./../../static/images/background_fossilfuels.png');
+        background-size: cover;
+        border-radius: 0;
+        z-index: 5;
+
+        // alt image of the astronaut with the sun glare off of his visor
+        .astronaut5 {
+            --swing-radius: 40vh; 
+            --top-position: 40vh;
+            position: absolute;
+            background: url('./../../static/images/astronaut.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18%;
+            height: 20%;
+            left: 46%;
+            top: 44%;
+            z-index: 4;
+            animation: swing 5s infinite ease-in-out;  // swing from the sun
+            transform-origin:  29% 0%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        // image of the radiating sun 
+        #smog {
+            position: absolute;
+            height: 50%;
+            width: 35%;
+            left: 33%;
+            top: 14%;
+            z-index: 5;
+            background: url('./../../static/images/smog.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    
+        // click me to lean more about solar power
+        #bubble6 {
+            position: absolute;
+            width: 35%;
+            left: 62%;
+            top: 43%;
+            z-index: 6;
+            transition: all 0.4s ease-out;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+    }
+
+
 
 
 
