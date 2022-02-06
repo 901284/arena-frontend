@@ -149,6 +149,52 @@ a {
   }
 }
 
+// scroll navigation ---------------
+
+// story nav up button
+.nav-container {
+
+  position: sticky;
+  width: fit-content;
+  height: min(5vh, 5vw);
+  top: 80vh;
+  left: 4vw;
+  z-index: 6;
+
+  .up {
+      display: inline-block;
+      width: min(5vh, 5vw);
+      height: min(5vh, 5vw);
+      background: url('./../../static/images/chevron-up.png');
+      z-index: 6;
+      background-size:contain;
+      background-repeat: no-repeat;
+      margin-right: 1vw;
+
+      &:hover {
+          cursor: pointer;
+      }
+
+  } 
+
+  // story nav down button 
+  .down {
+      display: inline-block;
+      width: min(5vh, 5vw);
+      height: min(5vh, 5vw);
+      background: url('./../../static/images/chevron-down.png');
+      background-size:contain;
+      background-repeat: no-repeat;
+
+      &:hover {
+          cursor: pointer;
+      }
+  }
+}
+
+
+
+
 // RESPONSIVE - MOBILE -------------------
 @media all and (max-width: 768px){ 
 

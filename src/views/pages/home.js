@@ -4,9 +4,9 @@ import {gotoRoute, anchorRoute } from './../../Router'
 import Auth from './../../Auth'
 import Utils from './../../Utils'
 import { gsap } from "gsap";
-// import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
-import { scrolltrigger } from "gsap/ScrollTrigger.js";
-
+import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
+// import { scrolltrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(MotionPathPlugin);
 
 
 /* TREV IS DOING THIS BIT. WORK IN POROGRESS   */
@@ -25,15 +25,34 @@ class HomeView {
 
   init(){    
     console.log('HomeView.init')
-    localStorage.setItem("currentStage","0");
+
     // this.currentStep = 0;
     document.title = 'Home'  
     this.render()    
     this.setListeners()
     Utils.pageIntroAnim()  
     this.startSection1Anim()
-    
+    if (!localStorage.getItem('currentStage')) {
+      console.log('no current stage set. setting it to 0')
+      this.setStage(0)
+    }
+    this.handleStageClick()
   } 
+
+
+    // clicking the down arrow increments the story stage to the next level
+  handleDownClick(){
+    this.stageIncrement()
+    this.handleStageClick()
+     
+  }
+
+  // clicking the up arrow decrements the story stage to the previous level
+  handleUpClick(){
+    this.stageDecrement()
+    this.handleStageClick()
+
+  }
 
 
   setListeners(){
@@ -46,26 +65,63 @@ class HomeView {
     this.atmosphere = document.querySelector(".atmosphere");
     this.astronaut = document.querySelector('.astronaut');
     this.astronaut2 = document.querySelector('.astronaut2');
-
-    // enable these once i have put them  in the dom.
-    // this.downArrow = document.querySelector('#down');
-    // this.upArrow = document.querySelector('#up');
+    this.up = document.querySelector('.up');
+    this.down = document.querySelector('.down');
     
-    
+  
     console.log('setting click listener on the Minjis');
     this.astronaut.addEventListener('click', ()=>{
-      let currentStage = Number(localStorage.getItem("currentStage"));
-      this.handleStageClick(++currentStage)
+      console.log('clicked minji')
+      this.stageIncrement()
+      this.handleStageClick()
+      console.log('endclick minji')
     })
+    this.bubble1.addEventListener('click', ()=>{
+      console.log('clicked bubble1')
+      this.stageIncrement()
+      this.handleStageClick()
+      
+    })
+
+    this.bubble2.addEventListener('click', ()=> {
+
+      if( this.getStage() == 1)  {
+        gotoRoute('/atmosphere')
+      } else {
+        this.stageIncrement()
+        this.handleStageClick()
+      }
+
+    })
+
+    // more information baout atmosphere
     this.astronaut2.addEventListener('click', () => {
-      let currentStage = Number(localStorage.getItem("currentStage"));      
-      this.handleStageClick(++currentStage);
+
+
     })
     
+
 
   }
 
 
+  // helper functions to set the stage in local storage/
+  stageIncrement(){
+    let currentStage = Number(localStorage.getItem("currentStage"));
+    ++currentStage
+    localStorage.setItem('currentStage',currentStage.toString())
+  }
+  stageDecrement(){
+    let currentStage = Number(localStorage.getItem("currentStage"));
+    (currentStage > 0) ? --currentStage : currentStage = 0;
+    localStorage.setItem('currentStage',currentStage.toString())
+  }
+  getStage(){
+    return Number(localStorage.getItem("currentStage"));   
+  }
+  setStage(stageInt) {
+    if (stageInt >= 0) localStorage.setItem('currentStage',stageInt.toString())
+  }
 
     /*'animating in the elements for section 1 when section on page load'*/
   startSection1Anim(){
@@ -74,19 +130,33 @@ class HomeView {
       const space = document.querySelector(".space");
       const astronaut = document.querySelector(".astronaut");
       const bubble1 = document.querySelector("#bubble1");
-      // const downArrow = document.querySelector(".downArrow");
+      let spaceBackground = document.querySelector(".space-background");
+      let bubble2 = document.querySelector("#bubble2");
+      let atmosphere = document.querySelector(".atmosphere");
+
+      //reset elements properties      
+      space.style.borderRadius = "50%"; 
+      space.style.opacity = "1";
+      // space.style.scale.transform = "scale(1)";
+
   
       // create gsap timeline for animating in the atmosphere.
       const tl = gsap.timeline();
-      tl  .from(space, {opacity: 0, scale: 0.1, duration: 0.5, delay: 0.3})
-          .from(earth, {opacity: 0, scale: 0.5, duration: 0.8,ease: "elastic.out"})
-          .from(astronaut, {opacity:0 , y: -100, duration: 0.7, ease: "power4.out"})
-          .from(bubble1, { opacity:0 , y: -50, duration: 0.8, ease: "power4.out"},+2.0);
+      tl  .to(atmosphere,{opacity: 0, duration: 0 })
+          .fromTo(space, {opacity: 0, scale: 0.1},{opacity: 1, scale:1, duration: 0.5})
+          .fromTo(earth, {opacity: 0, scale: 0.5}, {opacity: 1, scale: 1, duration: 0.8, ease: "elastic.out"})
+          .fromTo(astronaut, {opacity:0 , y: -100},{opacity:1 , duration: 0.7, ease: "power4.out"} )
+          .fromTo(bubble1, { opacity:0 , y: -50}, { opacity:1 , duration: 0.8, ease: "power4.out"},+2.0);
+          
+        //   tl  .to(bubble1, {opacity:0 ,  duration: 0.4, ease: "power4.out"})
+        // .to(spaceBackground,{duration: 1.2, borderRadius: "0%",  ease: "power4.out", x: newXcoord, y: newYcoord, width: "100%", height: "100%"})     
   }
 
 
 
-  handleStageClick(newStage){
+  handleStageClick(){
+
+    console.log('stageclick')
 
     /* elements of section 1 */ 
     // this.earth = document.querySelector(".earth");
@@ -106,82 +176,117 @@ class HomeView {
 
 
     /* elements of section 3 */ 
-
+    let section3 = document.querySelector('#section3');
+    
 
 
     /* elements of section 4 */
+    // let section4 = document.querySelector('#section4');
 
 
-    switch(newStage) {
-      case 0:
-        // First time on the page- make like new 
-        section2.classList.add("hide");
-        // section3.classList.add("hide");
-        this.showSection(section1)
-        this.startSection1Anim()
+    console.log('stage: ', this.getStage())
+
+    switch(this.getStage()) {
+
+      case 0:  // page load and intro / hero screen
+      
+        // set the nav buttons
+        this.up.classList.add('hide');
+        this.down.classList.remove('hide');  
+                       
+        //  show or hide relevant sections 
+        section2.classList.add('hide');    
+        section3.classList.add('hide');       
+        section1.classList.remove('hide');  
+         
+        this.handleStage0Click(atmosphere,bubble1, bubble2, spaceBackground)
         break;
 
-      case 1:
+      case 1:  // atmosphere popup oj minji interaction
+        // set the display class on the nav buttons.
+        this.up.classList.remove('hide');
+        this.down.classList.remove('hide');
+        
+        //  show or hide relevant sections 
+        section2.classList.add('hide');    
+        section3.classList.add('hide');       
+        section1.classList.remove('hide');  
+         
         // show the atmosphere, hide the first bubble and show the second.
         this.handleStage1Click(atmosphere,bubble1, bubble2, spaceBackground)
         break;
            
 
-      case 2:
-            // code block to execure the transition from section 1 to section 2
-        this.hideSetion(section1)
+      case 2: // atmosphere page with minji hanging from a cloud
+        // code block to execure the transition from section 1 to section 2
+        // set the display class on the nav buttons.
+        this.up.classList.remove('hide');
+        this.down.classList.remove('hide');
+
+        // show and hide the relevant sections
+        section1.classList.add("hide")
+        section2.classList.remove("hide")
+        section3.classList.add("hide")
         this.handleStage2Click(section1, section2, cloud, astronaut2, bubble3)        
 
         break;
       
-      case 3:
-    // code block to start the click animations of section 2
-
-        //reload the page.
-         // change later
+      case 3:  // wind power page
+        // set the display class on the nav buttons.
+        this.up.classList.remove('hide');
+        this.down.classList.remove('hide');
+        
+        // show and hide the relevant sections
+        section1.classList.add("hide")
+        section2.classList.add("hide")
+        section3.classList.remove("hide")
+        this.handleStage3Click(section3)
         break;
     
 
       default:
+        // stageis out of range or not set, so set to o
+        this.setStage(0)
         // code block
 
     } 
 
-    // save the stage to local storage for when the user navigates back to this page    
-    localStorage.setItem("currentStage", newStage.toString());
-  
+
   }
 
-  /* =============== animate section in or out ==================  */
-
-  showSection(section){
-    const tl =  gsap.timeline(); 
-    tl  .from(section, { className: "-hide", scale: 0.1, duration: 0.5, ease: "power4.out" });
-  }
-
-
-  hideSetion(section){
-    const tl =  gsap.timeline(); 
-    tl  .to(section, { className: "+hide", scale: 0.1, duration: 0.5, ease: "power4.out" });
-  }
 
 
   /* ==============  animations for section 1  ================== */
+  handleStage0Click(atmosphere, bubble1, bubble2, spaceBackground) {
+   
+    const tlStage0 = gsap.timeline();
+    
+    bubble2.classList.add("hide");
+    bubble1.classList.remove("hide");
+    atmosphere.classList.add("hide");
+    spaceBackground.classList.add('space-background-small')
+    spaceBackground.classList.remove('space-background-enlarged')
+
+    this.startSection1Anim()
+
+  }
 
 
   handleStage1Click(atmosphere, bubble1, bubble2, spaceBackground) {
-      
+
     const tl = gsap.timeline();
-    atmosphere.classList.remove("hide");
+    // atmosphere.classList.remove("hide");
     bubble2.classList.remove("hide");
     let newXcoord = 0 - spaceBackground.offsetLeft;
     let newYcoord = 0 - spaceBackground.offsetTop;
+    spaceBackground.classList.remove('space-background-small')
+    spaceBackground.classList.add('space-background-enlarged')
     
     // animate the element transitions.
     tl  .to(bubble1, {opacity:0 ,  duration: 0.4, ease: "power4.out"})
-        .to(spaceBackground,{duration: 1.2, borderRadius: "0%",  ease: "power4.out", x: newXcoord, y: newYcoord, width: "100%", height: "100%"})            
-        .from(atmosphere, { opacity:0 , scale: 0.8, duration: 2.0, ease: "elastic.out"},+1.0)            
-        .from(bubble2, { opacity:0 , duration: 0.8, ease: "power4.out"});
+        // .fromTo(spaceBackground,{ css:{className:"+= space-background space-background-small"}},{duration: 1.2,  ease: "power4.out", css:{className:"+= space-background space-background-enlarged"}})            
+        .fromTo(atmosphere, { opacity: 0, scale: 0.5 }, { opacity:1 , scale: 1, duration: 2.0, ease: "elastic.out"},+1.0)            
+        .fromTo(bubble2, { opacity: 0 }, { opacity:1 , duration: 0.8, ease: "power4.out"});
     atmosphere.classList.remove("hide");
 
     // make the hide of bubble1 permanent
@@ -209,41 +314,60 @@ class HomeView {
     
 
 
-  /* ========== animations for section 2 =================== */
+  /* ========== animations for section 2 ( atmosphere  - minji hangs from cloud ) =================== */
 
   // animate to the clouds thingy in section 2 
+  
   handleStage2Click(section1, section2, cloud, astronaut2, bubble3) {
-    const tlCloud = gsap.timeline();
-    tlCloud  .to(section1,{opacity: 0, duration: 1, ease: "power4.out" })
-        .from(section2, { opacity: 0, scale: 0.2, duration: 0.3, ease: "power4.out" })
-        .from(cloud,{ duration: 1.2, scale: 0.1, ease: "power4.out"  })
-        .from(astronaut2,{ duration: 1.5, ease: "elastic.out", height: 0})
-        .from(bubble3,{ duration: 0.7, width: 0, x: "-100px", ease: "power4.out"});
+    const timelineCloud = gsap.timeline();
+    timelineCloud 
+        .fromTo(section2, { opacity: 0, scale: 0.1 }, {opacity: 1, scale: 1, duration: 0.3, ease: "power4.out" })
+        .fromTo(cloud, { scale: 0.1}, { duration: 1.2, scale: 1, ease: "power4.out"  })
+        .fromTo(astronaut2,{ scale: 0.0}, { duration: 1, ease: "elastic.out", scale: 1}) 
+        .fromTo(bubble3,{ opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power4.out"});
     section2.classList.remove("hide");
   }
   
+  /* ============ animateions for section 3 (wind power)================= */
+  handleStage3Click(section3){
+    const astronaut3 = document.querySelector('.astronaut3')
+    const speechBubble = document.querySelector('.speech-bubble4')
+    const windpower = document.querySelector('.windpower')
+ 
+    const timelineWind = gsap.timeline();
+    timelineWind.fromTo(section3,{opacity : 0, scale: 0.5}, {opacity : 1, scale: 1, duration: 0.5, ease: "power4.out"})
+                .fromTo(windpower,{ scale: 0.1, ease: "power4.out"  }, { duration: 1.2, scale: 1, ease: "power4.out"  })
+                .fromTo(astronaut3, { scale: 0.0},{ duration: 1, ease: "elastic.out", scale: 1})
+                .fromTo(speechBubble,{ opacity: 0.0, scale: 0.5}, { opacity: 1.0, duration: 0.7, scale: 1.0, ease: "power4.out"});
+  }
 
-  /* ============ animateions for section 3 ================= */
 
-  handleStage4Click(){
+
+  /* ============ animateions for section 4 (... power)================= */
+  handleStage4Click(section4){
+    console.log('stage 5 click handler')
+
+
 
   }
 
 
 
-  handleUpClick(){
-    // move the storyline to the previous stage
-    let currentStage = Number(localStorage.getItem("currentStage"));
-    
+
+  /* ============ animateions for section 5 (....dpower)================= */
+  handleStage5Click(section5){
+    console.log('stage 5 click handler')
 
   }
 
 
-  handleDownCLick(){
-    // move the storyline to the next stage
-    let currentStage = Number(localStorage.getItem("currentStage"));
+
+  /* ============ animateions for section 6 (... power)================= */
+  handleStage6Click(section6){
+    console.log('stage 6 click handler')
 
   }
+
 
 
 
@@ -253,13 +377,15 @@ class HomeView {
       
       <div class="page-content">
 
+        <div class='nav-container'>
+          <div class='up' @click=${()=> this.handleUpClick()} ></div>
+          <div class='down' @click=${()=> this.handleDownClick()} ></div>
+        </div>
 
-        <!-- page1  -->
+        <!-- page1  -  stages 0 and 1 -->
         <div class='home-section' id='section1'>
-
-
           <h1 class='anim-in'>Section 1</h1>
-          <div class='space-background'></div>
+          <div class='space-background space-background-small'></div>
           <div class='space'>           
            
             <div class='earth'> 
@@ -286,7 +412,7 @@ class HomeView {
 
         </div>  
 
-        <!-- page2  -->
+        <!-- page2 -  stage 2 -->
         <div class='home-section hide'  id='section2'>
           <h1 class='anim-in'>Earth's Atmosphere</h1>
           
@@ -297,7 +423,7 @@ class HomeView {
               
             </div>
 
-            <img class='speech-bubble3' id='bubble3' src='/images/section2-bubble1-learn.png' alt='Speech bubble says "Click Minji to lean more."'>
+            <img class='speech-bubble3' id='bubble3' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/atmosphere')} alt='Speech bubble says "Click Minji to lean more."'>
                       
                                    
    
@@ -305,13 +431,76 @@ class HomeView {
 
         </div>
 
-        <!-- page3  -->
+        <!-- page3 - stage 3 -->
         <div class='home-section hide'  id='section3'>
-          <h1 class='anim-in'>Section 3</h1>
+          <h1 class='anim-in'>Wind Power</h1>
+                 
+          <div class='windpower'>                    
+            <div class='astronaut3' @click=${()=> gotoRoute('/windpower')}></div>
+            <img class='speech-bubble4' id='bubble4' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/windpower')} alt='Speech bubble says "Click Minji to lean more."'>
+          </div>
+
+        </div>
+
+        <!-- page4  - stage 4 -->
+        <div class='home-section hide'  id='section4'>
+          <h1 class='anim-in'>Section 4</h1>
 
 
         </div>
 
+
+        <!-- page5 - stage 5 -->
+        <div class='home-section hide'  id='section5'>
+          <h1 class='anim-in'>Section 5</h1>
+
+
+        </div>
+
+
+        <!-- page6  - stage 6-->
+        <div class='home-section hide'  id='section6'>
+          <h1 class='anim-in'>Section 6</h1>
+
+
+        </div>
+
+
+        <!-- page7  -->
+        <div class='home-section hide'  id='section7'>
+          <h1 class='anim-in'>Section 7</h1>
+
+
+        </div>
+
+
+        <!-- page8 -->
+        <div class='home-section hide'  id='sectio8'>
+          <h1 class='anim-in'>Section 8</h1>
+
+
+        </div>
+
+        <!-- page9-->
+        <div class='home-section hide'  id='section9'>
+          <h1 class='anim-in'>Section 9</h1>
+
+
+        </div>       
+        
+        <!-- page10-->
+        <div class='home-section hide'  id='section10' >
+          <h1 class='anim-in'>Section 10</h1>
+
+
+        </div>       
+        
+        <!-- page11- -->
+        <div class='home-section hide'  id='section11'>
+          <h1 class='anim-in'>Section 11</h1>
+
+
+        </div>
 
 
 

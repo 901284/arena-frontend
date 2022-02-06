@@ -29,7 +29,7 @@ class ProfileView {
 
 
             <h1>${Auth.currentUser.firstname + " " + Auth.currentUser.lastname }</h1>
-            <a href="javascript:history.back()"><h2><sl-icon-button name="x"></sl-icon-button></h2></a>
+            <a href="/"><h2><sl-icon-button name="x"></sl-icon-button></h2></a>
 
           </div>
 

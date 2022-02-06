@@ -11,6 +11,7 @@ import engageView from './views/pages/engage'
 import careersView from './views/pages/careers'
 import atmosphereView from './views/pages/atmosphere'
 import references from './views/pages/references'
+import windpowerView from './views/pages/windpower'
 
 // define routes
 const routes = {
@@ -25,7 +26,8 @@ const routes = {
 	'/engage': engageView,
 	'/careers': careersView,
 	'/atmosphere': atmosphereView,
-	'/references': references
+	'/references': references,
+	'/windpower' : windpowerView
 }
 
 class Router {
