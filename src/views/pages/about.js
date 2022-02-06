@@ -16,13 +16,6 @@ class AboutView {
     const template = html`
       <va-app-header title="About" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-content">        
-       <!--  <h1>About</h1>
-        <article>
-        <p>Hello and welcome to ARENA EDUCATION, We are Ali, Mikayla, Lucas, Trevor and Ryan.. and we are Team Rose. This website is our team work for the DIG33 DigEx Design Studio unit at Curtin University Australia.</p>
-        <p>ARENA EDUCATION website is based on a simulated and fictional design brief, as if it was affiliated with the Australian Renewable Energy Agency. It aims to educate young Australians about renewable energy in an easy-to-understand language, and in an interactive and playful manner.</p>
-        <p>Have fun and keep exploring renewable energy.</p>
-        </article> -->
-
         <div class="about-header">
           <div class="header-info">
             <h1>ABOUT</h1>
@@ -63,14 +56,17 @@ class AboutView {
           <div class="our-role">
             <h3>Our Role</h3>
             <h1>Connecting investment, knowledge and people to deliver energy innovation</h1>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt 
-              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            <p>Established by the Australian government in July 2012, our purpose is to support the global transition to net zero emissions by accelerating
+               the pace of pre-commercial innovation, to the benefit of Australian consumers, businesses and workers.
             </p>
           </div>
+          
 
           <img src="/images/earth.png" class="role-img"/>
+
         </div>
+
+        <hr id="about-hr">
 
         <div class="project-container">
           <div class="project-box">
@@ -83,13 +79,13 @@ class AboutView {
               </p>
             </div>
 
-            <div class="project-img"></div>
+            <div class="project-img alternative-img"></div>
             
           </div>
         </div>
 
         <div class="project-container">
-          <div class="project-box">
+          <div class="project-box alternative">
           <div class="project-img"></div>
 
             <div class="project-text">

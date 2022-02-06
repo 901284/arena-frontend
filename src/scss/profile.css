@@ -80,4 +80,28 @@
 .profile-wrapper .profile-body .input-group {
   max-width: 95%;
 }
+
+.profile-wrapper .profile-body #base64image {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+.profile-wrapper .profile-body .base64image-thumbnail {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
 /*# sourceMappingURL=profile.css.map */

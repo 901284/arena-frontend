@@ -3,7 +3,7 @@
   height: 60vh;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: left;
+  background-position: center;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0.15))), url("./../../static/images/aboutheader.jpg");
   background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("./../../static/images/aboutheader.jpg");
   display: -webkit-box;
@@ -99,7 +99,7 @@
 .about-intro h1 {
   font-size: 8rem;
   width: 80%;
-  color: var(-brand-charcoal);
+  color: var(--brand-charcoal);
   text-align: center;
 }
 
@@ -175,7 +175,12 @@
 
 .project-container .project-img {
   background-image: url("./../../static/images/car.jpeg");
+  background-size: 100%;
   width: 50%;
+}
+
+.project-container .alternative-img {
+  background-image: url("./../../static/images/hydrogen.jpeg");
 }
 
 .project-container .project-text {
@@ -197,5 +202,135 @@
   width: 90%;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+#about-hr {
+  border: 0.5px solid var(--brand-charcoal);
+  width: 95%;
+}
+
+@media (max-width: 1280px) {
+  .about-numbers .number {
+    font-size: 7rem;
+  }
+  .about-numbers .number-p {
+    font-size: 1.25rem;
+  }
+  .about-intro h1 {
+    font-size: 6rem;
+  }
+  .role-container .our-role h1 {
+    font-size: 2rem;
+  }
+  .role-container .our-role p {
+    font-size: 1rem;
+  }
+  .role-container .role-img {
+    width: 350px;
+    height: 350px;
+  }
+  .project-container p {
+    font-size: .9rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 414px) {
+  .about-header {
+    background-size: auto;
+  }
+  .about-header .header-info h1 {
+    font-size: 4rem;
+  }
+  .about-header .header-info p {
+    font-size: 1rem;
+    width: 80%;
+  }
+  .about-numbers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    padding: 2em 0;
+  }
+  .about-numbers .number {
+    font-size: 6rem;
+  }
+  .about-numbers .number-p {
+    font-size: 1rem;
+  }
+  .about-intro {
+    height: 70%;
+  }
+  .about-intro h1 {
+    font-size: 3.5rem;
+  }
+  .role-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 3em;
+  }
+  .role-container .our-role {
+    padding: 2em 0;
+    margin: 0;
+    width: 100%;
+  }
+  .role-container .our-role h1 {
+    font-size: 1.4rem;
+  }
+  .role-container .our-role p {
+    font-size: .7rem;
+  }
+  .role-container .role-img {
+    width: 250px;
+    height: 250px;
+  }
+  .project-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    width: auto;
+    padding: 0;
+    margin: 2em 2em;
+  }
+  .project-container .project-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .project-container .alternative {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .project-container h3 {
+    font-size: .75em;
+  }
+  .project-container h2 {
+    font-size: 1.5em;
+  }
+  .project-container p {
+    font-size: .5em;
+  }
+  .project-container .project-text {
+    padding: 0;
+    width: 100%;
+    padding: 2em;
+  }
+  .project-container .project-img {
+    padding: 0;
+    width: auto;
+    height: 100%;
+  }
 }
 /*# sourceMappingURL=about.css.map */

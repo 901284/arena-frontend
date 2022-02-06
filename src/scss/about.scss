@@ -3,7 +3,7 @@
     height: 60vh;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: left;
+    background-position: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.15)) , url("./../../static/images/aboutheader.jpg");
     display: flex;
     flex-direction: column;
@@ -135,7 +135,13 @@
 
     .project-img {
         background-image: url("./../../static/images/car.jpeg");
+        background-size: 100%;
         width: 50%;
+    }
+
+    .alternative-img {
+        background-image: url("./../../static/images/hydrogen.jpeg");
+
     }
 
     .project-text {
@@ -162,3 +168,157 @@
         }
 
     }
+
+#about-hr {
+    border: 0.5px solid var(--brand-charcoal);
+    width: 95%;
+}
+
+// laptop responsive design ///////////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 1280px) {
+    .about-numbers {
+        .number {
+            font-size: 7rem;
+        }
+
+        .number-p {
+            font-size: 1.25rem;
+        }
+    }
+
+    .about-intro {
+        h1 {
+            font-size: 6rem;
+        }
+    }
+
+    .role-container {
+        .our-role {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        .role-img {
+            width: 350px;
+            height: 350px;
+        }
+    }
+
+    .project-container {
+        p {
+            font-size: .9rem;
+            width: 100%;
+        }
+    }
+}
+
+// iphone responsive design ///////////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 414px) {
+    .about-header {
+        background-size: auto;
+
+        .header-info h1 {
+            font-size: 4rem;
+        }
+    
+        .header-info p {
+            font-size: 1rem;
+            width: 80%;
+
+            }
+    }
+
+    .about-numbers {
+        flex-direction: column;
+        height: auto;
+        padding: 2em 0;
+
+        .number {
+            font-size: 6rem;
+        }
+
+        .number-p {
+            font-size: 1rem;
+        }
+    }
+
+    .about-intro {
+        height: 70%;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+    }
+
+    .role-container {
+        flex-direction: column;
+        padding: 3em;
+
+        .our-role {
+        padding: 2em 0;
+        margin: 0;
+        width: 100%;
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: .7rem;
+            }
+        }
+
+        .role-img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        width: auto;
+        padding: 0;
+        margin: 2em 2em;
+
+        .project-box {
+            flex-direction: column-reverse;
+        }
+
+        .alternative {
+            flex-direction: column;
+        }
+
+        h3 {
+            font-size: .75em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        p {
+            font-size: .5em;
+        }
+
+        .project-text {
+            padding: 0;
+            width: 100%;
+            padding: 2em;
+
+        }
+
+        .project-img {
+            padding: 0;
+            width: auto;
+            height: 100%;
+        }
+    }
+}
+
