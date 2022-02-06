@@ -411,7 +411,7 @@ class HomeView {
 
         <!-- page1  -  stages 0 and 1 -->
         <div class='home-section' id='section1'>
-          <h1 class='anim-in'>Section 1</h1>
+          <h1 class='anim-in'>Hi, Welcome to ARENA! My name in Minji</h1>
           <div class='space-background space-background-small'></div>
           <div class='space'>           
            
