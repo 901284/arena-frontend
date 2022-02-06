@@ -12,6 +12,7 @@ import careersView from './views/pages/careers'
 import atmosphereView from './views/pages/atmosphere'
 import references from './views/pages/references'
 import windpowerView from './views/pages/windpower'
+import solarpowerView from './views/pages/solarpower'
 
 // define routes
 const routes = {
@@ -27,7 +28,8 @@ const routes = {
 	'/careers': careersView,
 	'/atmosphere': atmosphereView,
 	'/references': references,
-	'/windpower' : windpowerView
+	'/windpower' : windpowerView,
+	'/solarpower' : solarpowerView
 }
 
 class Router {

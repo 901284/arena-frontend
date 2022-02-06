@@ -178,6 +178,7 @@ class HomeView {
     /* elements of section 3 */ 
     let section3 = document.querySelector('#section3');
     
+    let section4 = document.querySelector('#section4')
 
 
     /* elements of section 4 */
@@ -195,9 +196,11 @@ class HomeView {
         this.down.classList.remove('hide');  
                        
         //  show or hide relevant sections 
+        section1.classList.remove('hide');         
         section2.classList.add('hide');    
-        section3.classList.add('hide');       
-        section1.classList.remove('hide');  
+        section3.classList.add('hide');      
+        section4.classList.add("hide")
+ 
          
         this.handleStage0Click(atmosphere,bubble1, bubble2, spaceBackground)
         break;
@@ -208,9 +211,11 @@ class HomeView {
         this.down.classList.remove('hide');
         
         //  show or hide relevant sections 
+        section1.classList.remove('hide');  
         section2.classList.add('hide');    
         section3.classList.add('hide');       
-        section1.classList.remove('hide');  
+        section4.classList.add("hide")
+
          
         // show the atmosphere, hide the first bubble and show the second.
         this.handleStage1Click(atmosphere,bubble1, bubble2, spaceBackground)
@@ -227,6 +232,8 @@ class HomeView {
         section1.classList.add("hide")
         section2.classList.remove("hide")
         section3.classList.add("hide")
+        section4.classList.add("hide")
+
         this.handleStage2Click(section1, section2, cloud, astronaut2, bubble3)        
 
         break;
@@ -240,9 +247,23 @@ class HomeView {
         section1.classList.add("hide")
         section2.classList.add("hide")
         section3.classList.remove("hide")
+        section4.classList.add("hide")
+
         this.handleStage3Click(section3)
         break;
     
+      case 4:  // solar power
+        // set the display class on the nav buttons.
+        this.up.classList.remove('hide');
+        this.down.classList.add('hide');
+
+        // show or hide the relevent sections 
+        section1.classList.add("hide")
+        section2.classList.add("hide")
+        section3.classList.add("hide")
+        section4.classList.remove("hide")
+        this.handleStage4Click(section4)
+        break;
 
       default:
         // stageis out of range or not set, so set to o
@@ -343,18 +364,24 @@ class HomeView {
 
 
 
-  /* ============ animateions for section 4 (... power)================= */
+  /* ============ animateions for section 4 (solar power) ================= */
   handleStage4Click(section4){
-    console.log('stage 5 click handler')
+    console.log('stage 4 click handler')
+    let astronaut = document.querySelector('.astronaut4')
+    let bubble = document.querySelector('.speech-bubble5')
+    let solarpower = document.querySelector('.solarpower')
+    let sun = document.querySelector('#sun')
 
-
-
+    const timeLineSolar = gsap.timeline();
+    timeLineSolar .fromTo(solarpower, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
+                  .fromTo(sun, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
+                  .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out"  })
+                  .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out" });
   }
 
 
 
-
-  /* ============ animateions for section 5 (....dpower)================= */
+  /* ============ animateions for section 5 (.... power) ================= */
   handleStage5Click(section5){
     console.log('stage 5 click handler')
 
@@ -362,7 +389,7 @@ class HomeView {
 
 
 
-  /* ============ animateions for section 6 (... power)================= */
+  /* ============ animateions for section 6 (... power) ================= */
   handleStage6Click(section6){
     console.log('stage 6 click handler')
 
@@ -392,11 +419,11 @@ class HomeView {
              
             </div>
 
-            <div class='atmosphere hide' id='atmos-section1' >
+            <div class='atmosphere hide' id='atmos-section1' alt='image of the atmosphere surrounding the planet' >
                          
             </div>
 
-            <div class='astronaut'>
+            <div class='astronaut' alt='animated image of Minji the astonaut'>
               
             </div>
 
@@ -416,10 +443,10 @@ class HomeView {
         <div class='home-section hide'  id='section2'>
           <h1 class='anim-in'>Earth's Atmosphere</h1>
           
-          <div class='cloud'>           
+          <div class='cloud' alt='Large circular image of the clouds in the sky containing Minji and a speech bubble'>           
            
            
-            <div class='astronaut2' @click=${()=> gotoRoute('/atmosphere')} >
+            <div class='astronaut2' alt='animated image of Minji the astonaut' @click=${()=> gotoRoute('/atmosphere')} >
               
             </div>
 
@@ -431,21 +458,26 @@ class HomeView {
 
         </div>
 
-        <!-- page3 - stage 3 -->
+        <!-- page3 - stage 3  - wind power -->
         <div class='home-section hide'  id='section3'>
           <h1 class='anim-in'>Wind Power</h1>
                  
           <div class='windpower'>                    
-            <div class='astronaut3' @click=${()=> gotoRoute('/windpower')}></div>
+            <div class='astronaut3' alt='animated image of Minji the astonaut' @click=${()=> gotoRoute('/windpower')}></div>
             <img class='speech-bubble4' id='bubble4' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/windpower')} alt='Speech bubble says "Click Minji to lean more."'>
           </div>
 
         </div>
 
-        <!-- page4  - stage 4 -->
+        <!-- page4  - stage 4 - solar power-->
         <div class='home-section hide'  id='section4'>
-          <h1 class='anim-in'>Section 4</h1>
+          <h1 class='anim-in'>Solar Power</h1>
 
+          <div class='solarpower'>                    
+            <div class='astronaut4' alt='animated image of Minji the astonaut' @click=${()=> gotoRoute('/solarpower')}></div>
+            <div id='sun' alt='Image of the sun' ></div>
+            <img class='speech-bubble5' id='bubble5' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/solarpower')} alt='Speech bubble says "Click Minji to lean more."'>
+          </div>
 
         </div>
 
