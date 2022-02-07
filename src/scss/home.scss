@@ -410,6 +410,10 @@
     top: 0;
     width: 100vw;
 
+    h1 {
+        color: var(--brand-charcoal);
+    }
+
 
     .hydrogen {
 
@@ -432,7 +436,7 @@
             height: 20%;
             left: 58%;
             top: 48%;
-            z-index: 4;
+            z-index: 6;
             animation: swing 5s infinite ease-in-out;  // swing from the sun
             transform-origin:  29% 0%;
             &:hover {
@@ -466,6 +470,7 @@
             transition: all 0.4s ease-out;
             &:hover {
                 cursor: pointer;
+                // cursor: url('./../../static/images/cursor_planet.png');   is not working. Unable to make a custom mouse pointer.
                 transform: scale(1.1);
             }
         }

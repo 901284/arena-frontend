@@ -506,7 +506,7 @@ class HomeView {
 
         <!-- page3 - stage 3  - wind power -->
         <div class='home-section hide'  id='section3'>
-          <h1 class='anim-in'>Wind Power</h1>
+          <h1 class='anim-in'>WIND POWER</h1>
                  
           <div class='windpower'>                    
             <div class='astronaut3' alt='animated image of Minji the astonaut' @click=${()=> gotoRoute('/windpower')}></div>
@@ -517,7 +517,7 @@ class HomeView {
 
         <!-- page4  - stage 4 - solar power-->
         <div class='home-section hide'  id='section4'>
-          <h1 class='anim-in'>Solar Power</h1>
+          <h1 class='anim-in'>SOLAR POWER</h1>
 
           <div class='solarpower'>                    
             <div class='astronaut4' @click=${()=> gotoRoute('/solarpower')} alt='animated image of Minji the astonaut'></div>
@@ -530,7 +530,7 @@ class HomeView {
 
         <!-- page5 - stage 5  - fossil fuels -->
         <div class='home-section hide'  id='section5'>
-          <h1 class='anim-in'>Fossil Fuels</h1>
+          <h1 class='anim-in'>FOSSIL FUELS</h1>
 
           <div class='fossilfuels' alt='Image of a hazy polluted sky'>                    
             <div class='astronaut5' @click=${()=> gotoRoute('/fossilfuels')} alt='animated image of Minji the astonaut'></div>
@@ -543,7 +543,7 @@ class HomeView {
 
         <!-- page6  - stage 6 -  hydrogen  --->
         <div class='home-section hide'  id='section6'>
-          <h1 class='anim-in'>Hydrogen</h1>
+          <h1 class='anim-in'>HYDROGEN</h1>
 
           <div class='hydrogen' alt='Image of a clear blue sky'>                    
             <div class='astronaut6' @click=${()=> gotoRoute('/hydrogen')} alt='Animated image of Minji the astonaut hanging from a pristine cloud'></div>
