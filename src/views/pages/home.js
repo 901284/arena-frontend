@@ -42,18 +42,20 @@ class HomeView {
 
     // clicking the down arrow increments the story stage to the next level
   handleDownClick(){
-    this.stageIncrement()
-    this.handleStageClick()
-     
+    let lastStage = 9;
+    if (this.getStage() < lastStage){
+      this.stageIncrement()
+      this.handleStageClick()
+    }    
   }
 
   // clicking the up arrow decrements the story stage to the previous level
   handleUpClick(){
+    if (this.getStage() > 0 ) {
     this.stageDecrement()
     this.handleStageClick()
-
+    }
   }
-
 
   setListeners(){
     console.log('setlisteners called')
@@ -65,10 +67,7 @@ class HomeView {
     this.atmosphere = document.querySelector(".atmosphere");
     this.astronaut = document.querySelector('.astronaut');
     this.astronaut2 = document.querySelector('.astronaut2');
-    this.up = document.querySelector('.up');
-    this.down = document.querySelector('.down');
-    
-  
+
     console.log('setting click listener on the Minjis');
     this.astronaut.addEventListener('click', ()=>{
       console.log('clicked minji')
@@ -93,14 +92,6 @@ class HomeView {
       }
 
     })
-
-    // more information baout atmosphere
-    this.astronaut2.addEventListener('click', () => {
-
-
-    })
-    
-
 
   }
 
@@ -157,12 +148,18 @@ class HomeView {
 
     console.log('stageclick')
 
-    /* sections 3 */ 
+    /* nav butttons */
+    let up = document.querySelector('.up');
+    let down = document.querySelector('.down'); 
+
+
+    /* sections  */ 
     let section1 = document.querySelector('#section1'); 
     let section2 = document.querySelector('#section2');
     let section3 = document.querySelector('#section3');
     let section4 = document.querySelector('#section4');
     let section5 = document.querySelector('#section5');
+    let section6 = document.querySelector('#section6');
 
     /* elements of section 1 */ 
     let spaceBackground = document.querySelector(".space-background");
@@ -181,8 +178,8 @@ class HomeView {
       case 0:  // page load and intro / hero screen
       
         // set the nav buttons
-        this.up.classList.add('hide');
-        this.down.classList.remove('hide');  
+        up.classList.add('hide');
+        down.classList.remove('hide');  
                        
         //  show or hide relevant sections 
         section1.classList.remove('hide');         
@@ -190,14 +187,16 @@ class HomeView {
         section3.classList.add('hide');      
         section4.classList.add("hide")
         section5.classList.add("hide")
+        section6.classList.add("hide")
+
           
         this.handleStage0Click(atmosphere,bubble1, bubble2, spaceBackground)
         break;
 
       case 1:  // atmosphere popup oj minji interaction
         // set the display class on the nav buttons.
-        this.up.classList.remove('hide');
-        this.down.classList.remove('hide');
+        up.classList.remove('hide');
+        down.classList.remove('hide');
         
         //  show or hide relevant sections 
         section1.classList.remove('hide');  
@@ -205,7 +204,8 @@ class HomeView {
         section3.classList.add('hide');       
         section4.classList.add("hide")
         section5.classList.add("hide")
-         
+        section6.classList.add("hide")
+
         // show the atmosphere, hide the first bubble and show the second.
         this.handleStage1Click(atmosphere,bubble1, bubble2, spaceBackground)
         break;
@@ -214,8 +214,9 @@ class HomeView {
       case 2: // atmosphere page with minji hanging from a cloud
         // code block to execure the transition from section 1 to section 2
         // set the display class on the nav buttons.
-        this.up.classList.remove('hide');
-        this.down.classList.remove('hide');
+        up.classList.remove('hide');
+        down.classList.remove('hide');
+        
 
         // show and hide the relevant sections
         section1.classList.add("hide")
@@ -223,6 +224,7 @@ class HomeView {
         section3.classList.add("hide")
         section4.classList.add("hide")
         section5.classList.add("hide")
+        section6.classList.add("hide")
 
         this.handleStage2Click(section1, section2, cloud, astronaut2, bubble3)        
 
@@ -230,8 +232,9 @@ class HomeView {
       
       case 3:  // wind power page
         // set the display class on the nav buttons.
-        this.up.classList.remove('hide');
-        this.down.classList.remove('hide');
+        up.classList.remove('hide');
+        down.classList.remove('hide');
+        
         
         // show and hide the relevant sections
         section1.classList.add("hide")
@@ -239,14 +242,16 @@ class HomeView {
         section3.classList.remove("hide")
         section4.classList.add("hide")
         section5.classList.add("hide")
+        section6.classList.add("hide")
 
         this.handleStage3Click(section3)
         break;
     
       case 4:  // solar power
         // set the display class on the nav buttons.
-        this.up.classList.remove('hide');
-        this.down.classList.add('hide');
+        up.classList.remove('hide');
+        down.classList.remove('hide');
+        
 
         // show or hide the relevent sections 
         section1.classList.add("hide")
@@ -254,24 +259,42 @@ class HomeView {
         section3.classList.add("hide")
         section4.classList.remove("hide")
         section5.classList.add("hide")
+        section6.classList.add("hide")
 
         this.handleStage4Click(section4)
         break;
 
       case 5:  // fossil fuels
-      // set the display class on the nav buttons.
-      this.up.classList.remove('hide');
-      this.down.classList.add('hide');
+        // set the display class on the nav buttons.
+        up.classList.remove('hide');
+        down.classList.remove('hide');
+        
+        // show or hide the relevent sections 
+        section1.classList.add("hide")
+        section2.classList.add("hide")
+        section3.classList.add("hide")
+        section4.classList.add("hide")
+        section5.classList.remove("hide")
+        section6.classList.add("hide")
 
-      // show or hide the relevent sections 
-      section1.classList.add("hide")
-      section2.classList.add("hide")
-      section3.classList.add("hide")
-      section4.classList.add("hide")
-      section5.classList.remove("hide")
-      this.handleStage5Click(section5)
-      break;
+        this.handleStage5Click(section5)
+        break;
 
+      case 6:  // fossil fuels
+        // set the display class on the nav buttons.
+        up.classList.remove('hide');
+        down.classList.remove('hide');
+        
+        // show or hide the relevent sections 
+        section1.classList.add("hide")
+        section2.classList.add("hide")
+        section3.classList.add("hide")
+        section4.classList.add("hide")
+        section5.classList.add("hide")
+        section6.classList.remove("hide")
+
+        this.handleStage6Click(section6)
+        break;
 
       default:
         // stageis out of range or not set, so set to o
@@ -406,9 +429,20 @@ class HomeView {
   }
 
 
-  /* ============ animateions for section 6 (... power) ================= */
+  /* ============ animateions for section 6 ( hydrogen ) ================= */
   handleStage6Click(section6){
     console.log('stage 6 click handler')
+
+    let astronaut = document.querySelector('.astronaut6')
+    let bubble = document.querySelector('#bubble7')
+    let hydrogen = document.querySelector('.hydrogen')
+    let h2o = document.querySelector('#h2o')
+
+    const timeLineFossilfuels = gsap.timeline();
+    timeLineFossilfuels .fromTo(hydrogen, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
+                        .fromTo(h2o, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
+                        .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out"  })
+                        .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out" });
 
   }
 
@@ -461,16 +495,11 @@ class HomeView {
           <h1 class='anim-in'>Earth's Atmosphere</h1>
           
           <div class='cloud' alt='Large circular image of the clouds in the sky containing Minji and a speech bubble'>           
-           
-           
-            <div class='astronaut2' alt='animated image of Minji the astonaut' @click=${()=> gotoRoute('/atmosphere')} >
-              
-            </div>
+            
+            <div class='astronaut2' alt='animated image of Minji the astonaut' @click=${()=> gotoRoute('/atmosphere')} ></div>
 
             <img class='speech-bubble3' id='bubble3' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/atmosphere')} alt='Speech bubble says "Click Minji to lean more."'>
-                      
-                                   
-   
+                         
           </div>
 
         </div>
@@ -512,10 +541,15 @@ class HomeView {
         </div>
 
 
-        <!-- page6  - stage 6-->
+        <!-- page6  - stage 6 -  hydrogen  --->
         <div class='home-section hide'  id='section6'>
-          <h1 class='anim-in'>Section 6</h1>
+          <h1 class='anim-in'>Hydrogen</h1>
 
+          <div class='hydrogen' alt='Image of a clear blue sky'>                    
+            <div class='astronaut6' @click=${()=> gotoRoute('/hydrogen')} alt='Animated image of Minji the astonaut hanging from a pristine cloud'></div>
+            <div id='h2o' @click=${()=> gotoRoute('/hydrogen')} alt='Image of smog in the sky' ></div>
+            <img class='speech-bubble7' id='bubble7' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/hydrogen')} alt='Speech bubble says "Click Minji to lean more."'>
+          </div>
 
         </div>
 

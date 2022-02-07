@@ -178,37 +178,38 @@ a {
   left: 4vw;
   z-index: 6;
 
-  .up {
-      display: inline-block;
-      width: min(5vh, 5vw);
-      height: min(5vh, 5vw);
-      background: url('./../../static/images/chevron-up.png');
-      z-index: 6;
-      background-size:contain;
-      background-repeat: no-repeat;
-      margin-right: 1vw;
-      transition: all 0.2s ease-out;
-      &:hover {
-          cursor: pointer;
-          transform: scale(1.2);
-      }
+  .nav-button {
+    width: min(5vh, 5vw);
+    height: min(5vh, 5vw);
+    z-index: 6;
+    transition: all 0.2s ease-out;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
 
+  .up {
+    @extend .nav-button;
+    background: url('./../../static/images/chevron-up.png');
+    margin-right: 1vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
   } 
 
   // story nav down button 
   .down {
-      display: inline-block;
-      width: min(5vh, 5vw);
-      height: min(5vh, 5vw);
-      background: url('./../../static/images/chevron-down.png');
-      background-size:contain;
-      background-repeat: no-repeat;
-      transition: all 0.2s ease-out;
-      &:hover {
-          cursor: pointer;
-          transform: scale(1.2);
-      }
+    @extend .nav-button;
+    display: inline-block;
+    background: url('./../../static/images/chevron-down.png');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 
