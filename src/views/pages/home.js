@@ -144,22 +144,38 @@ class HomeView {
   }
 
 
-  handleStageClick(){
+  // quicky hide all sections. This is usually used before showing a section to ensure the lage is clear before unhiding a particular sectin and animating the elements into view.
+  hideAllSections(){
+    document.querySelector('#section1').classList.add('hide'); // learn more about atmosphere
+    document.querySelector('#section2').classList.add('hide'); // earths atmosphere
+    document.querySelector('#section3').classList.add('hide'); // wind power - before interaction
+    document.querySelector('#section4').classList.add('hide'); // solar power - before interaction
+    document.querySelector('#section5').classList.add('hide'); // fossil fuel - before interaction
+    document.querySelector('#section6').classList.add('hide'); // hydrogen - before interaction
+    document.querySelector('#section7').classList.add('hide'); // nuclear - before interaction
+    document.querySelector('#section8-game').classList.add('hide'); // game section  - before interaction
+    document.querySelector('#section9-ask').classList.add('hide'); // ask anything section  - before interaction 
+  }
+  
 
+  handleStageClick(){
     console.log('stageclick')
 
     /* nav butttons */
     let up = document.querySelector('.up');
     let down = document.querySelector('.down'); 
 
-
     /* sections  */ 
-    let section1 = document.querySelector('#section1'); 
-    let section2 = document.querySelector('#section2');
-    let section3 = document.querySelector('#section3');
-    let section4 = document.querySelector('#section4');
-    let section5 = document.querySelector('#section5');
-    let section6 = document.querySelector('#section6');
+    let section1 = document.querySelector('#section1'); // learn more about atmosphere
+    let section2 = document.querySelector('#section2'); // earths atmosphere
+    let section3 = document.querySelector('#section3'); // wind power - before interaction
+    let section4 = document.querySelector('#section4'); // solar power - before interaction
+    let section5 = document.querySelector('#section5'); // fossil fuel - before interaction
+    let section6 = document.querySelector('#section6'); // hydrogen - before interaction
+    let section7 = document.querySelector('#section7'); // nuclear - before interaction
+    let section8 = document.querySelector('#section8-game') // game section  - before interaction   
+    let section9 = document.querySelector('#section9-ask') // ask anything section  - before interaction 
+    
 
     /* elements of section 1 */ 
     let spaceBackground = document.querySelector(".space-background");
@@ -182,14 +198,8 @@ class HomeView {
         down.classList.remove('hide');  
                        
         //  show or hide relevant sections 
-        section1.classList.remove('hide');         
-        section2.classList.add('hide');    
-        section3.classList.add('hide');      
-        section4.classList.add("hide")
-        section5.classList.add("hide")
-        section6.classList.add("hide")
-
-          
+        this.hideAllSections();
+        section1.classList.remove('hide');                
         this.handleStage0Click(atmosphere,bubble1, bubble2, spaceBackground)
         break;
 
@@ -199,12 +209,8 @@ class HomeView {
         down.classList.remove('hide');
         
         //  show or hide relevant sections 
+        this.hideAllSections();
         section1.classList.remove('hide');  
-        section2.classList.add('hide');    
-        section3.classList.add('hide');       
-        section4.classList.add("hide")
-        section5.classList.add("hide")
-        section6.classList.add("hide")
 
         // show the atmosphere, hide the first bubble and show the second.
         this.handleStage1Click(atmosphere,bubble1, bubble2, spaceBackground)
@@ -216,51 +222,32 @@ class HomeView {
         // set the display class on the nav buttons.
         up.classList.remove('hide');
         down.classList.remove('hide');
-        
-
+      
         // show and hide the relevant sections
-        section1.classList.add("hide")
+        this.hideAllSections();
         section2.classList.remove("hide")
-        section3.classList.add("hide")
-        section4.classList.add("hide")
-        section5.classList.add("hide")
-        section6.classList.add("hide")
-
         this.handleStage2Click(section1, section2, cloud, astronaut2, bubble3)        
-
         break;
       
       case 3:  // wind power page
         // set the display class on the nav buttons.
         up.classList.remove('hide');
-        down.classList.remove('hide');
-        
+        down.classList.remove('hide');   
         
         // show and hide the relevant sections
-        section1.classList.add("hide")
-        section2.classList.add("hide")
-        section3.classList.remove("hide")
-        section4.classList.add("hide")
-        section5.classList.add("hide")
-        section6.classList.add("hide")
-
+        this.hideAllSections();
+        section3.classList.remove("hide")  
         this.handleStage3Click(section3)
         break;
     
       case 4:  // solar power
         // set the display class on the nav buttons.
         up.classList.remove('hide');
-        down.classList.remove('hide');
-        
+        down.classList.remove('hide');   
 
         // show or hide the relevent sections 
-        section1.classList.add("hide")
-        section2.classList.add("hide")
-        section3.classList.add("hide")
+        this.hideAllSections();
         section4.classList.remove("hide")
-        section5.classList.add("hide")
-        section6.classList.add("hide")
-
         this.handleStage4Click(section4)
         break;
 
@@ -270,13 +257,8 @@ class HomeView {
         down.classList.remove('hide');
         
         // show or hide the relevent sections 
-        section1.classList.add("hide")
-        section2.classList.add("hide")
-        section3.classList.add("hide")
-        section4.classList.add("hide")
+        this.hideAllSections();
         section5.classList.remove("hide")
-        section6.classList.add("hide")
-
         this.handleStage5Click(section5)
         break;
 
@@ -286,15 +268,47 @@ class HomeView {
         down.classList.remove('hide');
         
         // show or hide the relevent sections 
-        section1.classList.add("hide")
-        section2.classList.add("hide")
-        section3.classList.add("hide")
-        section4.classList.add("hide")
-        section5.classList.add("hide")
+        this.hideAllSections();
         section6.classList.remove("hide")
-
         this.handleStage6Click(section6)
         break;
+
+      case 7: // nuclear
+        // set the display class on the nav buttons.
+        up.classList.remove('hide');
+        down.classList.remove('hide');
+        
+        // show or hide the relevent sections 
+        this.hideAllSections();
+        section7.classList.remove("hide")
+        this.handleStage7Click(section7)
+        break;
+
+        
+      case 8: // game 
+        // set the display class on the nav buttons.
+        up.classList.remove('hide');
+        down.classList.remove('hide');
+        
+        // show or hide the relevent sections 
+        this.hideAllSections();
+        section8.classList.remove("hide")
+        this.handleStage8Click(section8)
+        break;
+
+
+      case 9: // ask anything 
+      // set the display class on the nav buttons.
+      up.classList.remove('hide');
+      down.classList.remove('hide');
+      
+      // show or hide the relevent sections 
+      this.hideAllSections();
+      section9.classList.remove("hide")
+      this.handleStage9Click(section9)
+      break;
+
+
 
       default:
         // stageis out of range or not set, so set to o
@@ -406,8 +420,8 @@ class HomeView {
     const timeLineSolar = gsap.timeline();
     timeLineSolar .fromTo(solarpower, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
                   .fromTo(sun, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
-                  .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out"  })
-                  .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out" });
+                  .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out"  })
+                  .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out" });
   }
 
 
@@ -424,8 +438,8 @@ class HomeView {
     const timeLineFossilfuels = gsap.timeline();
     timeLineFossilfuels .fromTo(fossilFuels, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
                         .fromTo(smog, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
-                        .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out"  })
-                        .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out" });
+                        .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out"  })
+                        .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out" });
   }
 
 
@@ -441,14 +455,69 @@ class HomeView {
     const timeLineFossilfuels = gsap.timeline();
     timeLineFossilfuels .fromTo(hydrogen, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
                         .fromTo(h2o, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
-                        .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out"  })
-                        .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out" });
+                        .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out"  })
+                        .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out" });
 
   }
 
 
 
+  /* ============ animateions for section 7 ( nuclear ) ================= */
+  handleStage7Click(section7){
+    console.log('stage 7 click handler')
 
+    let astronaut = document.querySelector('.astronaut7')
+    let bubble = document.querySelector('#bubble8')
+    let nuclear = document.querySelector('.nuclear')
+    let nuclearCloud = document.querySelector('#nuclear-cloud')
+
+    const timelineNuclear = gsap.timeline();
+    timelineNuclear .fromTo(nuclear, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
+                        .fromTo(nuclearCloud, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
+                        .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out"  })
+                        .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out" });
+
+  }
+
+
+
+  /* ============ animateions for section 8 ( game ) ================= */
+  handleStage8Click(section8){
+    console.log('stage 8 click handler')
+
+    let astronaut = document.querySelector('.astronaut-play')
+    let bubble = document.querySelector('#bubble-play')
+    let game = document.querySelector('.game')
+    let gameController = document.querySelector('#game-controller')
+
+    const timelinePlayGame = gsap.timeline();
+    timelinePlayGame  .fromTo(game, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
+                      .fromTo(gameController, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
+                      .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out"  })
+                      .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out" });
+
+  }
+
+  /* ============ animateions for section 9 ( ask anything ) ================= */
+  handleStage9Click(section9){
+    console.log('stage 9 click handler')
+
+    let astronaut = document.querySelector('.astronaut-ask')
+    let bubble = document.querySelector('#bubble-question')
+    let ask = document.querySelector('.ask')
+    let questionmark = document.querySelector('#questionmark')
+
+    const timelineAskMe = gsap.timeline();
+    timelineAskMe .fromTo(ask, {opacity: 0, scale: 0.5 }, {opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" })
+                  .fromTo(questionmark, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "elastic.out" })
+                  .fromTo(astronaut, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out"  })
+                  .fromTo(bubble,  { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power4.out" });
+
+  }
+
+
+
+  // render out the page contenet.
   render(){
     const template = html`
       <va-app-header title="Home" user=${JSON.stringify(Auth.currentUser)}></va-app-header>
@@ -466,25 +535,18 @@ class HomeView {
           <div class='space-background space-background-small'></div>
           <div class='space'>           
            
-            <div class='earth'> 
-             
-            </div>
+            <div class='earth'></div>
 
-            <div class='atmosphere hide' id='atmos-section1' alt='image of the atmosphere surrounding the planet' >
-                         
-            </div>
+            <div class='atmosphere hide' id='atmos-section1' alt='image of the atmosphere surrounding the planet' ></div>
 
-            <div class='astronaut' alt='animated image of Minji the astonaut'>
-              
-            </div>
+            <div class='astronaut' alt='animated image of Minji the astonaut'></div>
 
             <img class='speech-bubble' id='bubble1' src='/images/section1-bubble1.png' alt='Speech bubble says "Click me, please.  I need atmosphere to breethe!"'>
                       
             <img class='speech-bubble hide' id='bubble2'  src='/images/section1-bubble2.png' 
               alt='Speech bubble says "Oh, Thank you!  My name is Minji from teh clean plannet. 
               I am here to help you learn to keep your beautiful Bleu Marble plannet habitable for many years to come! 
-              Buckle up and enjoy the ride!"'>
-                        
+              Buckle up and enjoy the ride!"'>                   
    
           </div>
 
@@ -554,43 +616,44 @@ class HomeView {
         </div>
 
 
-        <!-- page7  -->
+        <!-- page7  - nuclear power -->
         <div class='home-section hide'  id='section7'>
-          <h1 class='anim-in'>Section 7</h1>
+          <h1 class='anim-in'>NUCLEAR POWER</h1>
 
-
-        </div>
-
-
-        <!-- page8 -->
-        <div class='home-section hide'  id='sectio8'>
-          <h1 class='anim-in'>Section 8</h1>
-
+          <div class='nuclear' alt='Image of yelow nuclear cloud in a blue sky'>                    
+            <div class='astronaut7' @click=${()=> gotoRoute('/nuclear')} alt='Animated image of Minji the astonaut swinging from the nuclear cloud'></div>
+            <div id='nuclear-cloud' @click=${()=> gotoRoute('/nuclear')} alt='The yellow and white nuclear cloud' ></div>
+            <img class='speech-bubble8' id='bubble8' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/nuclear')} alt='Speech bubble says "Click Minji to lean more."'>
+          </div>
 
         </div>
 
-        <!-- page9-->
-        <div class='home-section hide'  id='section9'>
-          <h1 class='anim-in'>Section 9</h1>
 
+        <!-- page8  - the power supply game -->
+        <div class='home-section hide'  id='section8-game'>
+          <h1 class='anim-in'>POWER SUPPLY GAME</h1>
+
+
+          <div class='game' alt='Logo image of the game controller in the center of the screen'>                    
+            <div class='astronaut-play' @click=${()=> gotoRoute('/game')} alt='Animated image of Minji the astonaut swinging from a game controller'></div>
+            <div id='game-controller' @click=${()=> gotoRoute('/game')} alt='Game controller logo image' ></div>
+            <img class='speech-bubble-play' id='bubble-play' src='/images/bubble-play.png' @click=${()=> gotoRoute('/game')} alt='Speech bubble says "Click Minji to play the game"'>
+          </div>
+
+        </div>
+
+        <!-- page9-  ask me anything -->
+        <div class='home-section hide'  id='section9-ask'>
+          <h1 class='anim-in'>ASK ME ANYTHING</h1>
+
+
+          <div class='ask' alt='Question mark logo centered in a sircular blue sky'>                    
+            <div class='astronaut-ask' @click=${()=> gotoRoute('/ask')} alt='Animated image of Minji the astonaut swinging from a game controller.'></div>
+            <div id='questionmark' @click=${()=> gotoRoute('/ask')} alt='Game controller logo image.' ></div>
+            <img class='speech-bubble-question' id='bubble-question' src='/images/section2-bubble1-learn.png' @click=${()=> gotoRoute('/ask')} alt='Speech bubble says "Click Minji to learn more."'>
+          </div>
 
         </div>       
-        
-        <!-- page10-->
-        <div class='home-section hide'  id='section10' >
-          <h1 class='anim-in'>Section 10</h1>
-
-
-        </div>       
-        
-        <!-- page11- -->
-        <div class='home-section hide'  id='section11'>
-          <h1 class='anim-in'>Section 11</h1>
-
-
-        </div>
-
-
 
       </div>
      

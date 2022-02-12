@@ -15,6 +15,8 @@ import windpowerView from './views/pages/windpower'
 import solarpowerView from './views/pages/solarpower'
 import fossilfuelsView from './views/pages/fossilfuels'
 import hydrogenView from './views/pages/hydrogen'
+import gameView from './views/pages/game'
+import askView from './views/pages/ask'
 
 // define routes
 const routes = {
@@ -30,10 +32,12 @@ const routes = {
 	'/careers': careersView,
 	'/atmosphere': atmosphereView,
 	'/references': references,
-	'/windpower' : windpowerView,
-	'/solarpower' : solarpowerView,
-	'/fossilfuels' : fossilfuelsView,
-	'/hydrogen' : hydrogenView,
+	'/windpower': windpowerView,
+	'/solarpower': solarpowerView,
+	'/fossilfuels': fossilfuelsView,
+	'/hydrogen': hydrogenView,
+	'/game': gameView,
+	'/ask': askView
 }
 
 class Router {

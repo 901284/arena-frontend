@@ -5,13 +5,13 @@ import Auth from '../../Auth'
 import Utils from '../../Utils'
 import { gsap } from "gsap";
 
-class hydrogenView {
+class HydrogenView {
 
   
   init(){    
     console.log('Hydrogen.init')
     
-    document.title = "Fossil Fuels"  
+    document.title = "Hydrogen Power"  
     this.render()    
     this.setListeners()
     Utils.pageIntroAnim()  
@@ -179,4 +179,4 @@ class hydrogenView {
 
 }
 
-export default new hydrogenView()
+export default new HydrogenView()

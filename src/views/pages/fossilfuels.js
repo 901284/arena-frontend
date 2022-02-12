@@ -5,7 +5,7 @@ import Auth from '../../Auth'
 import Utils from '../../Utils'
 import { gsap } from "gsap";
 
-class fossilfuelsView {
+class FossilfuelsView {
 
   
   init(){    
@@ -178,4 +178,4 @@ class fossilfuelsView {
 
 }
 
-export default new fossilfuelsView()
+export default new FossilfuelsView()

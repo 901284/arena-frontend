@@ -409,11 +409,9 @@
     position: absolute;
     top: 0;
     width: 100vw;
-
     h1 {
         color: var(--brand-charcoal);
     }
-
 
     .hydrogen {
 
@@ -474,16 +472,223 @@
                 transform: scale(1.1);
             }
         }
-
     }
-
-
-
-
-
-
 }
 
+
+
+
+// --- section 7 - nuclear  -----------------------------
+#section7 {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    h1 {
+        color: var(--brand-charcoal);
+    }
+
+    .nuclear {
+
+        // circular sky image in the middle of the screen 
+        @extend .space-template;
+        background: url('./../../static/images/blue_sky_background.png');
+        background-size: cover;
+        border-radius: 0;
+        z-index: 5;
+
+        // alt image of the astronaut with the sun glare off of his visor
+        .astronaut7 {
+            --swing-radius: 40vh; 
+            --top-position: 40vh;
+            position: absolute;
+            background: url('./../../static/images/astronaut_solar.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18%;
+            height: 20%;
+            left: 58%;
+            top: 48%;
+            z-index: 6;
+            animation: swing 5s infinite ease-in-out;  // swing from the sun
+            transform-origin:  29% 0%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        // image of the radiating sun 
+        #nuclear-cloud {
+            position: absolute;
+            height: 50%;
+            width: 35%;
+            left: 33%;
+            top: 25%;
+            z-index: 6;
+            background: url('./../../static/images/h2o_cloud.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    
+        // click me to lean more about solar power
+        #bubble8 {
+            position: absolute;
+            width: 35%;
+            left: 73%;
+            top: 50%;
+            z-index: 6;
+            transition: all 0.4s ease-out;
+            &:hover {
+                cursor: pointer;
+                // cursor: url('./../../static/images/cursor_planet.png');   is not working. Unable to make a custom mouse pointer.
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// --- section 8 - game (before minji interaction)  -----------------------------
+#section8-game {
+
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    h1 {
+        color: var(--brand-charcoal);
+    }
+    .game {
+
+        // circular sky image in the middle of the screen 
+        @extend .space-template;
+        background: url('./../../static/images/blue_sky_background.png');
+        background-size: cover;
+        border-radius: 0;
+        z-index: 5;
+
+        // alt image of the astronaut with the sun glare off of his visor
+        .astronaut-play {
+            --swing-radius: 40vh; 
+            --top-position: 40vh;
+            position: absolute;
+            background: url('./../../static/images/astronaut_solar.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18%;
+            height: 20%;
+            left: 55%;
+            top: 46%;
+            z-index: 6;
+            animation: swing 5s infinite ease-in-out;  // swing from the sun
+            transform-origin:  29% 0%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        // image of the radiating sun 
+        #game-controller {
+            position: absolute;
+            height: 50%;
+            width: 35%;
+            left: 33%;
+            top: 25%;
+            z-index: 6;
+            background: url('./../../static/images/game-controller.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    
+        // click me to lean more about solar power
+        #bubble-play {
+            position: absolute;
+            width: 42%;
+            left: 71%;
+            top: 45%;
+            z-index: 6;
+            transition: all 0.4s ease-out;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// --- section 8 - game (before minji interaction)  -----------------------------
+#section9-ask {
+
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    h1 {
+        color: var(--brand-charcoal);
+    }
+    .ask {
+
+        // circular sky image in the middle of the screen 
+        @extend .space-template;
+        background: url('./../../static/images/blue_sky_background.png');
+        background-size: cover;
+        border-radius: 0;
+        z-index: 5;
+
+        // image of the radiating sun 
+        #questionmark {
+            position: absolute;
+            height: 40%;
+            width: 35%;
+            left: 35%;
+            top: 10%;
+            z-index: 6;
+            background: url('./../../static/images/questionmark.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+                  
+
+        // alt image of the astronaut with the sun glare off of his visor
+        .astronaut-ask {
+            --swing-radius: 40vh; 
+            --top-position: 40vh;
+            position: absolute;
+            background: url('./../../static/images/astronaut_solar.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 18%;
+            height: 20%;
+            left: 52%;
+            top: 49%;
+            z-index: 5;
+            animation: swing 5s infinite ease-in-out;  // swing from the sun
+            transform-origin:  29% 0%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        // click me to lean more about solar power
+        #bubble-question {
+            position: absolute;
+            width: 45%;
+            left: 68%;
+            top: 50%;
+            z-index: 6;
+            transition: all 0.4s ease-out;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
 
 
 
