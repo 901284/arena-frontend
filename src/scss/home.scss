@@ -93,7 +93,7 @@
         transform-origin:  top center;
 
         &:hover {
-            cursor: pointer;
+            cursor: url('./../../static/images/cursor_planet.png'), pointer;  
         }
 
     }
@@ -124,7 +124,7 @@
         z-index: 2;
         transition: all 0.4s ease-out;
         &:hover {
-            cursor: pointer;
+            cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             transform: scale(1.1);
         }
     }
@@ -184,7 +184,7 @@
     transform-origin:  29% 0%;
 
     &:hover {
-        cursor: pointer;
+        cursor: url('./../../static/images/cursor_planet.png'), pointer;  
     }
 
 
@@ -199,7 +199,7 @@
     z-index: 6;
 
     &:hover {
-        cursor: pointer;
+        cursor: url('./../../static/images/cursor_planet.png'), pointer;  
     }
 }
 
@@ -238,7 +238,7 @@
     transform-origin:  29% 0%;
 
     &:hover {
-        cursor: pointer;
+        cursor: url('./../../static/images/cursor_planet.png'), pointer;  
     }
 }
 
@@ -250,7 +250,7 @@
     z-index: 6;
 
     &:hover {
-        cursor: pointer;
+        cursor: url('./../../static/images/cursor_planet.png'), pointer;  
     }
 
 }
@@ -288,7 +288,7 @@
             animation: swing 5s infinite ease-in-out;  // swing from the sun
             transform-origin:  29% 0%;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
 
@@ -304,7 +304,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
     
@@ -317,7 +317,7 @@
             z-index: 6;
             transition: all 0.4s ease-out;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
                 transform: scale(1.1);
             }
         }
@@ -358,7 +358,7 @@
             animation: swing 5s infinite ease-in-out;  // swing from the sun
             transform-origin:  29% 0%;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
 
@@ -374,7 +374,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
     
@@ -387,7 +387,7 @@
             z-index: 6;
             transition: all 0.4s ease-out;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
                 transform: scale(1.1);
             }
         }
@@ -431,7 +431,7 @@
             animation: swing 5s infinite ease-in-out;  // swing from the sun
             transform-origin:  29% 0%;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
 
@@ -447,7 +447,8 @@
             background-size: contain;
             background-repeat: no-repeat;
             &:hover {
-                cursor: pointer;
+                // cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
     
@@ -460,8 +461,8 @@
             z-index: 6;
             transition: all 0.4s ease-out;
             &:hover {
-                cursor: pointer;
-                // cursor: url('./../../static/images/cursor_planet.png');   is not working. Unable to make a custom mouse pointer.
+                // cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
                 transform: scale(1.1);
             }
         }
@@ -505,7 +506,7 @@
             animation: swing 5s infinite ease-in-out;  // swing from the sun
             transform-origin:  29% 0%;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
 
@@ -521,7 +522,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
     
@@ -534,7 +535,7 @@
             z-index: 6;
             transition: all 0.4s ease-out;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
                 // cursor: url('./../../static/images/cursor_planet.png');   is not working. Unable to make a custom mouse pointer.
                 transform: scale(1.1);
             }
@@ -576,7 +577,7 @@
             animation: swing 5s infinite ease-in-out;  // swing from the sun
             transform-origin:  29% 0%;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
 
@@ -592,7 +593,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
     
@@ -605,7 +606,7 @@
             z-index: 6;
             transition: all 0.4s ease-out;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
                 transform: scale(1.1);
             }
         }
@@ -642,7 +643,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
                   
@@ -663,7 +664,7 @@
             animation: swing 5s infinite ease-in-out;  // swing from the sun
             transform-origin:  29% 0%;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
             }
         }
 
@@ -676,7 +677,7 @@
             z-index: 6;
             transition: all 0.4s ease-out;
             &:hover {
-                cursor: pointer;
+                cursor: url('./../../static/images/cursor_planet.png'), pointer;  
                 transform: scale(1.1);
             }
         }
