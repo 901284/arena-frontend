@@ -213,6 +213,17 @@ a {
 }
 
 
+.app-logo {
+  position: absolute;
+  display: inline-block;
+  background-image: url('./../../static/images/footer-logo.png');
+  object-fit: contain;
+  height: min(4vw, 4vh);
+  top: 5vh;
+  left: 2vw;
+  z-index: 20;
+  
+}
 
 
 // RESPONSIVE - MOBILE -------------------
@@ -222,4 +233,17 @@ a {
     width: 90%;
     max-width: none;
   }
+
+
+  app-footer {
+    display: none;
+
+  }
+
+  // .app-logo {
+  //   display: none;
+  // }
+
+
+
 }

@@ -49,6 +49,8 @@ class ContactView {
         </div>
         
       </div>      
+      <app-footer></app-footer>
+
     `
     render(template, App.rootEl)
     

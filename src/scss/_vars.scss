@@ -24,6 +24,10 @@
   --app-header-txt-color: #fff;
   --app-header-title-font-size: 1.6em;
 
+
+  // app footer
+  --app-footer-height: 60px;
+
   // shoelace tokens
   // full list here:
   // https://github.com/shoelace-style/shoelace/blob/current/src/styles/base.scss
@@ -39,3 +43,4 @@
   --sl-color-primary-900: #{darken($brand-color, 40%)};
   --sl-focus-ring-color-primary: #{rgba($brand-color, 0.1)};
 }
+

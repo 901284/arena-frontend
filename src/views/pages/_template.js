@@ -19,6 +19,8 @@ class TemplateView {
         <p>Page content ...</p>
         
       </div>      
+      <app-footer></app-footer>
+
     `
     render(template, App.rootEl)
   }

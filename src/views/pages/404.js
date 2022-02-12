@@ -14,6 +14,8 @@ class FourOFourView{
         <h1>Opps!</h1>
         <p>Sorry, we couldn't find that.</p>
       </div>
+      <app-footer></app-footer>
+
     `
     render(template, App.rootEl)
   }

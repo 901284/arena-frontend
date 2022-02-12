@@ -1,0 +1,40 @@
+
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: var(--app-footer-height);
+    color: black;
+    display: flex;
+    z-index: 9;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    
+}
+  
+
+  .footer-container {
+      width: 15%;
+      text-align: center;
+      align-items: center;
+      vertical-align: middle;
+
+      img {
+         height: 100%;
+         object-fit: contain;
+        
+      }
+  }
+
+  /* responsive to mobile ------------------- */
+  @media all and (max-width: 768px){       
+
+    /* hide the footer to save screen realestate */
+    .app-footer  {
+      display: none;
+    }
+        
+  }

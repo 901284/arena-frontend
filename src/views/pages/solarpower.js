@@ -151,6 +151,8 @@ class SolarpowerView {
           </div>
         </div>  
       </div>
+      <app-footer></app-footer>
+
      
     `
     render(template, App.rootEl)

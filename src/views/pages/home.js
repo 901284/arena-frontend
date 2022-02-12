@@ -5,6 +5,7 @@ import Auth from './../../Auth'
 import Utils from './../../Utils'
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
+import AppFooter from "./../../components/app-footer";
 // import { scrolltrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -521,16 +522,17 @@ class HomeView {
   render(){
     const template = html`
       <va-app-header title="Home" user=${JSON.stringify(Auth.currentUser)}></va-app-header>
-      
       <div class="page-content">
 
         <div class='nav-container'>
           <div class='up' @click=${()=> this.handleUpClick()} ></div>
           <div class='down' @click=${()=> this.handleDownClick()} ></div>
         </div>
+        
 
         <!-- page1  -  stages 0 and 1 -->
         <div class='home-section' id='section1'>
+          
           <h1 class='anim-in'>Hi, Welcome to ARENA! My name in Minji</h1>
           <div class='space-background space-background-small'></div>
           <div class='space'>           
@@ -656,6 +658,7 @@ class HomeView {
         </div>       
 
       </div>
+      <app-footer></app-footer>
      
     `
     render(template, App.rootEl)

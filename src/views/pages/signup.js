@@ -49,6 +49,8 @@ class SignUpView{
           <p>Have an account? <a href="/signin" @click=${anchorRoute}>Sign In</a></p>
         </div>
       </div>
+      <app-footer></app-footer>
+
     `
     render(template, App.rootEl)
   }
