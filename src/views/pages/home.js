@@ -5,13 +5,8 @@ import Auth from './../../Auth'
 import Utils from './../../Utils'
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
-import AppFooter from "./../../components/app-footer";
-// import { scrolltrigger } from "gsap/ScrollTrigger.js";
+import AppFooter from './../../components/app-footer';
 gsap.registerPlugin(MotionPathPlugin);
-
-
-/* TREV IS DOING THIS BIT. WORK IN POROGRESS   */
-
 
 class HomeView {
 
@@ -95,7 +90,7 @@ class HomeView {
     })
 
   }
-
+ 
 
   // helper functions to set the stage in local storage/
   stageIncrement(){

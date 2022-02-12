@@ -18,7 +18,7 @@ customElements.define('app-footer', class AppFooter extends LitElement {
     <style>
 
       .app-footer {
-          position: fixed;
+          position: absolute;
           bottom: 0;
           right: 0;
           left: 0;
