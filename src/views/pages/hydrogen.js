@@ -134,10 +134,10 @@ class HydrogenView {
             <p>Click on the image below to learn more about the fuel cells.</p>
             <br>
             <div class='calign'>
-                  <img id='fuel-cells-image' src='/images/fuel-cells-image.png' alt='Image of fuel cells?.'>
+                  <a href="https://www.energy.gov/eere/fuelcells/fuel-cells/"><img id='fuel-cells-image' src='/images/fuel-cells-image.png' alt='Image of fuel cells?.'></a>
             </div>
             <h4>FUEL CELLS</h4>
-            <p>(Open in a new window:https://www.energy.gov/eere/fuelcells/fuel-cells/)</p>
+            <!-- <p>(Open in a new window:https://www.energy.gov/eere/fuelcells/fuel-cells/)</p> -->
             <br>
             <h4>Hydrogen-powered Vehicles</h4>
             <br>
@@ -157,10 +157,10 @@ class HydrogenView {
             <br>
             <p>Click on the image below to learn more about the future hydrogen-powered airplanes.</p>
             <div class='calign'>
-                  <img id='airbus-hydrogen-image' src='/images/airbus-hydrogen-airplanes.png' alt='Image of airbus hydrogen powered airplanes?.'>
+                  <a href="https://www.airbus.com/en/innovation/zero-emission/hydrogen/zeroe"><img id='airbus-hydrogen-image' src='/images/airbus-hydrogen-airplanes.png' alt='Image of airbus hydrogen powered airplanes?.'></a>
             </div>
             <h4>HYDROGEN POWERED AIRPLANES</h4>
-            <p>(Open in a new window:https://www.airbus.com/en/innovation/zero-emission/hydrogen/zeroe)</p>
+            <!-- <p>(Open in a new window:</p>https://www.airbus.com/en/innovation/zero-emission/hydrogen/zeroe) -->
 
 
           </div>

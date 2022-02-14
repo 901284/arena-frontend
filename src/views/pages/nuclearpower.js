@@ -171,7 +171,7 @@ class NuclearPowerView {
                 </a>
                 </div>
                 <h4>ADVANTAGES AND CHALLENGES OF NUCLEAR ENERGY</h4>
-                <p>(Open in a new window: https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy/)</p>
+                <!-- <p>(Open in a new window: https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy/)</p> -->
                 <br>
                 <br>
                 <p>Click on the image below to learn more about the safety of nuclear waste management.</p>
@@ -179,7 +179,7 @@ class NuclearPowerView {
                 <a href="https://www.base.bund.de/EN/nwm/introduction/introduction_node.html/"><img class='diagram' id='nuclear-waste-image' src='/images/nuclear-waste-image.png' alt='Image of scary nuclear waste.'></a>
                 </div>
                 <h4>SAFETY OF NUCLEAR WASTE MANAGEMENT</h4>
-                <p>(Open in a new window: https://www.base.bund.de/EN/nwm/introduction/introduction_node.html/)</p>
+                <!-- <p>(Open in a new window: https://www.base.bund.de/EN/nwm/introduction/introduction_node.html/)</p> -->
                 <br>
                 <br>
                 <p>Australia is the only G20 country where nuclear power is banned by Federal law, but 
@@ -194,7 +194,7 @@ class NuclearPowerView {
                 <div class='calign'>
                   <a href="https://www.nuclearaustralia.org.au/"><img class='diagram' id='ana-logo-image' src='/images/ana-logo.png' alt='Image of ana logo.'></a>
                 </div>
-                <p>(Open in a new window: https://www.nuclearaustralia.org.au/)</p>
+                <!-- <p>(Open in a new window: https://www.nuclearaustralia.org.au/)</p> -->
 
           </div>
           

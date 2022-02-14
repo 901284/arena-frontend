@@ -174,7 +174,7 @@ class AtmosphereView {
           </p>
 
 
-          <h3>How are humann impacting the greenhouse effect?</h3>
+          <h3>How are humans impacting the greenhouse effect?</h3>
           <p>Human activities are changing Earth's natural greenhouse effect. Burning fossil fuels like coal and oil puts more carbon dioxide into our atmosphere.
           NASA has observed increases in the amount of carbon dioxide and some other greenhouse gasses in our atmosphere. Too much of these greenhouse gasses can cause Earth's atmosphere to trap more and more heat. This causes Earth to warm up (The right side of figure 1).
           </p>

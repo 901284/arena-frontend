@@ -128,10 +128,10 @@ class SolarpowerView {
                 PV and even PV paint.</p>
 
                 <div class='calign'>
-                  <img class='diagram' id='photovoltaic-image' src='/images/photovoltaic.png' alt='Image of photovoltaic solar panels.'>
+                  <a href="https://arena.gov.au/renewable-energy/solar-pv-rd/"><img class='diagram' id='photovoltaic-image' src='/images/photovoltaic.png' alt='Image of photovoltaic solar panels.'></a>
                 </div>
                 <h4>PHOTOVOLTAIC</h4>
-                <p>(Open in a new window: https://arena.gov.au/renewable-energy/solar-pv-rd/)</p>
+                <!-- <p>(Open in a new window: https://arena.gov.au/renewable-energy/solar-pv-rd/)</p> -->
 
                 <p>2- Solar Thermal
                   Solar thermal converts sunlight into heat (also known as thermal energy), which can be used for 
@@ -144,10 +144,10 @@ class SolarpowerView {
                   storage as required.</p>
 
                   <div class='calign'>
-                  <img class='diagram' id='solar-thermal-image' src='/images/SOLAR THERMAL_IMAGE.png' alt='Image of solar thermal solar panels.'>
+                  <a href="https://arena.gov.au/renewable-energy/concentrated-solar-thermal/"><img class='diagram' id='solar-thermal-image' src='/images/SOLAR THERMAL_IMAGE.png' alt='Image of solar thermal solar panels.'></a>
                 </div>
                 <h4>SOLAR THERMAL</h4>
-                <p>(Open in a new window: https://arena.gov.au/renewable-energy/concentrated-solar-thermal/)</p>
+                <!-- <p>(Open in a new window: https://arena.gov.au/renewable-energy/concentrated-solar-thermal/)</p> -->
           </div>
         </div>  
       </div>

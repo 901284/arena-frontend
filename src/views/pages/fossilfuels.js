@@ -158,10 +158,10 @@ class FossilfuelsView {
               <br>
               <p>Click on the image below to learn more about the sources of Australia’s greenhouse gases.</p>
               <div class='calign'>
-                  <img id='coal-fired-power-plant-image' src='/images/coal-fired-power-plant.png' alt='Image of coal fired power plant?.'>
+              <a href="https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-change-qa/sources-of-ghg-gases"><img id='coal-fired-power-plant-image' src='/images/coal-fired-power-plant.png' alt='Image of coal fired power plant?.'></a>
               </div>
               <h4>AUSTRALIA'S GREENHOUSE GASES</h4>
-              <p>(Open in a new window: https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-change-qa/sources-of-ghg-gases)</p>
+              <!-- <p>(Open in a new window: https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-change-qa/sources-of-ghg-gases)</p> -->
           </div>
 
 
