@@ -39,7 +39,7 @@ const routes = {
 	'/hydrogen': hydrogenView,
 	'/game': gameView,
 	'/ask': askView,
-	'/nuclearpower' : nuclearpowerView,
+	'/nuclear' : nuclearpowerView,
 }
 
 class Router {
