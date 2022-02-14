@@ -52,6 +52,18 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
     })
   }
 
+  // Popup window
+  openChatWindow(url) {
+    h = "800"
+    w = "600"
+    LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+    TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+    settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars=yes,resizable=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes'
+    chatWindow = window.open(url,'_blank',settings);
+  }
+
+
+
   render(){    
     return html`
     <style>      
@@ -167,7 +179,8 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         <a href="/about" @click="${anchorRoute}">About</a>        
         <a href="/contact" @click="${anchorRoute}">Contact</a>        
         <a href="/engage" @click="${anchorRoute}">Engage</a>        
-        <a href="/careers" @click="${anchorRoute}">Careers</a>        
+        <a href="/careers" @click="${anchorRoute}">Careers</a>    
+        <a href="/chat" onclick="openChatWindow(this.href);return false">Chat with others!</a>    
         <sl-dropdown>
           <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">
             ${(this.user && this.user.b64data) ? 

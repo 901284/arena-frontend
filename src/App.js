@@ -1,11 +1,12 @@
 // Author:        Team Rose
 // Filename:      App.js
-// Created:       
+// Created:       December 2021
 // Description:   Root js application instance
 
 import Router from './Router'
 import Auth from './Auth'
 import Toast from './Toast'
+import ChatView from './views/pages/chat'
 
 class App {
   constructor(){
@@ -14,6 +15,7 @@ class App {
     this.apiBase = 'https://arenaapi-v2.herokuapp.com'
     // this.apiBase = 'http://localhost:3000'
     this.rootEl = document.getElementById("root")    
+    this.chatEl = document.getElementById("chat")
   }
   
   init() { 
@@ -25,6 +27,7 @@ class App {
     Auth.check(() => {
       // authenticated! init Router
       Router.init()
+      ChatView.init()
     })    
   }
 }
