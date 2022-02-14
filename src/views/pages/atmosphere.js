@@ -195,19 +195,10 @@ class AtmosphereView {
         <p><a href='https://climatekids.nasa.gov/greenhouse-cards'>https://climatekids.nasa.gov/greenhouse-cards</a></p>
         <p><a href='https://climatekids.nasa.gov/greenhouse-effext'>https://climatekids.nasa.gov/greenhouse-effext</a></p>
 
-
-
-
         </div>
 
-      
-
-
-
       </div>
-      <app-footer></app-footer>
-
-     
+      <app-footer></app-footer>     
     `
     render(template, App.rootEl)
   }

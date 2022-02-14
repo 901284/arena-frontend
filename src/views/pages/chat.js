@@ -5,6 +5,8 @@ import Auth from './../../Auth'
 import Utils from './../../Utils'
 import CommentAPI from './../../CommentAPI'
 import CommentElement from '../../components/CommentElement'
+import Toast from '../../Toast'
+
 
 class ChatView {
     init(){
@@ -52,10 +54,11 @@ class ChatView {
         // get the current user id  and listing id  and append to the form data before submission.   
         const formData = e.detail.formData
         formData.append("email", Auth.currentUser.email);
+        formData.append("name", Auth.currentUser.firstname);
         const sendButton = document.querySelector('#send-button')
         const commentInput = document.querySelector("#chat-input-comment")
         sendButton.setAttribute('loading', '')
-        const commentText =  formData.get('comment').toString()
+        const commentText =  formData.get('content').toString()
             
         // validate the text
         if (commentText == null || commentText.length <1) {
@@ -89,11 +92,10 @@ class ChatView {
 
 
         // dont render any comment elements if there is nothing to render
-        if ( comments == null || Object.keys(comments).length <1) return
+        if ( this.comments == null || Object.keys(this.comments).length <1) return
 
         chatHistory.innerHTML = ''
 
-        
         // editing lsitings into comments. reuse of the listing  function. :)
         this.comments.forEach(com => {
 
@@ -124,7 +126,7 @@ class ChatView {
             <sl-form class="dark-theme" @sl-submit=${this.chatHandler}>    
             <div class='chat-form'>
                 <div class='chat-input'>
-                    <sl-input id='chat-input-comment' name="comment" type="text" placeholder="Hey, I have an idea!!!" required></sl-input>                     
+                    <sl-input id='chat-input-comment' name="content" type="text" placeholder="Hey, I have an idea!!!" required></sl-input>                     
                 </div>
                 <div class='send-button-div'>
                     <sl-button id='send-button' type="primary" submit>Send</sl-button>
