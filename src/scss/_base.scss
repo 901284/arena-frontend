@@ -85,6 +85,26 @@ p {
   -o-border-radius: 0px;
 }
 
+sl-details{
+  margin-left: 30%;
+  margin-right: 30%;
+  color: white;
+  background: var(--brand-color)
+}
+
+.ask-form{
+  margin-left: 30%;
+  margin-right:30%;
+  border: 1px;
+  border-color: var(--brand-color);
+  padding:5%;
+}
+
+.ask-section{
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
 
 // links ---------------
 a {

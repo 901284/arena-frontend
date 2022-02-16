@@ -87,17 +87,39 @@ class AskView {
           <div class='ask-background'>
 
             <h1 class='anim-in'>ASK ME ANYTHING</h1>
-            <img  id='ask-header-image' src='/images/filename.png' alt='header image on the "Ask Me Anything" page showing a busy city using all energy forms.'>
+            <img class='header-image' src='/images/ask-header.png' alt='header image on the "Ask Me Anything" page showing a busy city using all energy forms.'>
 
           </div>
           
           <!-- scrolling content text, images and links          -->
           <div id='ask-body'>
 
-            <h4>heading</h4>
+            <h4>Frequently Asked Questions</h4>
             <br>
-            <p>This is some body text as a placeholder for the ask me section</p>
-          
+            <sl-details summary="Are hydrogen-propelled airplanes really climate neutral?">
+              Well not really 100%, In the first place, the production of hydrogen is not emission-free. In addition, the hydrogen-powered jet engines emit NOX gases into atmosphere as well. The good news is, the polluting emissions associated with hydrogen production and combustion are way lower than those of the fossil fuels. Depending on production and delivery methods and jet propulsion technologies.
+            </sl-details>
+            <br>
+            <sl-details summary="WHAT ARE HYDROGEN PRODUCTION PATHS?">
+              Natural gas steam reformation is the most widely used method. 97% of the hydrogen is produced using this pathway, because it is economically the most beneficial method. The second leading pathway is electrolysis. This method can be emission free if renewable sources of energy are used. Such as wind, geo-thermal, solar and so forth. Renewable hydrogen production by electrolysis sounds amazing but producing and delivering hydrogen by fossil fuels is the most economically beneficial and efficient way. The total efficiency for fossil fuels is above 50%, for gases is above 53% and for biofuel is about 40%.
+            </sl-details>
+            <br>
+            <sl-details summary="CAN SOLAR ENERGY BE USED TO PROPEL AIRCRAFTS?">
+              This type of aircraft is equipped with photovoltaic solar panels which capture the energy of the sunlight and transform it into electrical energy. which then powers the electric-propulsion system of the aircraft to generate enough lift to keep the aircraft airborne. There advantages of solar flight are that the Earth is constantly receiving lots of renewable solar energy for free, About 885 million terrawatt hours a year. This renewable and free source of energy can propel airplanes to fly much higher and far longer than traditional airplanes. Solar airplanes can fly in the stratosphere region and stay in the cruising flight mode for a very long time.
+            </sl-details>
+
+          <br>
+          <div class="ask-section">
+          <h4>ASK ME Anything</h4>
+          <p>Are you curious to know more?</p>
+          <p>You can easily ask us anything about the</p>
+          <p>renewable energy in the box below and click</p>
+          <p>on the SEND button.</p>
+          </div>
+          <sl-form class="ask-form">
+          <sl-textarea placeholder="Ask us a question"></sl-textarea>
+          <sl-button >SEND</sl-button>
+          </sl-form>
    
           </div>
 
