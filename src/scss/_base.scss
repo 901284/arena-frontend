@@ -14,24 +14,75 @@ body {
   font-weight: 300;
   background: var(--body-bg);
   height: 100vh;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 
 // headings ------------
-h1,h2,h3,h5,h6 {
+h1,h2,h3,h4,h5,h6 {
   font-family: 'Fuzzy Bubbles', cursive;
   margin: 0 0 .5em;
   color: var(--heading-color);
+  margin-left: 10vw;
+  margin-right: 10vw;
+  
 }
 
 h1 {
   font-size: 36pt;
+  margin-left: 20%;
+  margin-right: 20%;
 }
+
+// h4{
+//   padding-left: 10%;
+//   font-family: 'Fuzzy Bubbles', cursive;
+// }
+
+// .anim-in{
+//   position: absolute;
+//   z-index: 10;
+//   text-align: center;
+// }
 
 p {
   font-family: 'Varela Round', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.content-image{
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+
+  box-shadow:8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.header-image{
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: 0px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-shadow: none;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
 }
 
 
@@ -131,12 +182,19 @@ a {
 .signinup-logo {
   width: 200px;
   margin-bottom: 1em;
+  box-shadow: 0px;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
 }
 
 .diagram {
   height: min(70vh, 70vw);
   width: min(70vh, 70vw);
   align-items: center;
+  box-shadow: none;
 }
 // guide page ---------------
 .guide-step {

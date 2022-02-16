@@ -94,7 +94,7 @@ class FossilfuelsView {
           <div class='fossilfuels-background'>
 
             <h1 class='anim-in'>Fossil Fuels</h1>
-            <img  id='fossil-fuels-header-image' src='/images/fossil-fuels-header.png' alt='Image of cartoon fOsSiL fUeLs.'>
+            <img class='header-image' src='/images/fossil-fuels-header.png' alt='Image of cartoon fOsSiL fUeLs.'>
 
           </div>
           
@@ -129,14 +129,14 @@ class FossilfuelsView {
             <p>The figure below shows Australian electricity generation fuel mix in shares in calendar year
             2020 by state and territory. Electricity generation fuel mix varies across states and territories.Coal continues to dominate in New South Wales, Victoria and Queensland making up more than 60% of generation in all three states in 2020. Gas accounted for 85% of Northern Territory generation, 62% of Western Australian generation and 41% of South Australian generation. Renewables accounted for 98% of generation in Tasmania and 58% in South Australia, with hydro being dominant in Tasmania and other renewables being dominant in South Australia. Coal continues to make up more than 50% of total Australian generation.</p>
             <div class='calign'>
-                  <img id='fossil-fuel-graph-image' src='/images/fuel-mix-graph.png' alt='Image of fuel mix graph?.'>
+                  <img  src='/images/fuel-mix-graph.png' alt='Image of fuel mix graph?.'>
             </div>
             <br>
             <h4>Australian electricity generation renewable sources</h4>
             <br>
             <p>The figure below shows Australian electricity generation from renewable sources in gigawatt hours from 1994-95 to 2019-20. Generation from renewables has increased by 126% over thepast decade. The composition of renewable energy in Australia has diversified significantly as wind and increasingly solar capacity has come online, with the share of hydro declining.</p>
             <div class='calign'>
-                  <img id='renewable-sources-graph-image' src='/images/renewable-sources-graph.png' alt='Image of renewable sources graph?.'>
+                  <img class='content-image' src='/images/renewable-sources-graph.png' alt='Image of renewable sources graph?.'>
             </div>
             <br>
             <h4>Hazardous Fossil Fuels Emissions</h4>
@@ -158,7 +158,7 @@ class FossilfuelsView {
               <br>
               <p>Click on the image below to learn more about the sources of Australia’s greenhouse gases.</p>
               <div class='calign'>
-              <a href="https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-change-qa/sources-of-ghg-gases"><img id='coal-fired-power-plant-image' src='/images/coal-fired-power-plant.png' alt='Image of coal fired power plant?.'></a>
+              <a href="https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-change-qa/sources-of-ghg-gases"><img class='content-image' src='/images/coal-fired-power-plant.png' alt='Image of coal fired power plant?.'></a>
               </div>
               <h4>AUSTRALIA'S GREENHOUSE GASES</h4>
               <!-- <p>(Open in a new window: https://www.csiro.au/en/research/environmental-impacts/climate-change/climate-change-qa/sources-of-ghg-gases)</p> -->

@@ -94,7 +94,7 @@ class WindpowerView {
           <div class='windpower-background'>
 
             <h1 class='anim-in'>Wind Power</h1>
-            <img  id='wind-power-header-image' src='/images/wind-power-header.png' alt='Image of cartoon wind turbines.'>
+            <img class='header-image' src='/images/wind-power-header.png' alt='Image of cartoon wind turbines.'>
 
           </div>
           
@@ -185,13 +185,13 @@ class WindpowerView {
             <p>Click on the image below to learn about  Wind Power in Australia.</p>
             <br>
             <div class='calign'>
-                  <a href="https://arena.gov.au/renewable-energy/wind/"><img id='kangaroo-image' src='/images/kangaroo-wind-farm.png' alt='Image of kangaroo standing in front of wind turbines.'></a>            </div>
+                  <a href="https://arena.gov.au/renewable-energy/wind/"><img class='content-image' src='/images/kangaroo-wind-farm.png' alt='Image of kangaroo standing in front of wind turbines.'></a>            </div>
                 <h4>Wind Power in Australia</h4>
                 <!-- <p>(Open in a new window: https://arena.gov.au/renewable-energy/wind/)</p> -->
             <p>Click on the image below to learn about the types and applications of Wind Turbines. </p>
             <br>
             <div class='calign'>
-                  <a href="https://www.energy.gov/eere/wind/how-do-wind-turbines-work/"><img id='wind-turbine-image' src='/images/offshore-wind-turbines.png' alt='Image of wind turbines in the ocean?.'></a>
+                  <a href="https://www.energy.gov/eere/wind/how-do-wind-turbines-work/"><img class='content-image' src='/images/offshore-wind-turbines.png' alt='Image of wind turbines in the ocean?.'></a>
             </div>
                 <h4>Types and Applications of Wind Turbines</h4>
                 <!-- <p>(Open in a new window: https://www.energy.gov/eere/wind/how-do-wind-turbines-work/)</p> -->

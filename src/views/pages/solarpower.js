@@ -94,7 +94,7 @@ class SolarpowerView {
           <div class='solarpower-background'>
 
             <h1 class='anim-in'>Solar Power</h1>
-            <img id='solar-power-header-image' src='/images/solar-power-header.png' alt='Image of cartoon solar panels and sun.'>
+            <img class='header-image' src='/images/solar-power-header.png' alt='Image of cartoon solar panels and sun.'>
 
           </div>
           
@@ -128,7 +128,7 @@ class SolarpowerView {
                 PV and even PV paint.</p>
 
                 <div class='calign'>
-                  <a href="https://arena.gov.au/renewable-energy/solar-pv-rd/"><img class='diagram' id='photovoltaic-image' src='/images/photovoltaic.png' alt='Image of photovoltaic solar panels.'></a>
+                  <a href="https://arena.gov.au/renewable-energy/solar-pv-rd/"><img class='content-image' src='/images/photovoltaic.png' alt='Image of photovoltaic solar panels.'></a>
                 </div>
                 <h4>PHOTOVOLTAIC</h4>
                 <!-- <p>(Open in a new window: https://arena.gov.au/renewable-energy/solar-pv-rd/)</p> -->
@@ -144,7 +144,7 @@ class SolarpowerView {
                   storage as required.</p>
 
                   <div class='calign'>
-                  <a href="https://arena.gov.au/renewable-energy/concentrated-solar-thermal/"><img class='diagram' id='solar-thermal-image' src='/images/SOLAR THERMAL_IMAGE.png' alt='Image of solar thermal solar panels.'></a>
+                  <a href="https://arena.gov.au/renewable-energy/concentrated-solar-thermal/"><img class='content-image' src='/images/SOLAR THERMAL_IMAGE.png' alt='Image of solar thermal solar panels.'></a>
                 </div>
                 <h4>SOLAR THERMAL</h4>
                 <!-- <p>(Open in a new window: https://arena.gov.au/renewable-energy/concentrated-solar-thermal/)</p> -->

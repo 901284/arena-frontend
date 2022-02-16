@@ -193,7 +193,7 @@ class AtmosphereView {
 
           <div class='calign'>
             <p>Click on the image below to learn more about the Greenhouse Effect.</p>    
-            <a href='https://climatekids.nasa.gov/greenhouse-effect'><img src='/images/greenhouse-effect.png' alt="Image of earths atmosphere protecting the earth from the intense sun rays"/></a>
+            <a href='https://climatekids.nasa.gov/greenhouse-effect'><img class='content-image' src='/images/greenhouse-effect.png' alt="Image of earths atmosphere protecting the earth from the intense sun rays"/></a>
             <h3>Greenhouse Effect</h3>
           </div>
 
@@ -202,7 +202,7 @@ class AtmosphereView {
 
           <div class='calign'>
             <p>Click on the image below to learn more about the Greenhouse Gasses.</p>
-            <a href='https://climatekids.nasa.gov/greenhouse-cards'><img src='/images/greenhouse-gasses.png' alt='Image of large factory emmitting gasses'/></a>
+            <a href='https://climatekids.nasa.gov/greenhouse-cards'><img class='content-image' src='/images/greenhouse-gasses.png' alt='Image of large factory emmitting gasses'/></a>
             <h3>Greenhouse Gasses</h3>
           </div>
 

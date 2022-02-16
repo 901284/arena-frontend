@@ -115,7 +115,7 @@ class GameView {
           <div class='game-background'>
 
             <h1 class='anim-in'>THE POWER SUPPLY GAME</h1>
-            <img  id='game-header-image' src='/images/power-supply-game-header.png' alt='header image on the game page showing a city at night time with all the lights on.'>
+            <img class='header-image' src='/images/power-supply-game-header.png' alt='header image on the game page showing a city at night time with all the lights on.'>
 
           </div>
           

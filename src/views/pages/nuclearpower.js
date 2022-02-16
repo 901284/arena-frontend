@@ -94,7 +94,7 @@ class NuclearPowerView {
           <div class='nuclearpower-background'>
 
             <h1 class='anim-in'>Nuclear Power</h1>
-            <img id='nuclear-power-header-image' src='/images/nuclear-power-header.png' alt='Image of cartoon nuclear plant.'>
+            <img class='header-image' src='/images/nuclear-power-header.png' alt='Image of cartoon nuclear plant.'>
 
           </div>
           
@@ -135,7 +135,7 @@ class NuclearPowerView {
                   by country.</p>
                   <br>
                   <div class='calign'>
-                  <img class='diagram' id='nuclear-reactors-image' src='/images/nuclear-reactors-graph.png' alt='Image of graph with number of reactors worldwide.'>
+                  <img class='content-image' src='/images/nuclear-reactors-graph.png' alt='Image of graph with number of reactors worldwide.'>
                 </div>
 
                 <br>
@@ -167,7 +167,7 @@ class NuclearPowerView {
                 <br>
                 <div class='calign'>
                 <a href="https://www.energy.gov/ne/articles/advantages-and-challenges-nuclear-energy/">
-                  <img class='diagram' id='nuclear-plant-image' src='/images/nuclear-plant-image.png' alt='Image of a nuclear power plant.'>
+                  <img class='content-image' src='/images/nuclear-plant-image.png' alt='Image of a nuclear power plant.'>
                 </a>
                 </div>
                 <h4>ADVANTAGES AND CHALLENGES OF NUCLEAR ENERGY</h4>
@@ -176,7 +176,7 @@ class NuclearPowerView {
                 <br>
                 <p>Click on the image below to learn more about the safety of nuclear waste management.</p>
                 <div class='calign'>
-                <a href="https://www.base.bund.de/EN/nwm/introduction/introduction_node.html/"><img class='diagram' id='nuclear-waste-image' src='/images/nuclear-waste-image.png' alt='Image of scary nuclear waste.'></a>
+                <a href="https://www.base.bund.de/EN/nwm/introduction/introduction_node.html/"><img class='content-image' src='/images/nuclear-waste-image.png' alt='Image of scary nuclear waste.'></a>
                 </div>
                 <h4>SAFETY OF NUCLEAR WASTE MANAGEMENT</h4>
                 <!-- <p>(Open in a new window: https://www.base.bund.de/EN/nwm/introduction/introduction_node.html/)</p> -->
@@ -192,7 +192,7 @@ class NuclearPowerView {
                 <br>
                 <p>Click on the image below to learn more about ANA</p>
                 <div class='calign'>
-                  <a href="https://www.nuclearaustralia.org.au/"><img class='diagram' id='ana-logo-image' src='/images/ana-logo.png' alt='Image of ana logo.'></a>
+                  <a href="https://www.nuclearaustralia.org.au/"><img class='content-image' src='/images/ana-logo.png' alt='Image of ana logo.'></a>
                 </div>
                 <!-- <p>(Open in a new window: https://www.nuclearaustralia.org.au/)</p> -->
 
