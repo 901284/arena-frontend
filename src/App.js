@@ -28,6 +28,7 @@ class App {
       // authenticated! init Router
       Router.init()
       ChatView.init()
+
     })    
   }
 }

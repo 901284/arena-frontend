@@ -19,9 +19,14 @@ class CommentAPI {
       if(err) console.log(err)
       // show error      
       Toast.show(`Problem posting the comment.  ${response.status}`)   
+    }else {
+      console.log("comment insertion ok")
     }
-    
+    console.log("new comment response: ", response)
+    return response;
   }
+    
+ 
   
   // get all comments
   async getComments(){

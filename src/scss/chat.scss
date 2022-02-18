@@ -1,15 +1,215 @@
+#chat-icon {
+    display: inline-block;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    // top: 12vh;
+    // right: 2vw;
+    top: var(--chat-icon-top);
+    right: var(--chat-icon-right);
+    
+
+
+}
+
+/* icon button to open the chat widget  */
+#open-chat {
+    margin-left: 1em;
+    color: var(--brand-color);
+    font-size: 3vh;
+    transition: all 0.5s ease;
+}
+#open-chat:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+    scale: 1.2;
+}
+
+
 #chat {
     position: absolute;
-    background-color: #55555511;
+    background-color: whitesmoke;
+    border-radius: 1;
     bottom: 150px;
     top: 150px;
-    right: 20px;
-    height: 500px;
-    width: 200px;
+    right: 50px;
+    height: 80%;
+    width: 20vw;
+    box-shadow: 0 0 7px 7px whitesmoke;
 
     display:  flex;
     flex-direction: column;
     align-content: flex-end;
+    padding: 1em;
+    transition: transform 0.5s ease;
+    opacity: 0;
+
+    /* debug border */ 
+    border-color: red;
+    border-style: dashed;
+    border-width: 1px;
+
+    #close-button {
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: black;
+        transition: all 0.3s ease;
+        &:hover {
+            transform: rotate(90deg);
+            cursor: pointer;
+        }
+
+    }
+
+    .chat-container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        // padding: 1em;
+        // margin-bottom: 0.5em;
+        // margin-top: 1em;
+        background-color: whitesmoke;
+        height: 100%;
+
+                /* debug border */ 
+        border-color: pink;
+        border-style: dashed;
+        border-width: 1px;
+
+
+        // contains the chat bubbles displayed to the users
+        .chat-history {
+            flex-grow: 1;
+            max-height: 70vh;  
+            scroll-behavior: auto;
+            scrollbar-color: grey whitesmoke;
+            margin-top: 1em;
+            overflow: scroll;    
+
+                /* debug border */ 
+            border-color: brown;
+            border-style: dashed;
+            border-width: 1px;
+            
+            
+            comment-bubble {
+                background-color: whitesmoke;
+                
+                
+            }
+
+
+
+            .comment-bubble { 
+                width: 100%;
+                height: fit-content;
+                min-width: 100px;
+                border-radius: 4px;
+                box-shadow: 0 0 8px 5px whitesmoke;
+                padding: 1em;
+                margin: 0px;
+                 
+                .comment-author-details {
+                  
+                  display: flex;
+                  margin-right: 2em;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  align-content:center;
+                  justify-content: left;
+            
+                  div { 
+                    display: inline-block;
+                    
+                  }
+            
+                  .small-date {
+                    margin-top: 0.5em;
+                    font-size: x-small;
+                  }
+                }
+                .comment-body-text {
+                  padding-left: 1em;
+            
+                }
+            }
+
+
+        
+                // class for th elisting author chat bubble which is left aligned
+            .responder{
+                justify-content: left;
+
+            }
+            .author{
+                justify-content: right;
+            }
+
+        
+           
+
+        }
+
+          // styling of the text-input and button in the chat window
+        .chat-form  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2em;    
+            max-height: fit-content;
+            margin-bottom: 1em;  
+            min-width: fit-content;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+   
+            .chat-input {
+                display: inline-block;
+                flex-grow: 1;
+            }
+
+            .send-button-div {
+                margin-left: 0.5em;
+                display: inline-block;
+                width: fit-content;
+                span {
+                    color: var(--brand-color);
+                    font-size: x-large;
+                    &:hover {
+                        cursor: pointer;
+                    } 
+                }
+            
+            }
+        }
+        
+    } 
+
+
+
     
 }
+
+
+// <div class="chat-container">
+            
+// <div class='chat-history'> 
+//     
+    // <div class = 'comment-bubble ${authorClass}'>
+        // <div class='comment-author-details'>
+        //   <p>Chat bubble</p>
+        //   <div>
+        //     <h3 id='name${comment.name}'>${comment.name}</h3>
+        //     <p class='small-date'>${moment(comment.CreatedOn).format('MMMM Do YYYY, @ h:mm a')}</p>
+        //   </div>
+        // </div>  
+//      <div>   
+//      <p class='comment-body-text' id='comment${comment.email}' >${comment.content}</p>
+//   </div>
+// </div>`
+
+
 
