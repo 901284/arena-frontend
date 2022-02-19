@@ -1,0 +1,173 @@
+// icon palced in the top corder to enable or disable the chat feature
+#chat-icon {
+    display: inline-block;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    // top: 12vh;
+    // right: 2vw;
+    top: var(--chat-icon-top);
+    right: var(--chat-icon-right);
+
+}
+
+/* icon button to open the chat widget  */
+#open-chat {
+    margin-left: 1em;
+    color: var(--brand-color);
+    font-size: 3vh;
+    transition: all 0.5s ease;
+}
+#open-chat:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+    scale: 1.2;
+}
+
+
+// chat widget
+#chat {
+    position: absolute;
+    background-color: #88888811;
+    border-radius: 1;
+    top: 150px;
+    right: 50px;
+    max-height: 75%;
+    width: 20vw;
+    min-width: 250px;
+    border: lightgray 1px solid;
+
+    display:  flex;
+    flex-direction: column;
+    align-content: flex-end;
+    padding: 1em;
+    padding-right: 0em;
+    transition: transform 0.5s ease;
+    opacity: 0;
+
+    // close X button to make the chat widget diappear
+    #close-button {
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: var(--brand-color);
+        transition: all 0.3s ease;
+        &:hover {
+            transform: rotate(90deg);
+            cursor: pointer;
+        }
+
+    }
+
+    // hold the chat history and the chat input form
+    .chat-container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border-radius: 5px;
+
+
+        // contains the chat bubbles displayed to the users
+        .chat-history {
+            // flex-grow: 1;
+            height: 65vh;  
+            scroll-behavior: auto;
+            scrollbar-color: var(--brand-color) #FFFFFF00;
+            margin-top: 1em;
+            overflow: scroll;    
+            border-radius: 5px;
+
+            // chat bubble that contains  the user name, post date and the comment.
+            .comment-bubble { 
+                width: 100%;
+                height: fit-content;
+                min-width: 100px;
+                border-radius: 6px;
+                background-color: white;
+                padding: 1em 0em;
+                margin: 1em 0em;
+                color: #333333;
+                padding-left: 1em;
+
+                h4{
+                    margin: 0;
+                }
+                 
+                // author name
+                .comment-author-details {
+                  
+                  display: flex;
+                  margin-right: 2em;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  align-content:center;
+                  justify-content: left;
+            
+                  div { 
+                    display: inline-block;
+                  }
+            
+                  // date posted
+                  .small-date {
+                    margin-top: 0.5em;
+                    font-size: x-small;
+                  }
+                }
+                // the comment the user posted
+                .comment-body-text {
+                  padding-left: 1em;
+            
+                }
+            }
+        
+                // class for th elisting author chat bubble which is left aligned
+            .responder{
+                justify-content: left;
+
+            }
+            .author{
+                justify-content: right;
+            }
+        }
+
+          // styling of the text-input and button in the chat window
+        .chat-form  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2em;    
+            max-height: fit-content;
+            margin-bottom: 1em;  
+            min-width: fit-content;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+   
+            .chat-input {
+                display: inline-block;
+                flex-grow: 1;
+            }
+
+            .send-button-div {
+                margin-left: 0.5em;
+                display: inline-block;
+                width: fit-content;
+                span {
+                    color: var(--brand-color);
+                    font-size: x-large;
+                    &:hover {
+                        cursor: pointer;
+                    } 
+                }
+            
+            }
+        }
+        #chat-input-comment {
+            margin-right: 1em;
+        }
+    } 
+
+}

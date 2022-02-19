@@ -142,12 +142,15 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         font-weight: bold;
       }
 
+
       /* RESPONSIVE - MOBILE ------------------- */
       @media all and (max-width: 768px){       
         
         .app-top-nav {
           display: none;
         }
+
+
       }
 
       </style>
@@ -167,7 +170,8 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         <a href="/about" @click="${anchorRoute}">About</a>        
         <a href="/contact" @click="${anchorRoute}">Contact</a>        
         <a href="/engage" @click="${anchorRoute}">Engage</a>        
-        <a href="/careers" @click="${anchorRoute}">Careers</a>        
+        <a href="/careers" @click="${anchorRoute}">Careers</a>    
+                
         <sl-dropdown>
           <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">
             ${(this.user && this.user.b64data) ? 
@@ -203,7 +207,11 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         <a href="#" @click="${() => Auth.signOut()}">Sign Out</a>
       </nav>  
     </sl-drawer>
+
+
     `
+    
+
   }
   
 })

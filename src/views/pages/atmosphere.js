@@ -7,11 +7,6 @@ import { gsap } from "gsap";
 // import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 import { scrolltrigger } from "gsap/ScrollTrigger.js";
 
-
-
-/* TREV IS DOING THIS BIT. WORK IN POROGRESS   */
-
-
 class AtmosphereView {
 
   
@@ -23,10 +18,8 @@ class AtmosphereView {
     this.setListeners()
     Utils.pageIntroAnim()  
     this.startSection1Anim()
-    this.scrollPosition = 0
-    
+    this.scrollPosition = 0 
   } 
-
 
   setListeners(){
     console.log('setlisteners called')
@@ -36,21 +29,10 @@ class AtmosphereView {
     this.atmosphere = document.querySelector(".atmosphere");
     this.astronaut = document.querySelector('.astronaut');
 
-
     // enable these once i have put them  in the dom.
     this.downArrow = document.querySelector('#down');
-    // this.upArrow = document.querySelector('#up');
     this.leftArrow = document.querySelector('#left');
-
-    // this.leftArrow.addEventListener('click', () => {
-    //   gotoRoute('/home')
-    // })
-
-    // this.downArrow.addEventListener('click', () => {
-    //   anchorRoute('#atmosphere-body-text')
-
-    // })
-        
+       
   }
 
     /*'animating in the elements for section 1 when section on page load'*/
@@ -104,7 +86,6 @@ class AtmosphereView {
     }
     
 
-
   handleUpClick(){
     // move up the page
     let page =  document.querySelector('.page-content')
@@ -117,7 +98,6 @@ class AtmosphereView {
 
   }
 
-
   handleDownClick(){
     // move down the page
     let page =  document.querySelector('.page-content')
@@ -127,7 +107,6 @@ class AtmosphereView {
       left: 0,
       behavior: 'smooth'
     });
-
   }
 
 
@@ -158,9 +137,7 @@ class AtmosphereView {
 
           </div>
 
-        </div>  
-
-
+        </div> 
         
         <div id='atmosphere-body-text'>
           <h3>What is the greenhouse effect?</h3>
@@ -185,6 +162,7 @@ class AtmosphereView {
           <p>Figure 1:  The Natural Greenhouse effect, left side, and the Human Enhanced Greenhouse effect, right side, in the Earth's atmosphere.<p>
 
 
+<<<<<<< HEAD
           <h3>What reduces the greenhouse effect on Earth?</h3>
 
           <p>Just like a glass greenhouse, Earth's greenhouse is also full of plants! Plants can help to balance the greenhouse effect on Earth. All plants — from giant trees to tiny phytoplankton in the ocean — take in carbon dioxide and give off oxygen. The ocean also absorbs a lot of excess carbon dioxide in the air. Unfortunately, the increased carbon dioxide in the ocean changes the water, making it more acidic. This is called ocean acidification. More acidic water can be harmful to many ocean creatures, such as certain shellfish and coral. Warming oceans, from too many greenhouse gasses in the atmosphere, can also be harmful to these organisms. Warmer waters are a main cause of coral bleaching.
@@ -206,7 +184,6 @@ class AtmosphereView {
             <h3>Greenhouse Gasses</h3>
           </div>
 
-        
           <p>To Learn more about the Earth's atmosphere and the Greenhouse Effect, please use the websites below.</p>
           <p><a href='https://scied.ucar.edu/learning-zone/how-climate-works/greenhouse-effect'>https://scied.ucar.edu/learning-zone/how-climate-works/greenhouse-effect</a></p>
           
@@ -215,14 +192,10 @@ class AtmosphereView {
         <br><br><br><br>
 
       </div>
-      <app-footer></app-footer>
-
-     
+      <app-footer></app-footer>     
     `
     render(template, App.rootEl)
   }
-
-
 
 }
 
