@@ -8,9 +8,6 @@ import CommentElement from '../../components/CommentElement'
 import Toast from '../../Toast'
 import { gsap } from "gsap";
 
-
-
-
 class ChatView {
     init(){
         console.log('ChatView.init')
