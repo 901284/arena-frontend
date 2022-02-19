@@ -55,7 +55,7 @@ class ChatView {
     }
     async refresher(){
         const refreshInterval = 7000 //milliseconds
-        let max = 2
+        let max = 5000
         let count = 0
 
         while (this.isAutoRefresh && count < max){
