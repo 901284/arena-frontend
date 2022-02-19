@@ -1,3 +1,4 @@
+// icon palced in the top corder to enable or disable the chat feature
 #chat-icon {
     display: inline-block;
     position: absolute;
@@ -7,8 +8,6 @@
     // right: 2vw;
     top: var(--chat-icon-top);
     right: var(--chat-icon-right);
-    
-
 
 }
 
@@ -26,35 +25,33 @@
 }
 
 
+// chat widget
 #chat {
     position: absolute;
-    background-color: whitesmoke;
+    background-color: #88888811;
     border-radius: 1;
-    bottom: 150px;
     top: 150px;
     right: 50px;
-    height: 80%;
+    max-height: 75%;
     width: 20vw;
-    box-shadow: 0 0 7px 7px whitesmoke;
+    min-width: 250px;
+    border: lightgray 1px solid;
 
     display:  flex;
     flex-direction: column;
     align-content: flex-end;
     padding: 1em;
+    padding-right: 0em;
     transition: transform 0.5s ease;
     opacity: 0;
 
-    /* debug border */ 
-    border-color: red;
-    border-style: dashed;
-    border-width: 1px;
-
+    // close X button to make the chat widget diappear
     #close-button {
         display: inline-block;
         position: absolute;
         top: 5px;
         right: 5px;
-        color: black;
+        color: var(--brand-color);
         transition: all 0.3s ease;
         &:hover {
             transform: rotate(90deg);
@@ -63,54 +60,42 @@
 
     }
 
+    // hold the chat history and the chat input form
     .chat-container {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        // padding: 1em;
-        // margin-bottom: 0.5em;
-        // margin-top: 1em;
-        background-color: whitesmoke;
         height: 100%;
-
-                /* debug border */ 
-        border-color: pink;
-        border-style: dashed;
-        border-width: 1px;
+        border-radius: 5px;
 
 
         // contains the chat bubbles displayed to the users
         .chat-history {
-            flex-grow: 1;
-            max-height: 70vh;  
+            // flex-grow: 1;
+            height: 65vh;  
             scroll-behavior: auto;
-            scrollbar-color: grey whitesmoke;
+            scrollbar-color: var(--brand-color) #FFFFFF00;
             margin-top: 1em;
             overflow: scroll;    
+            border-radius: 5px;
 
-                /* debug border */ 
-            border-color: brown;
-            border-style: dashed;
-            border-width: 1px;
-            
-            
-            comment-bubble {
-                background-color: whitesmoke;
-                
-                
-            }
-
-
-
+            // chat bubble that contains  the user name, post date and the comment.
             .comment-bubble { 
                 width: 100%;
                 height: fit-content;
                 min-width: 100px;
-                border-radius: 4px;
-                box-shadow: 0 0 8px 5px whitesmoke;
-                padding: 1em;
-                margin: 0px;
+                border-radius: 6px;
+                background-color: white;
+                padding: 1em 0em;
+                margin: 1em 0em;
+                color: #333333;
+                padding-left: 1em;
+
+                h4{
+                    margin: 0;
+                }
                  
+                // author name
                 .comment-author-details {
                   
                   display: flex;
@@ -122,21 +107,20 @@
             
                   div { 
                     display: inline-block;
-                    
                   }
             
+                  // date posted
                   .small-date {
                     margin-top: 0.5em;
                     font-size: x-small;
                   }
                 }
+                // the comment the user posted
                 .comment-body-text {
                   padding-left: 1em;
             
                 }
             }
-
-
         
                 // class for th elisting author chat bubble which is left aligned
             .responder{
@@ -146,10 +130,6 @@
             .author{
                 justify-content: right;
             }
-
-        
-           
-
         }
 
           // styling of the text-input and button in the chat window
@@ -185,31 +165,9 @@
             
             }
         }
-        
+        #chat-input-comment {
+            margin-right: 1em;
+        }
     } 
 
-
-
-    
 }
-
-
-// <div class="chat-container">
-            
-// <div class='chat-history'> 
-//     
-    // <div class = 'comment-bubble ${authorClass}'>
-        // <div class='comment-author-details'>
-        //   <p>Chat bubble</p>
-        //   <div>
-        //     <h3 id='name${comment.name}'>${comment.name}</h3>
-        //     <p class='small-date'>${moment(comment.CreatedOn).format('MMMM Do YYYY, @ h:mm a')}</p>
-        //   </div>
-        // </div>  
-//      <div>   
-//      <p class='comment-body-text' id='comment${comment.email}' >${comment.content}</p>
-//   </div>
-// </div>`
-
-
-

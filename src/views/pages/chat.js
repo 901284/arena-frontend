@@ -10,6 +10,7 @@ import { gsap } from "gsap";
 
 
 
+
 class ChatView {
     init(){
         console.log('ChatView.init')
@@ -25,9 +26,6 @@ class ChatView {
         this.refresher()
     }
 
-
-
-    // TREV TO PICK UP HERE TO ALOS MAKE THE ICON DISAPPEAR WHEN THE WIDGET IS SHOW. ALSO NEED TO SHOW THE INCON WHEN THE WIDGET DISAPPEARS.
     setIconClickListener(){
 
         document.querySelector('#chat-icon').addEventListener('click', () => {
@@ -59,20 +57,18 @@ class ChatView {
         return new Promise(resolve => setTimeout(resolve, milliseconds));
     }
     async refresher(){
-        const refreshInterval = 10000 //milliseconds
-        let max = 2
+        const refreshInterval = 7000 //milliseconds
+        let max = 2000
         let count = 0
 
         while (this.isAutoRefresh && count < max){
             await this.sleep(refreshInterval)
             this.getAllComments();
-            console.log("got comments", this.comments)
+            await this.sleep(refreshInterval)
             this.renderComments();
-            console.log("rendered comments")
             count++
         }
     }
-
 
 
     // get the commments from the datasbase.
@@ -80,22 +76,51 @@ class ChatView {
         let result = await CommentAPI.getComments();
         console.log('comment data: ' ,result)
         this.comments = result;
+    }
+
+
+    // render out the comments to the chatHistory element, most recent at the bottom.
+    renderComments(){
+        let chatHistory = document.querySelector('.chat-history')
+        // clear previous chat elements and populate with the generic message
+        chatHistory.innerHTML = `<div><p>Be the first to comment!</p></div>`
+
+        // dont render any comment elements if there is nothing to render
+        if ( this.comments == null || Object.keys(this.comments).length <1) {
+            console.log('no comments to render')
+            return
+        } 
+
+        chatHistory.innerHTML = ''
+
+        // editing lsitings into comments. reuse of the listing  function. :)
+        this.comments.forEach(com => {
+            // verify if the user is an author or non-author of the comment
+            const isAuthor = (com.email == Auth.currentUser.email) ? true : false
+            let commentElement = CommentElement.build(com, isAuthor)
+            chatHistory.innerHTML+=commentElement;
+
+        }); 
+
+        chatHistory.scrollTop = chatHistory.scrollHeight;
 
     }
 
-    chatHandler(e){
+ 
+    // handle the onclick or enter key event in the chat comment input
+    async chatHandler(e){
+        console.log("chatHandler called")
 
-        // stop the usual submit process for validation and hadle the submit with js.
         e.preventDefault()
-
-        // get the current user id  and listing id  and append to the form data before submission.   
         const formData = e.detail.formData
-        const sendButton = document.querySelector('#send-button')
+           
+        console.log("submit comment called")
+        // get the current user id  and listing id  and append to the form data before submission.   
         const commentInput = document.querySelector("#chat-input-comment")
-        sendButton.setAttribute('loading', '')
-        
+       
         // validate the text
-        const commentText =  formData.get('content').toString()
+        const commentText =  commentInput.value
+        console.log("input: ", commentText)
         if (commentText == null || commentText.length <1) {
             Toast.show("You must have text input to post a comment","info")
             return
@@ -120,41 +145,33 @@ class ChatView {
             Toast.show("Unable to sumbit the new comment ","error")
             console.log("Error submitting the new comment. ",err)
         })
-        // this.getAllComments();
-        // this.renderComments();
-        sendButton.setAttribute('loading', 'false')
-    }
 
-    renderComments(){
+        document.querySelector("#chat-input-comment").value = ""
+
+        // get all comments
+        let result = await CommentAPI.getComments();
+        console.log('comment data: ' ,result)
+        let comments = result;
+
+        
+        // render out the new comments
         let chatHistory = document.querySelector('.chat-history')
-        // clear previous chat elements and populate with the generic message
-        chatHistory.innerHTML = `<div><p>Be the first to comment!</p></div>`
-
 
         // dont render any comment elements if there is nothing to render
-        if ( this.comments == null || Object.keys(this.comments).length <1) {
+        if ( comments == null || Object.keys(comments).length <1) {
             console.log('no comments to render')
-            return
+            return true
         } 
-
         chatHistory.innerHTML = ''
-
         // editing lsitings into comments. reuse of the listing  function. :)
-        this.comments.forEach(com => {
-
+        comments.forEach(com => {
             // verify if the user is an author or non-author of the comment
             const isAuthor = (com.email == Auth.currentUser.email) ? true : false
             let commentElement = CommentElement.build(com, isAuthor)
-            // make it clickable to view more detail
-            // commentElement.addEventListener('click', e => {
-            //     // handleCommentClick(e.currentTarget.id)
-            //     console.log('comment id clicked: ', e.currentTarget.id)
-            //     chatHistory.append(commentBubble)   
-            // })
-            // console.log(commentElement)
             chatHistory.innerHTML+=commentElement;
-
         }); 
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+        return true;      
     }
 
     render(){    
@@ -163,33 +180,17 @@ class ChatView {
             <div id='close-button'>
                 <span class="material-icons material-icons-outlined">close</span>
             </div>
-            
             <div class='chat-history'> 
                 <p>Be the first to comment!</p>
 
             </div>
-
-            <!-- Form to get the user input to post to the chat        -->
-            <sl-form class="dark-theme chat-form" >    
-
-            <sl-input id='chat-input-comment' name="content" type="text" placeholder="Hey, I have an idea!!!" size="medium"  required >
-              <sl-icon name="chat" slot="suffix" id='send-button' @click=${this.chatHandler}></sl-icon>
-            </sl-input>
-                
-<!--             
-                <div class='chat-input'>
-                    <sl-input id='chat-input-comment' name="content" type="text" placeholder="Hey, I have an idea!!!" required large></sl-input>                     
-                </div>
-                <div class='send-button-div'> -->
-                    <!-- <sl-button id='send-button' type="primary" submit>-></sl-button> -->
-                    <!-- <span id='send-button' class="material-icons material-icons-outlined" @click=${this.chatHandler} >send</span>
-                </div> -->
-                
+            <sl-form @sl-submit=${this.chatHandler}>    
+                <sl-input id='chat-input-comment' name="content" type="text" placeholder="Hey, I have an idea!!!" size="medium" required submit>
+                    <sl-icon slot="suffix" id='send-button' submit></sl-icon>
+                </sl-input>
             </sl-form>
         </div>
-
         `
-
     if (localStorage.getItem('showChat') == "true") {
         document.querySelector('#chat').style.opacity = 1.0;
     } else {
