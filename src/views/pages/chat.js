@@ -55,7 +55,7 @@ class ChatView {
     }
     async refresher(){
         const refreshInterval = 7000 //milliseconds
-        let max = 2000
+        let max = 2
         let count = 0
 
         while (this.isAutoRefresh && count < max){
@@ -162,9 +162,8 @@ class ChatView {
         chatHistory.innerHTML = ''
         // editing lsitings into comments. reuse of the listing  function. :)
         comments.forEach(com => {
-            // verify if the user is an author or non-author of the comment
-            const isAuthor = (com.email == Auth.currentUser.email) ? true : false
-            let commentElement = CommentElement.build(com, isAuthor)
+
+            let commentElement = CommentElement.build(com)
             chatHistory.innerHTML+=commentElement;
         }); 
         chatHistory.scrollTop = chatHistory.scrollHeight;

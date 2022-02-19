@@ -16,14 +16,10 @@ class CommentElement {
   }
 
   // code needed to build and output each comment element (chat bubble) 
-  build(comment, isAuthor) {
-
-    // console.log("checking if the user is an author:" , isAuthor)
-    let authorClass = (isAuthor) ? 'author':'responder';
-    let flexJustification = (isAuthor) ? 'flexend':'flexstart'
+  build(comment) {
 
     const commentEl = `
-    <div class = 'comment-bubble ${authorClass}'>
+    <div class = 'comment-bubble'>
       <div class='comment-author-details'>
         <div>
           <h4 id='name${comment.name}'>${comment.name}</h4>
