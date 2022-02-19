@@ -33,32 +33,50 @@
 }
 
 .careers-information {
-    height: 40vh;
+    // height: 40vh;
     width: 100%;
     background: rgb(228, 226, 226);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 
     .careers-boxes-container {
         display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
   
     }
 
     .careers-box {
-        width: 50%;
-        padding: 1.5rem 4rem;
+        
+        padding: 2vw;
+        margin-left: 0px;
+        margin-right: 0px;
+        flex-basis: auto;
+        max-width: 25%;
+        min-width: 20em;
+        
+        
+
+        p{
+            margin-left: 0px;
+            margin-right: 0px;
+            
+        }
      }
 
     h2 {
+        padding-top: 5vh;
         text-align: center;
         font-size: 2rem;
     }
 
-    h3 {
+    .careers-heading {
         font-style: italic;
         font-size: 1.5rem;
+        text-align: left;
+        font-family: 'Fuzzy Bubbles', cursive;
     }
     
 }
@@ -68,10 +86,15 @@
 
     .testimonials-container {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 3em 0;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+        
+        p{
+            margin-left: 0px;
+            margin-right: 0px;
+        }
     }
 
     h2 {
@@ -88,22 +111,20 @@
     }
 
     .testimonials-boxes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; 
-        width: 25%;
-        height: auto;
+        padding: 5vw;
+        flex-basis: auto;
+        max-width: 25%;
+        min-width: 20em;
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 1.5rem 4rem rgba(black, .15);
-        margin: 0 2rem;
+        
     }
 
-    p {
-        width: 60%;
-        font-size: 1.25em;
-        text-align: center;
-    }
+    // p {
+    //     width: 60%;
+    //     font-size: 1.25em;
+    //     text-align: center;
+    // }
 
     .testimonials-img {
         width: 250px;
@@ -193,4 +214,9 @@
             font-size: 1em;
             color:  var(--brand-grey);
         }
+
+        // app-footer{
+        //     position: sticky;
+            
+        // }
 }

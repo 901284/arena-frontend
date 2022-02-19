@@ -72,25 +72,31 @@
          width: 80%;
          color: var(--brand-charcoal);
          text-align: center;
+         margin-left: 0px;
+        margin-right: 0px;
      }
 }
 
 .role-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 4rem 7rem;
 
     .our-role {
         padding: 0 3rem;
         width: 60%;
         margin: 2rem 2rem;
+        
         }
 
         h1 {
             border-left: 3px solid var(--brand-green);
             padding-left: 2rem;
             font-size: 4rem;
+            margin-left: 0px;
+            margin-right: 0px;
         }
     
         h3 {
@@ -98,11 +104,15 @@
             font-weight: 400;
             padding: 1rem 0;
             font-size: 1.5rem;
+            margin-left: 0px;
+            margin-right: 0px;
         }
     
         p {
             font-size: 1.5rem;
             line-height: 1.5;
+            margin-left: 0px;
+            margin-right: 0px;
         }
     
         .role-img {
@@ -129,8 +139,11 @@
 
     .project-box{
         display: flex;
-        width: auto;
-        height: 500px;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+        height: auto;
     }
 
     .project-img {
@@ -149,15 +162,20 @@
         padding: 4rem 7rem;
 
     }
+    
 
     h2 {
         font-size: 2rem;
+        margin-left: 0px;
+            margin-right: 0px;
     }
 
     h3 {
             text-transform: uppercase;
             font-weight: 400;
             font-size: 1.5rem;
+            margin-left: 0px;
+            margin-right: 0px;
             
         }
 
@@ -165,6 +183,8 @@
             width: 90%;
             font-size: 1.25rem;
             line-height: 1.5;
+            margin-left: 0px;
+            margin-right: 0px;
         }
 
     }
@@ -189,6 +209,8 @@
     .about-intro {
         h1 {
             font-size: 6rem;
+            margin-left: 0px;
+            margin-right: 0px;
         }
     }
 
@@ -196,10 +218,14 @@
         .our-role {
             h1 {
                 font-size: 2rem;
+                margin-left: 0px;
+            margin-right: 0px;
             }
 
             p {
                 font-size: 1rem;
+                margin-left: 0px;
+            margin-right: 0px;
             }
         }
 
@@ -213,6 +239,8 @@
         p {
             font-size: .9rem;
             width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
         }
     }
 }
@@ -297,14 +325,20 @@
 
         h3 {
             font-size: .75em;
+            margin-left: 0px;
+            margin-right: 0px;
         }
 
         h2 {
             font-size: 1.5em;
+            margin-left: 0px;
+            margin-right: 0px;
         }
 
         p {
             font-size: .5em;
+            margin-left: 0px;
+            margin-right: 0px;
         }
 
         .project-text {

@@ -70,7 +70,7 @@ class AboutView {
 
         <div class="project-container">
           <div class="project-box">
-            <div class="project-text">
+            <div class="project-text project-inner">
              <h3>Our Projects</h3>
               <h2>Hydogren Hub<br>Feasibility Study</h2>
               <p>This project will investigate the technical and commercial viability of renewable hydrogen and ammonia production facilities at the Port of Newcastle.

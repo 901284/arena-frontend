@@ -24,38 +24,38 @@ class CareersView {
           </div>
           <!-- <p>There are a gazillion career opportunities in the renewable energy sector. Whether your interested in solar, wind, bio or other renewable energy forms and wonder what pathways and options you will have to land a job in the renewable energy sector in the future, have a look at the website below. It has a cool tool which helps you to map a career in clean energy. 
           <br><a href="https://www.energy.gov/eere/education/map-career-clean-energy">https://www.energy.gov/eere/education/map-career-clean-energy</a></p> -->
-
+          
           <div class="careers-information">
-            <h2>A meaningful impact</h2>
+          <h2>A meaningful impact</h2>
             <div class="careers-boxes-container">
 
-              <div class="careers-box">
-                <h3>Expertise</h3>
+              <sl-card class="careers-box">
+                <p slot="header" class="careers-heading">Expertise</h3>
                 <p>Our deep understanding of the renewable energy sector as well as our willingness to fund ground breaking projects means
                   we provide a pathway to commercialisation for many new technologies and businesses that would otherwise struggle.
                 </p>
-              </div>
+              </sl-card>
 
-              <div class="careers-box">
-                <h3>Innovation</h3>
+              <sl-card class="careers-box">
+                <p slot="header" class="careers-heading">Innovation</h3>
                 <p>Always learning fast, we stand at the brink of cutting edge energy innovation, working to shape an energy market that
                   is fit for purpose and in which renewable energy is available when and where it is needed.
                 </p>
-              </div>
+              </sl-card>
 
-              <div class="careers-box">
-                <h3>Collaboration</h3>
+              <sl-card class="careers-box">
+                <p slot="header" class="careers-heading">Collaboration</h3>
                 <p>We bring together people from across the globe to undertake research and inform policy decisions - from the energy sector
                   to the government, startups and universities - we collaborate with everyone.
                 </p>
-              </div>
+              </sl-card>
               
-              <div class="careers-box">
-                <h3>Sustainability</h3>
+              <sl-card class="careers-box">
+                <p slot="header" class="careers-heading">Sustainability</h3>
                 <p>We're always working to ensuring that businesses in the private sector always have the right tools, technology options
                   and business models to deliver and secure and reliable energy, because that's how our impact is measured.
                 </p>
-              </div>
+              </sl-card>
 
             </div>
           </div>
@@ -74,7 +74,7 @@ class CareersView {
               </div>
 
               <div class="testimonials-boxes">
-              <div class="testimonials-img david-img"></div>
+                <div class="testimonials-img david-img"></div>
                 <p>"I started here as an intern straight out of university, and immediately felt welcomed throughout
                   the entire office. Upon graduating, I found myself working with an amazing company, and even more amazing people".</p>
                   <h4>David Green</h4>
