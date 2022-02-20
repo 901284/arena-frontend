@@ -67,7 +67,6 @@ class ChatView {
         }
     }
 
-
     // get the commments from the datasbase.
     async getAllComments(){
         let result = await CommentAPI.getComments();
