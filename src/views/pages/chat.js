@@ -28,19 +28,19 @@ class ChatView {
         document.querySelector('#chat-icon').addEventListener('click', () => {
 
             if (localStorage.getItem('showChat') == "true") {
-                // is already true so hide the widget  and set as false
+                // is already true so hide the widget and set the local var shoeChat as false 
                 let chatWidget = document.querySelector('#chat')
                 let chatIcon = document.querySelector('#chat-icon')
                 let chatTl = gsap.timeline();
-                chatTl  .to(chatWidget, {opacity: 0, duration: 0.5, ease: "power4.out"})
+                chatTl  .to(chatWidget, {opacity: 0, scale: 0, duration: 0.5, ease: "power4.out"})
                         .to(chatIcon, {opacity: 1, duration: 0.5, ease: "power4.out"},-0.5);
                 localStorage.setItem('showChat',"false")
             } else  {
-                //  is already false so show the widget and set as true 
+                //  is already false so show the widget, hide the show widget button and set the local var shoeChat as true 
                 let chatWidget = document.querySelector('#chat')
                 let chatIcon = document.querySelector('#chat-icon')
                 let chatTl = gsap.timeline();
-                chatTl  .fromTo(chatWidget, {opacity: 0},{opacity: 1, duration: 0.5, ease: "power4.out"})
+                chatTl  .fromTo(chatWidget, {opacity: 0, scale: 0},{opacity: 1, scale: 1, duration: 0.5, ease: "power4.out"})
                         .to(chatIcon, {opacity: 0, duration: 0.5, ease: "power4.out"},-0.5);
                 localStorage.setItem('showChat',"true")
             }
@@ -54,16 +54,17 @@ class ChatView {
         return new Promise(resolve => setTimeout(resolve, milliseconds));
     }
     async refresher(){
-        const refreshInterval = 10000 //milliseconds
+        const refreshInterval = 15000 //milliseconds
         let max = 2000
         let count = 0
 
         while (this.isAutoRefresh && count < max){
-            await this.sleep(refreshInterval)
-            this.getAllComments();
-            await this.sleep(refreshInterval)
-            this.renderComments();
+            if (localStorage.getItem('showChat') == "true") {
+                this.getAllComments();
+                this.renderComments();
+            } 
             count++
+            await this.sleep(refreshInterval)
         }
     }
 
@@ -73,7 +74,6 @@ class ChatView {
         console.log('comment data: ' ,result)
         this.comments = result;
     }
-
 
     // render out the comments to the chatHistory element, most recent at the bottom.
     renderComments(){
@@ -92,8 +92,7 @@ class ChatView {
         // editing lsitings into comments. reuse of the listing  function. :)
         this.comments.forEach(com => {
             // verify if the user is an author or non-author of the comment
-            const isAuthor = (com.email == Auth.currentUser.email) ? true : false
-            let commentElement = CommentElement.build(com, isAuthor)
+            let commentElement = CommentElement.build(com)
             chatHistory.innerHTML+=commentElement;
 
         }); 
@@ -186,21 +185,36 @@ class ChatView {
             </sl-form>
         </div>
         `
-    if (localStorage.getItem('showChat') == "true") {
-        document.querySelector('#chat').style.opacity = 1.0;
-    } else {
-        document.querySelector('#chat').style.opacity = 0.0;
-    }
 
         render(template, App.chatEl)    
+
+        if (localStorage.getItem('showChat') == "true") {
+            // document.querySelector('#chat').style.opacity = 1.0;
+            
+            let chatWidget = document.querySelector('#chat')
+            let chatIcon = document.querySelector('#chat-icon')
+            const chatOnTimeline = gsap.timeline();
+            chatOnTimeline  .to(chatWidget, {opacity: 1, scale: 1,  duration: 0.5, ease: "power4.out"})
+                            .to(chatIcon, {opacity: 0, duration: 0.5, ease: "power4.out"},-0.5);          
+    
+        } else {
+            // document.querySelector('#chat').style.opacity = 0.0;
+            let chatWidget = document.querySelector('#chat')
+            let chatIcon = document.querySelector('#chat-icon')
+            const chatOffTimeline = gsap.timeline();
+            chatOffTimeline .to(chatWidget, {opacity: 0, scale: 0,  duration: 0.5, ease: "power4.out"})
+                            .to(chatIcon, {opacity: 1, duration: 0.5, ease: "power4.out"},-0.5);              
+        }
+
         document.querySelector('#close-button').addEventListener('click', () => {
             localStorage.setItem('showChat', "false");
             let chatWidget = document.querySelector('#chat')
             let chatIcon = document.querySelector('#chat-icon')
 
             const chatTl = gsap.timeline();
-            chatTl  .to(chatWidget, {opacity: 0, duration: 0.5, ease: "power4.out"})
-                    .to(chatIcon, {opacity: 1, duration: 0.5, ease: "power4.out"},-0.5);
+            chatTl  .to(chatWidget, {opacity:0, scale: 0,  duration: 0.5, ease: "power4.out"})
+                    .to(chatIcon, {opacity: 1,  duration: 0.5, ease: "power4.out"},-0.5);
+
         })
     }
 }
