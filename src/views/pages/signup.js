@@ -18,7 +18,8 @@ class SignUpView{
     const submitBtn = document.querySelector('.submit-btn')
     submitBtn.setAttribute('loading', '')    
     const formData = e.detail.formData
-    
+    formData.append("bio", "User has not yet completed their bio.")
+   
     // sign up using Auth
     Auth.signUp(formData, () => {
       submitBtn.removeAttribute('loading')

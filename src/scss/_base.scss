@@ -197,6 +197,10 @@ a {
 .signup-box {  
   max-width: 320px;
   text-align: center;
+  p, h1, h2, h3, h4, h5, h6 {
+    margin-left: 0;
+    margin-right: 0;
+  } 
 }
 
 .signinup-logo {

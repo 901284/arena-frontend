@@ -110,14 +110,9 @@ class EditProfileView {
         Toast.show('Error while updating profile','error')
       };
 
-      // console.log("reading as data url"); 
-
-      // reader.readAsDataURL();
       reader.readAsBinaryString(f)
-      // gotoRoute('/profile')
+  
       
-    
-
     } else {
 
       const formData = e.detail.formData
@@ -157,7 +152,7 @@ class EditProfileView {
         <div class="profile-wrapper">
 
           <div class="profile-header">
-            <h1>${this.user.firstname + " " + this.user.lastname }</h1>
+            <h1>${Auth.currentUser.firstname + " " + Auth.currentUser.lastname }</h1>
             <a href="javascript:history.back()"><h2><sl-icon-button name="x"></sl-icon-button></h2></a>
           </div>
 
@@ -169,22 +164,22 @@ class EditProfileView {
               <sl-form class="page-form input-validation-type" @sl-submit=${this.updateProfileSubmitHandler.bind(this)}>
                 <p>Last Updated: ${moment(Auth.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>
                 <div class="input-group">
-                  <sl-input type="text" name="firstname" value="${this.user.firstname}" placeholder="First Name"></sl-input>
+                  <sl-input type="text" name="firstname" value="${Auth.currentUser.firstname}" placeholder="First Name"></sl-input>
                 </div>
                 <div class="input-group">
-                  <sl-input type="text" name="lastname" value="${this.user.lastname}" placeholder="Last Name"></sl-input>
+                  <sl-input type="text" name="lastname" value="${Auth.currentUser.lastname}" placeholder="Last Name"></sl-input>
                 </div>
                 <div class="input-group">
-                  <sl-input type="text" name="email" value="${this.user.email}" placeholder="Email Address"></sl-input>
+                  <sl-input type="text" name="email" value="${Auth.currentUser.email}" placeholder="Email Address"></sl-input>
                 </div>     
                 <div class="input-group">
-                  <sl-textarea type="text" size="medium" name="bio" value="${this.user.bio}" placeholder="Enter some information about yourself"></sl-textarea>
+                  <sl-textarea type="text" size="medium" name="bio" value="${Auth.currentUser.bio}" placeholder="Enter some information about yourself"></sl-textarea>
                 </div>          
                 <div class="input-group">
                   <label>Avatar</label><br>          
-                  ${(this.user.b64data) ? html`
+                  ${(Auth.currentUser.b64data) ? html`
                     <img class='base64image-thumbnail'
-                    src="data:image/${this.user.filetype};base64, ${this.user.b64data}" alt='unable to display base64 image'/> 
+                    src="data:image/${Auth.currentUser.filetype};base64, ${Auth.currentUser.b64data}" alt='unable to display base64 image'/> 
                   
                     <input type="file" name="avatar" id='fileInput'/>
                   `: html`
@@ -200,7 +195,7 @@ class EditProfileView {
           
               ${Auth.currentUser && Auth.currentUser.b64data ? html`
                   <img id='base64image'
-                  src="data:image/${this.user.filetype};base64, ${this.user.b64data}" alt='unable to display base64 image'/> 
+                  src="data:image/${Auth.currentUser.filetype};base64, ${Auth.currentUser.b64data}" alt='unable to display base64 image'/> 
                       
                 `:html`
                     <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>

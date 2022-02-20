@@ -54,8 +54,8 @@ class ChatView {
         return new Promise(resolve => setTimeout(resolve, milliseconds));
     }
     async refresher(){
-        const refreshInterval = 7000 //milliseconds
-        let max = 5000
+        const refreshInterval = 10000 //milliseconds
+        let max = 2000
         let count = 0
 
         while (this.isAutoRefresh && count < max){

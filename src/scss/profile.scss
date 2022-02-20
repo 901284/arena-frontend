@@ -6,7 +6,6 @@
     min-width: 50%;
     max-width:fit-content;
     
-    
     border-radius: 10px;
     background: #fff;
     box-shadow: 0px 0px 10px #666;
@@ -16,6 +15,13 @@
     transform: translate(-50%, -50%);
     padding: 20px;
     flex-direction: column;
+    z-index: 10;
+
+    // undo the formatting that was placed in _base.scss
+    p, h1, h2, h3, h4, h5, h6 {
+        margin-left: 0;
+        margin-right: 0;
+    } 
 
     .profile-header {
         text-align: center;

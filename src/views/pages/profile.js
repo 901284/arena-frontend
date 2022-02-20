@@ -13,10 +13,9 @@ class ProfileView {
     Utils.pageIntroAnim()
   }
 
+  // render out the user profile modal
   render(){
-        
-    console.log("render called") 
-    console.log(" current user is  ", Auth.currentUser.avatar)
+           
     const template = (Auth.currentUser == null) ? html`
       <sl-spinner></sl-spinner>
     `:html`
@@ -39,7 +38,7 @@ class ProfileView {
             <!-- left side -->
             <div class="profile-form">
               
-                <table>
+                <table> 
 
                   <tr>
                     <td><h4>Last Updated </h4></td>
@@ -71,12 +70,6 @@ class ProfileView {
                     <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>
                 `}
 
-<!--                 
-              ${Auth.currentUser && Auth.currentUser.avatar ? html`
-                <sl-avatar style="--size: 250px; margin-bottom: 1em;" image=${(Auth.currentUser && Auth.currentUser.avatar) ? `${App.apiBase}/images/${Auth.currentUser.avatar}` : ''}></sl-avatar>
-                `:html`
-                <sl-avatar style="--size: 250px; margin-bottom: 1em;"></sl-avatar>
-              `} -->
             </div>
                     
           </div> <!-- end of profile body -->
