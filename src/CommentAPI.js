@@ -19,10 +19,7 @@ class CommentAPI {
       if(err) console.log(err)
       // show error      
       Toast.show(`Problem posting the comment.  ${response.status}`)   
-    }else {
-      console.log("comment insertion ok")
     }
-    console.log("new comment response: ", response)
     return response;
   }
     
@@ -46,9 +43,7 @@ class CommentAPI {
     
     // convert response payload into json - store as data
     const data = response.json()
-
-    console.log("data: ", data)
-    
+   
     // return data
     return data
   }

@@ -20,7 +20,6 @@ class HomeView {
 
 
   init(){    
-    console.log('HomeView.init')
 
     // this.currentStep = 0;
     document.title = 'Home'  
@@ -29,7 +28,6 @@ class HomeView {
     Utils.pageIntroAnim()  
     this.startSection1Anim()
     if (!localStorage.getItem('currentStage')) {
-      console.log('no current stage set. setting it to 0')
       this.setStage(0)
     }
     this.handleStageClick()
@@ -54,7 +52,6 @@ class HomeView {
   }
 
   setListeners(){
-    console.log('setlisteners called')
 
     this.earth = document.querySelector(".earth");
     this.space = document.querySelector(".space");
@@ -64,18 +61,13 @@ class HomeView {
     this.astronaut = document.querySelector('.astronaut');
     this.astronaut2 = document.querySelector('.astronaut2');
 
-    console.log('setting click listener on the Minjis');
     this.astronaut.addEventListener('click', ()=>{
-      console.log('clicked minji')
       this.stageIncrement()
       this.handleStageClick()
-      console.log('endclick minji')
     })
     this.bubble1.addEventListener('click', ()=>{
-      console.log('clicked bubble1')
       this.stageIncrement()
       this.handleStageClick()
-      
     })
 
     this.bubble2.addEventListener('click', ()=> {
@@ -86,12 +78,7 @@ class HomeView {
         this.stageIncrement()
         this.handleStageClick()
       }
-
     })
-
- 
-
-
   }
  
 
@@ -115,7 +102,6 @@ class HomeView {
 
     /*'animating in the elements for section 1 when section on page load'*/
   startSection1Anim(){
-      console.log('startsection1Anim called')
       const earth = document.querySelector(".earth");
       const space = document.querySelector(".space");
       const astronaut = document.querySelector(".astronaut");
@@ -158,7 +144,6 @@ class HomeView {
   
 
   handleStageClick(){
-    console.log('stageclick')
 
     /* nav butttons */
     let up = document.querySelector('.up');
@@ -361,7 +346,6 @@ class HomeView {
 
     // animate in the atmosphere
     animateAtmosphere(){
-      console.log('animating the atmosphere')
       const atmosphere = document.querySelector("#atmos-section1");
       // create gsap timeline for animating in the atmosphere.
       const tl = gsap.timeline({})   
@@ -369,7 +353,6 @@ class HomeView {
      }
   
     animateSection1Speech(){
-      console.log('animating the speech for section 1')
       const atmosphere = document.querySelector("#atmos-section1");
       // create gsap timeline for animating in the atmosphere.
       const tl = gsap.timeline({})   
@@ -410,7 +393,6 @@ class HomeView {
 
   /* ============ animateions for section 4 (solar power) ================= */
   handleStage4Click(section4){
-    console.log('stage 4 click handler')
     let astronaut = document.querySelector('.astronaut4')
     let bubble = document.querySelector('.speech-bubble5')
     let solarpower = document.querySelector('.solarpower')
@@ -427,8 +409,6 @@ class HomeView {
 
   /* ============ animateions for section 5 (.... power) ================= */
   handleStage5Click(section5){
-    console.log('stage 5 click handler')
-
     let astronaut = document.querySelector('.astronaut5')
     let bubble = document.querySelector('#bubble6')
     let fossilFuels = document.querySelector('.fossilfuels')
@@ -444,8 +424,6 @@ class HomeView {
 
   /* ============ animateions for section 6 ( hydrogen ) ================= */
   handleStage6Click(section6){
-    console.log('stage 6 click handler')
-
     let astronaut = document.querySelector('.astronaut6')
     let bubble = document.querySelector('#bubble7')
     let hydrogen = document.querySelector('.hydrogen')
@@ -463,8 +441,6 @@ class HomeView {
 
   /* ============ animateions for section 7 ( nuclear ) ================= */
   handleStage7Click(section7){
-    console.log('stage 7 click handler')
-
     let astronaut = document.querySelector('.astronaut7')
     let bubble = document.querySelector('#bubble8')
     let nuclear = document.querySelector('.nuclear')
@@ -482,8 +458,6 @@ class HomeView {
 
   /* ============ animateions for section 8 ( game ) ================= */
   handleStage8Click(section8){
-    console.log('stage 8 click handler')
-
     let astronaut = document.querySelector('.astronaut-play')
     let bubble = document.querySelector('#bubble-play')
     let game = document.querySelector('.game')
@@ -499,8 +473,6 @@ class HomeView {
 
   /* ============ animateions for section 9 ( ask anything ) ================= */
   handleStage9Click(section9){
-    console.log('stage 9 click handler')
-
     let astronaut = document.querySelector('.astronaut-ask')
     let bubble = document.querySelector('#bubble-question')
     let ask = document.querySelector('.ask')

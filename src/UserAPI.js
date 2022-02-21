@@ -55,9 +55,7 @@ class UserAPI {
       headers: { "Authorization": `Bearer ${localStorage.accessToken}`}
     })
 
-    // console.log("response: ", response)
-
-        // if response not ok
+    // if response not ok
     if(!response.ok){ 
       // console log error
       const err = response.json()
@@ -67,11 +65,7 @@ class UserAPI {
     }
     
     // convert response payload into json - store as data
-    const data = response.json()
-
-    // console.log("data: ", data)
-    
-    // return data
+    const data = response.json()    
     return data
   }
 }

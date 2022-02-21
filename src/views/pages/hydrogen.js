@@ -9,7 +9,6 @@ class HydrogenView {
 
   
   init(){    
-    console.log('Hydrogen.init')
     
     document.title = "Hydrogen Power"  
     this.render()    
@@ -22,8 +21,6 @@ class HydrogenView {
 
 
   setListeners(){
-    console.log('setlisteners called')
-
  
     // enable these once i have put them  in the dom.
     this.downArrow = document.querySelector('#down');
@@ -34,12 +31,7 @@ class HydrogenView {
 
     /*'animating in the elements for section 1 when section on page load'*/
   startSection1Anim(){
-      console.log('startsection1Anim called')
 
-
-
-      // const downArrow = document.querySelector(".downArrow");
-  
       // create gsap timeline for animating in the atmosphere.
       const tl = gsap.timeline();
   //     tl  .from(space, {opacity: 0, scale: 0.1, duration: 0.5, delay: 0.3})
@@ -49,29 +41,20 @@ class HydrogenView {
   }
 
 
-  /* =============== animate section in or out ==================  */
-
-
-
-
+  
   handleUpClick(){
-  // move up the page
-
+    // move up the page
     let pageHeight = window.innerHeight;
-    window.scrollBy(0, 0 - pageHeight);
-    
-
+    document.querySelector('.page-content').scrollBy({ top: 0-(pageHeight-100),behavior: 'smooth' });
   }
 
 
   handleDownClick(){
     // move down the page
-
     let pageHeight = window.innerHeight;
-    window.scrollBy(0, pageHeight);
-
-
+    document.querySelector('.page-content').scrollBy({ top: pageHeight-100,behavior: 'smooth' });
   }
+
 
 
   render(){

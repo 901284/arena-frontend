@@ -9,7 +9,6 @@ class SolarpowerView {
 
   
   init(){    
-    console.log('Solarpower.init')
     
     document.title = "Solar Power"  
     this.render()    
@@ -22,8 +21,6 @@ class SolarpowerView {
 
 
   setListeners(){
-    console.log('setlisteners called')
-
  
     // enable these once i have put them  in the dom.
     this.downArrow = document.querySelector('#down');
@@ -34,9 +31,6 @@ class SolarpowerView {
 
     /*'animating in the elements for section 1 when section on page load'*/
   startSection1Anim(){
-      console.log('startsection1Anim called')
-
-
 
       // const downArrow = document.querySelector(".downArrow");
   
@@ -48,29 +42,21 @@ class SolarpowerView {
   //         .from(bubble1, { opacity:0 , y: -50, duration: 0.8, ease: "power4.out"},+2.0);
   }
 
-
   /* =============== animate section in or out ==================  */
 
 
 
-
   handleUpClick(){
-  // move up the page
-
+    // move up the page
     let pageHeight = window.innerHeight;
-    window.scrollBy(0, 0 - pageHeight);
-    
-
+    document.querySelector('.page-content').scrollBy({ top: 0-(pageHeight-100),behavior: 'smooth' });
   }
 
 
   handleDownClick(){
     // move down the page
-
     let pageHeight = window.innerHeight;
-    window.scrollBy(0, pageHeight);
-
-
+    document.querySelector('.page-content').scrollBy({ top: pageHeight-100,behavior: 'smooth' });
   }
 
 

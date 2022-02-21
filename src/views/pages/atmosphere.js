@@ -11,7 +11,6 @@ class AtmosphereView {
 
   
   init(){    
-    console.log('Atmosphere.init')
     
     document.title = "Earth's Atmosphere"  
     this.render()    
@@ -22,7 +21,6 @@ class AtmosphereView {
   } 
 
   setListeners(){
-    console.log('setlisteners called')
 
     this.earth = document.querySelector(".earth");
     this.space = document.querySelector(".space");
@@ -37,7 +35,6 @@ class AtmosphereView {
 
     /*'animating in the elements for section 1 when section on page load'*/
   startSection1Anim(){
-      console.log('startsection1Anim called')
       const earth = document.querySelector(".earth");
       const space = document.querySelector(".space");
       const astronaut = document.querySelector(".astronaut");
@@ -69,7 +66,6 @@ class AtmosphereView {
 
   // animate in the atmosphere
     animateAtmosphere(){
-      console.log('animating the atmosphere')
       const atmosphere = document.querySelector("#atmos-section1");
       // create gsap timeline for animating in the atmosphere.
       const tl = gsap.timeline({})   
@@ -77,7 +73,6 @@ class AtmosphereView {
      }
   
     animateSection1Speech(){
-      console.log('animating the speech for section 1')
       const atmosphere = document.querySelector("#atmos-section1");
       // create gsap timeline for animating in the atmosphere.
       const tl = gsap.timeline({})   
@@ -85,29 +80,20 @@ class AtmosphereView {
   
     }
     
-
+    // nav button click handlers
   handleUpClick(){
     // move up the page
-    let page =  document.querySelector('.page-content')
     let pageHeight = window.innerHeight;
-    page.scrollBy({
-      top: 0 - pageHeight,
-      left: 0,
-      behavior: 'smooth'
-    });
-
+    document.querySelector('.page-content').scrollBy({ top: 0-(pageHeight-100),behavior: 'smooth' });
   }
+
 
   handleDownClick(){
     // move down the page
-    let page =  document.querySelector('.page-content')
     let pageHeight = window.innerHeight;
-    page.scrollBy({
-      top: pageHeight,
-      left: 0,
-      behavior: 'smooth'
-    });
+    document.querySelector('.page-content').scrollBy({ top: pageHeight-100,behavior: 'smooth' });
   }
+
 
 
   render(){
@@ -161,8 +147,6 @@ class AtmosphereView {
           </div>
           <p>Figure 1:  The Natural Greenhouse effect, left side, and the Human Enhanced Greenhouse effect, right side, in the Earth's atmosphere.<p>
 
-
-<<<<<<< HEAD
           <h3>What reduces the greenhouse effect on Earth?</h3>
 
           <p>Just like a glass greenhouse, Earth's greenhouse is also full of plants! Plants can help to balance the greenhouse effect on Earth. All plants — from giant trees to tiny phytoplankton in the ocean — take in carbon dioxide and give off oxygen. The ocean also absorbs a lot of excess carbon dioxide in the air. Unfortunately, the increased carbon dioxide in the ocean changes the water, making it more acidic. This is called ocean acidification. More acidic water can be harmful to many ocean creatures, such as certain shellfish and coral. Warming oceans, from too many greenhouse gasses in the atmosphere, can also be harmful to these organisms. Warmer waters are a main cause of coral bleaching.

@@ -2,6 +2,11 @@
 // Filename:      App.js
 // Created:       December 2021
 // Description:   Root js application instance
+// hosted at:     https://arena-frontend-v2.netlify.app/
+
+// fix the wrapping on the references.
+// fix the chat widget in mobile view.
+
 
 import Router from './Router'
 import Auth from './Auth'

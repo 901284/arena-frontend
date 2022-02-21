@@ -10,7 +10,6 @@ import { gsap } from "gsap";
 
 class ChatView {
     init(){
-        console.log('ChatView.init')
         document.title = 'Chat with other users'
         this.setIconClickListener()
         this.comments=[];  // a place to store all the comments
@@ -71,7 +70,6 @@ class ChatView {
     // get the commments from the datasbase.
     async getAllComments(){
         let result = await CommentAPI.getComments();
-        console.log('comment data: ' ,result)
         this.comments = result;
     }
 
@@ -83,7 +81,6 @@ class ChatView {
 
         // dont render any comment elements if there is nothing to render
         if ( this.comments == null || Object.keys(this.comments).length <1) {
-            console.log('no comments to render')
             return
         } 
 
@@ -104,18 +101,15 @@ class ChatView {
  
     // handle the onclick or enter key event in the chat comment input
     async chatHandler(e){
-        console.log("chatHandler called")
 
         e.preventDefault()
         const formData = e.detail.formData
            
-        console.log("submit comment called")
         // get the current user id  and listing id  and append to the form data before submission.   
         const commentInput = document.querySelector("#chat-input-comment")
        
         // validate the text
         const commentText =  commentInput.value
-        console.log("input: ", commentText)
         if (commentText == null || commentText.length <1) {
             Toast.show("You must have text input to post a comment","info")
             return
@@ -127,7 +121,6 @@ class ChatView {
         // send the data
         CommentAPI.newComment(formData)
         .then(result => {
-            console.log(result)
             if (result.ok){
                 // if response ok, clear the comment field ready for next input
                 commentInput.value = ''              
@@ -145,16 +138,13 @@ class ChatView {
 
         // get all comments
         let result = await CommentAPI.getComments();
-        console.log('comment data: ' ,result)
         let comments = result;
-
         
         // render out the new comments
         let chatHistory = document.querySelector('.chat-history')
 
         // dont render any comment elements if there is nothing to render
         if ( comments == null || Object.keys(comments).length <1) {
-            console.log('no comments to render')
             return true
         } 
         chatHistory.innerHTML = ''

@@ -66,7 +66,6 @@ class Auth {
       localStorage.setItem('accessToken', data.accessToken)
       // set current user
       this.currentUser = data.user      
-      // console.log(this.currentUser)           
       // redirect to home
       Router.init()
       gotoRoute('/')
@@ -111,7 +110,6 @@ class Auth {
     
     // token is valid!
     const data = await response.json()
-    // console.log(data)
     // set currentUser obj
     this.currentUser = data.user
     // run success - callback to init the router.

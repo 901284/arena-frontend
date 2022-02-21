@@ -8,8 +8,7 @@ import { gsap } from "gsap";
 class AskView {
   
   init(){    
-    console.log('AskView.init')
-    
+   
     document.title = "Ask me anything"  
     this.render()    
     this.setListeners()
@@ -21,8 +20,6 @@ class AskView {
 
 
   setListeners(){
-    console.log('setlisteners called')
-
  
     // enable these once i have put them  in the dom.
     this.downArrow = document.querySelector('#down');
@@ -33,8 +30,6 @@ class AskView {
 
     /*'animating in the elements for section 1 when section on page load'*/
   startSection1Anim(){
-      console.log('startsection1Anim called')
-
 
       // create gsap timeline for animating in the atmosphere.
       const tl = gsap.timeline();

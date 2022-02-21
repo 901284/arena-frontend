@@ -9,7 +9,6 @@ import moment from 'moment'
 
 class EditProfileView {
   init(){
-    console.log('EditProfileView.init')
     document.title = 'Edit Profile'    
     this.user = null
     this.avatar = null
@@ -25,8 +24,7 @@ class EditProfileView {
   async getUser(){
     try {
       this.user = await UserAPI.getUser(Auth.currentUser.email)     
-      // console.log("the user: " , this.user) 
-       this.render()
+      this.render()
     }catch(err){
       console.log(err)
       Toast.show(err, 'error')
@@ -36,7 +34,6 @@ class EditProfileView {
 
 
   async updateProfileSubmitHandler(e){
-    console.log("updateProfileSubmitHandler called") 
     e.preventDefault()
     const submitBtn = document.querySelector('.submit-btn')
     submitBtn.setAttribute('loading', '')
@@ -120,10 +117,7 @@ class EditProfileView {
       const submitBtn = document.querySelector('.submit-btn')
       submitBtn.setAttribute('loading', '')
       try {
-        // console.log("calling UserAPI.updateUser(Auth.currentUser.email, formData)") 
         const updatedUser = await UserAPI.updateUser(Auth.currentUser.email, formData)    
-        // console.log("got updated user : ",updatedUser)   
-
         delete updatedUser.password        
         this.user = updatedUser   
         Auth.currentUser = updatedUser
@@ -142,7 +136,6 @@ class EditProfileView {
 
   render(){
         
-    console.log("render called") 
     const template = (this.user == null) ? html`
     <sl-spinner></sl-spinner>
     `:html`
