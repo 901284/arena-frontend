@@ -140,7 +140,8 @@ class CareersView {
                   <h4>Perth</h4>
                 </div>
               </div>
-
+            </div>
+          </div>
       </div>   
       <app-footer></app-footer>
    
