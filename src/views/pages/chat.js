@@ -20,6 +20,32 @@ class ChatView {
         this.renderComments();
         this.isAutoRefresh = true;
         this.refresher()
+        this.setWindowSizeListener()
+
+
+    }
+
+
+    handleWindowResize() {
+        const tabletScreenThreshold = 1280
+        if (window.innerWidth < tabletScreenThreshold) {
+            // animate out the chat widget
+            let chatWidget = document.querySelector('#chat')
+            const chatOffTimeline = gsap.timeline();
+            chatOffTimeline .to(chatWidget, {opacity: 0, scale: 0,  duration: 0.5, ease: "power4.out"});
+
+        } else if (localStorage.getItem('showChat') == "true") {
+            let chatWidget = document.querySelector('#chat')
+            let chatIcon = document.querySelector('#chat-icon')
+            const chatOnTimeline = gsap.timeline();
+            chatOnTimeline  .to(chatWidget, {opacity: 1, scale: 1,  duration: 0.5, ease: "power4.out"})
+                            .to(chatIcon, {opacity: 0, duration: 0.5, ease: "power4.out"},-0.5);          
+    
+        }
+    }
+
+    setWindowSizeListener() {       
+        window.onresize = this.handleWindowResize;
     }
 
     setIconClickListener(){
@@ -158,6 +184,9 @@ class ChatView {
         return true;      
     }
 
+
+
+
     render(){    
         const template = html`      
         <div class="chat-container">
@@ -179,8 +208,6 @@ class ChatView {
         render(template, App.chatEl)    
 
         if (localStorage.getItem('showChat') == "true") {
-            // document.querySelector('#chat').style.opacity = 1.0;
-            
             let chatWidget = document.querySelector('#chat')
             let chatIcon = document.querySelector('#chat-icon')
             const chatOnTimeline = gsap.timeline();
@@ -188,7 +215,6 @@ class ChatView {
                             .to(chatIcon, {opacity: 0, duration: 0.5, ease: "power4.out"},-0.5);          
     
         } else {
-            // document.querySelector('#chat').style.opacity = 0.0;
             let chatWidget = document.querySelector('#chat')
             let chatIcon = document.querySelector('#chat-icon')
             const chatOffTimeline = gsap.timeline();

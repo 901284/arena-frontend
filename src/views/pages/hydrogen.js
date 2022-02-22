@@ -55,8 +55,6 @@ class HydrogenView {
     document.querySelector('.page-content').scrollBy({ top: pageHeight-100,behavior: 'smooth' });
   }
 
-
-
   render(){
     const template = html`
       <va-app-header title="Hydrogen" user=${JSON.stringify(Auth.currentUser)}></va-app-header>
