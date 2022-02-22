@@ -42,43 +42,49 @@
 }
 
 .careers-information {
-  height: 40vh;
   width: 100%;
   background: #e4e2e2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .careers-information .careers-boxes-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
 }
 
 .careers-information .careers-box {
-  width: 50%;
-  padding: 1.5rem 4rem;
+  padding: 2vw;
+  margin-left: 0px;
+  margin-right: 0px;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  max-width: 25%;
+  min-width: 20em;
+}
+
+.careers-information .careers-box p {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .careers-information h2 {
+  padding-top: 5vh;
   text-align: center;
   font-size: 2rem;
 }
 
-.careers-information h3 {
+.careers-information .careers-heading {
   font-style: italic;
   font-size: 1.5rem;
+  text-align: left;
+  font-family: 'Fuzzy Bubbles', cursive;
 }
 
 .careers-testimonials {
@@ -93,13 +99,16 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 3em 0;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.careers-testimonials .testimonials-container p {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .careers-testimonials h2 {
@@ -115,31 +124,14 @@
 }
 
 .careers-testimonials .testimonials-boxes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 25%;
-  height: auto;
+  padding: 5vw;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  max-width: 25%;
+  min-width: 20em;
   background: rgba(255, 255, 255, 0.8);
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  margin: 0 2rem;
-}
-
-.careers-testimonials p {
-  width: 60%;
-  font-size: 1.25em;
-  text-align: center;
 }
 
 .careers-testimonials .testimonials-img {
@@ -239,5 +231,18 @@
   font-weight: 400;
   font-size: 1em;
   color: var(--brand-grey);
+}
+
+@media (max-width: 414px) {
+  .careers-header {
+    background-size: auto;
+  }
+  .careers-header .header-info h1 {
+    font-size: 4rem;
+  }
+  .careers-header .header-info p {
+    font-size: 1rem;
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=careers.css.map */

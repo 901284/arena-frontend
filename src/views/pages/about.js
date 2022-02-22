@@ -74,8 +74,8 @@ class AboutView {
              <h3>Our Projects</h3>
               <h2>Hydogren Hub<br>Feasibility Study</h2>
               <p>This project will investigate the technical and commercial viability of renewable hydrogen and ammonia production facilities at the Port of Newcastle.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu. 
+              This is a first-of-a-kind deployment for Australia and will help to reduce emissions in the ultra-heavy transport sector. The project will be located at the
+              Sun Metals zinc refinery in Townsville, which is owned by Ark Energy’s sister company, Sun Metals Corporation (SMC). 
               </p>
             </div>
 
@@ -91,9 +91,9 @@ class AboutView {
             <div class="project-text">
              <h3>Our Projects</h3>
               <h2>Next Generation<br>Electric Bus Depot</h2>
-              <p>This project will investigate the technical and commercial viability of renewable hydrogen and ammonia production facilities at the Port of Newcastle.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu. 
+              <p>There is limited understanding and knowledge of the best and most effective way to transition a large fleet of heavy vehicles, stagnating the government’s 
+                and private operators’ efforts to decarbonise. This project provides the Australian public transport sector with a commercial and technical blueprint to solve '
+                some of the most critical issues facing large-scale fleet electrification, being the impact on the grid and the management of assets.
               </p>
             </div>            
           </div>

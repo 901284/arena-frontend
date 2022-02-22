@@ -18,7 +18,7 @@ customElements.define('app-footer', class AppFooter extends LitElement {
     <style>
 
       .app-footer {
-          position: absolute;
+          position: fixed;
           bottom: 0;
           right: 0;
           left: 0;
@@ -32,11 +32,16 @@ customElements.define('app-footer', class AppFooter extends LitElement {
           flex-grow: 1;
           padding: 1em;
           color: darkgrey;
-          background-color: #55555511;
+         /*  background-color: #55555511; */
+         opacity: 0.3;
+      }
+
+      .app-footer:hover {
+        opacity: 1;
       }
 
       .app-footer a {
-        color: grey;
+        color: var(--brand-color);
       }
         
 
@@ -45,6 +50,7 @@ customElements.define('app-footer', class AppFooter extends LitElement {
           text-align: center;
           align-items: center;
           vertical-align: middle;
+          color: var(--brand-color);
           margin-left: 1em;
           margin-right: 1em;
 

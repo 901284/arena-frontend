@@ -101,18 +101,23 @@
   width: 80%;
   color: var(--brand-charcoal);
   text-align: center;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .role-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 4rem 7rem;
 }
 
@@ -126,6 +131,8 @@
   border-left: 3px solid var(--brand-green);
   padding-left: 2rem;
   font-size: 4rem;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .role-container h3 {
@@ -133,11 +140,15 @@
   font-weight: 400;
   padding: 1rem 0;
   font-size: 1.5rem;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .role-container p {
   font-size: 1.5rem;
   line-height: 1.5;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .role-container .role-img {
@@ -169,8 +180,16 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: auto;
-  height: 500px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
 }
 
 .project-container .project-img {
@@ -190,18 +209,24 @@
 
 .project-container h2 {
   font-size: 2rem;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .project-container h3 {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.5rem;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .project-container p {
   width: 90%;
   font-size: 1.25rem;
   line-height: 1.5;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 #about-hr {
@@ -218,12 +243,18 @@
   }
   .about-intro h1 {
     font-size: 6rem;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .role-container .our-role h1 {
     font-size: 2rem;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .role-container .our-role p {
     font-size: 1rem;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .role-container .role-img {
     width: 350px;
@@ -232,6 +263,8 @@
   .project-container p {
     font-size: .9rem;
     width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 
@@ -247,18 +280,14 @@
     width: 80%;
   }
   .about-numbers {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     height: auto;
     padding: 2em 0;
   }
   .about-numbers .number {
-    font-size: 6rem;
+    font-size: 35px;
   }
   .about-numbers .number-p {
-    font-size: 1rem;
+    font-size: 11px;
   }
   .about-intro {
     height: 70%;
@@ -315,12 +344,18 @@
   }
   .project-container h3 {
     font-size: .75em;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .project-container h2 {
     font-size: 1.5em;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .project-container p {
     font-size: .5em;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .project-container .project-text {
     padding: 0;

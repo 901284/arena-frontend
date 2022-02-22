@@ -22,8 +22,6 @@ class CareersView {
               <p>We offer exciting and rewarding careers for talented individuals who wish to help improve Australia’s future through renewable energy.</p>
             </div>
           </div>
-          <!-- <p>There are a gazillion career opportunities in the renewable energy sector. Whether your interested in solar, wind, bio or other renewable energy forms and wonder what pathways and options you will have to land a job in the renewable energy sector in the future, have a look at the website below. It has a cool tool which helps you to map a career in clean energy. 
-          <br><a href="https://www.energy.gov/eere/education/map-career-clean-energy">https://www.energy.gov/eere/education/map-career-clean-energy</a></p> -->
           
           <div class="careers-information">
           <h2>A meaningful impact</h2>

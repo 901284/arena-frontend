@@ -220,3 +220,20 @@
             
         // }
 }
+
+// iphone responsive design ///////////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 414px) {
+    .careers-header {
+        background-size: auto;
+
+        .header-info h1 {
+            font-size: 4rem;
+        }
+    
+        .header-info p {
+            font-size: 1rem;
+            width: 80%;
+
+            }
+    }
+}

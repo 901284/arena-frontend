@@ -20,6 +20,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 10;
+}
+
+.profile-wrapper p, .profile-wrapper h1, .profile-wrapper h2, .profile-wrapper h3, .profile-wrapper h4, .profile-wrapper h5, .profile-wrapper h6 {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .profile-wrapper .profile-header {

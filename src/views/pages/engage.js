@@ -15,13 +15,6 @@ class EngageView {
     const template = html`
       <va-app-header title="Engage" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-content">  
-
-     <!--    <h1>Engage</h1>
-        <img src="images/astronautincloud.png" alt="Cartoon astronaut in cloud">
-        <p>Are you keen on learning more about Renewable Energy and having a positive impact on the Earth's Environment?</p>
-        <p>This official energy website has fun educational resources for students from year one to year twelve:<br><a href="https://www.energy.gov/diversity/student-educational-resources-stem">https://www.energy.gov/diversity/student-educational-resources-stem</a></p>
-        <p>And if you are eager to get more actively engaged, you may want to have a look at The SDG7 Youth Constituency website:<br><a href="https://www.unmgcy.org/sustainable-energy">https://www.unmgcy.org/sustainable-energy</a></p> -->
-        
         <div class="engage-header">
           <div class="header-info">
             <h1>ENGAGE</h1>
@@ -31,8 +24,10 @@ class EngageView {
         
         <div class="engage-spiel">
           <h1>Are you keen on learning more about Renewable Energy and having a positive impact on the Earth's Environment?</h1>
-          <p class="feature-box__text">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, 
-            similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+          <p class="feature-box__text">We offer free online renewable energy courses, games and quizzes, so that you can build your 
+            skills and learn about a career in renewable energy. If that's not your style, you can at least learn something to help
+            make the Earth a better place!
+          </p>
             <sl-icon name="caret-down-fill" class="learn-more"></sl-icon>
 
 
@@ -46,7 +41,7 @@ class EngageView {
               <sl-icon name="arrow-down-right-circle"  style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
               <h3 class="heading-tertiary">Take a trip</h3>
               <p class="feature-box__text">
-                Lorem ipsum sit amet consectetur adiscipting elit. Aperiam, ipsum sapiente aspernatur.
+                Take a field trip with your classmates to one of our exciting locations!
               </p>
             </div>
           </div>
@@ -56,7 +51,7 @@ class EngageView {
               <sl-icon name="arrow-down-right-circle"  style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
               <h3 class="heading-tertiary">Be a role model</h3>
               <p class="feature-box__text">
-                Kids do a lot of learning just by observing what older kids do - show them how
+                Kids learn a lot through observing what older kids do - show them how
                 they can start to implement good habits.
               </p>
             </div>
@@ -67,7 +62,8 @@ class EngageView {
               <sl-icon name="arrow-down-right-circle"   style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
               <h3 class="heading-tertiary">Explore the world</h3>
               <p class="feature-box__text">
-                Lorem ipsum sit amet consectetur adiscipting elit. Aperiam, ipsum sapiente aspernatur.
+                Curiosity is a really cool natural thing. Go out into the world, and see how your and the other's around you interactions
+                shape the world that we live in.
               </p>
             </div>
           </div>
@@ -77,7 +73,7 @@ class EngageView {
               <sl-icon name="arrow-down-right-circle"  style="font-size: 5rem; color: var(--brand-green);"></sl-icon>
               <h3 class="heading-tertiary">Play games</h3>
               <p class="feature-box__text">
-                Lorem ipsum sit amet consectetur adiscipting elit. Aperiam, ipsum sapiente aspernatur.
+                Interact with any of our cool pages and games to learn all that you want!
               </p>
             </div>
           </div>

@@ -65,10 +65,10 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         left: 0;
         height: var(--app-header-height);
         color: black;
-        background: var(--brand-green);
         display: flex;
         z-index: 9;
         align-items: center;
+        background: none;
       }
       
 
@@ -96,7 +96,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       }
       
       .hamburger-btn::part(base) {
-        color: var(--brand-color)
+        color: var(--brand-color);
       }
 
       .app-top-nav {
@@ -131,7 +131,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       }
 
       .page-title {
-        color: var(--app-header-txt-color);
+        color: var(--brand-color);
         margin-right: 0.5em;
         font-size: var(--app-header-title-font-size);
       }
